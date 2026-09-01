@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1a17">
+<meta name="description" content="إنجيل يسوع المسيح بحسب القدّيس يوحنّا — الترجمة الكاثوليكيّة العربيّة، للقراءة على الهاتف.">
+<title>إنجيل القدّيس يوحنّا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#231f1c;
+  --ink-soft:#5c534c;
+  --rubric:#9d2f22;
+  --rubric-soft:#b85546;
+  --gold:#8a6a2f;
+  --page:#faf7f1;
+  --page-2:#f2ece1;
+  --rule:#ded4c4;
+  --chrome:#1e1b17;
+  --chrome-ink:#f0e9dc;
+  --fs:19px;
+  --lh:2.15;
+  --measure:33rem;
+  --sans:"Noto Kufi Arabic",system-ui,"Segoe UI",sans-serif;
+  --serif:"Amiri","Scheherazade New","Traditional Arabic",Georgia,serif;
+}
+html[data-theme="sepia"]{--page:#f2e6d0;--page-2:#e9dabf;--rule:#d6c3a2;--ink:#3a2f21;--ink-soft:#6b5a44;}
+html[data-theme="dark"]{
+  --page:#161513;--page-2:#201e1a;--rule:#37332c;--ink:#e6e0d4;--ink-soft:#a49b8c;
+  --rubric:#e0836f;--rubric-soft:#c9705d;--gold:#c8a463;--chrome:#0e0d0c;--chrome-ink:#ece5d8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--page);color:var(--ink);
+  font-family:var(--serif);font-size:var(--fs);line-height:var(--lh);
+  transition:background .25s ease,color .25s ease;
+  overflow-wrap:break-word;
+}
+a{color:inherit}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky;top:0;z-index:40;background:var(--chrome);color:var(--chrome-ink);
+  display:flex;align-items:center;gap:.35rem;
+  padding:.45rem .6rem;padding-top:calc(.45rem + env(safe-area-inset-top));
+  font-family:var(--sans);
+}
+.bar button{
+  background:none;border:0;color:inherit;font:inherit;font-size:.8rem;
+  padding:.5rem .6rem;border-radius:.5rem;cursor:pointer;line-height:1;
+  display:flex;align-items:center;gap:.35rem;min-height:40px;
+}
+.bar button:hover{background:rgba(255,255,255,.09)}
+.bar button:focus-visible,.cg:focus-visible,.toc-item:focus-visible,#q:focus-visible{
+  outline:2px solid var(--rubric-soft);outline-offset:2px}
+.bar .now{flex:1;font-size:.78rem;opacity:.72;text-align:center;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aa{display:flex;align-items:flex-end;gap:1px;font-family:var(--serif);line-height:.85}
+.aa-lg{font-size:1.15rem}
+.aa-sm{font-size:.8rem;opacity:.7}
+.icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.progress{position:absolute;bottom:0;right:0;height:2px;background:var(--rubric-soft);width:0}
+
+/* ---------- title block ---------- */
+.hero{
+  max-width:var(--measure);margin:0 auto;padding:3.2rem 1.25rem 1.6rem;text-align:center;
+}
+.hero .eyebrow{font-family:var(--sans);font-size:.7rem;letter-spacing:.04em;
+  color:var(--ink-soft);margin:0 0 1.4rem}
+.hero h1{
+  font-size:clamp(2rem,9vw,2.9rem);line-height:1.5;margin:0;font-weight:700;
+  color:var(--rubric);
+}
+.hero h1 small{display:block;font-size:.42em;font-weight:400;color:var(--ink-soft);
+  margin-bottom:.5rem;line-height:1.8}
+.rule-orn{display:flex;align-items:center;gap:.7rem;margin:1.8rem auto 0;max-width:14rem;
+  color:var(--gold)}
+.rule-orn::before,.rule-orn::after{content:"";flex:1;height:1px;background:currentColor;opacity:.45}
+.rule-orn span{font-size:1rem;line-height:1}
+
+.grid-wrap{max-width:var(--measure);margin:0 auto;padding:1.4rem 1.25rem 2.6rem}
+.grid-wrap p.hint{font-family:var(--sans);font-size:.72rem;color:var(--ink-soft);
+  text-align:center;margin:0 0 1rem;line-height:1.9}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.45rem}
+.cg{
+  display:flex;align-items:center;justify-content:center;
+  aspect-ratio:1;border:1px solid var(--rule);border-radius:.55rem;
+  text-decoration:none;color:var(--ink);font-size:1.05rem;background:var(--page-2);
+  transition:background .15s,color .15s,border-color .15s;
+}
+.cg:hover,.cg:active{background:var(--rubric);color:#fff;border-color:var(--rubric)}
+
+/* ---------- reading ---------- */
+main{max-width:var(--measure);margin:0 auto;padding:0 1.25rem 5rem}
+.chapter{scroll-margin-top:64px}
+.chapter-head{
+  display:flex;align-items:baseline;justify-content:center;gap:.5rem;
+  margin:3.4rem 0 1.2rem;padding-top:1.4rem;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-weight:500;
+}
+#ch1 .chapter-head{border-top:0;margin-top:.5rem;padding-top:0}
+.ch-word{font-size:.72rem;color:var(--ink-soft);letter-spacing:.02em}
+.ch-num{font-size:1.5rem;color:var(--rubric);font-weight:700;font-family:var(--serif)}
+
+.part{margin:2.8rem 0 1.6rem;text-align:center}
+.part-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:2.1rem;height:2.1rem;border-radius:50%;
+  border:1px solid var(--gold);color:var(--gold);
+  font-family:var(--serif);font-size:1rem;margin-bottom:.6rem;
+}
+.part-title{margin:0;font-size:1.22em;font-weight:700;color:var(--ink);line-height:1.7}
+.subpart{
+  margin:2rem 0 1rem;font-size:1.02em;font-weight:400;color:var(--ink-soft);
+  text-align:center;line-height:1.8;font-family:var(--sans);
+}
+.sub-mark{color:var(--gold);margin-left:.4rem}
+.rubric{
+  margin:2.2rem 0 .9rem;font-size:1.08em;font-weight:700;color:var(--rubric);
+  line-height:1.8;
+}
+.prose{margin:0 0 1.15rem;text-align:start;hyphens:none}
+.poem{margin:0 0 1.15rem;padding-right:.9rem;border-right:1px solid var(--rule)}
+.poem .line{margin:0 0 .12rem;line-height:1.95;color:var(--ink)}
+.vn{
+  font-family:var(--sans);font-size:.62em;color:var(--rubric);
+  vertical-align:.5em;margin-left:.18em;font-weight:700;
+  user-select:none;scroll-margin-top:80px;cursor:pointer;
+}
+html[data-theme="dark"] .vn{color:var(--rubric-soft)}
+html[data-vn="off"] .vn{display:none}
+.hit{background:rgba(157,47,34,.16);border-radius:.2rem;
+  box-shadow:0 0 0 2px rgba(157,47,34,.16)}
+@keyframes flash{0%,100%{background:transparent}25%{background:rgba(184,85,70,.28)}}
+.flash{animation:flash 1.6s ease}
+
+/* ---------- drawer ---------- */
+.scrim{position:fixed;inset:0;background:rgba(20,17,14,.5);opacity:0;pointer-events:none;
+  transition:opacity .22s;z-index:50;backdrop-filter:blur(2px)}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(86vw,22rem);z-index:51;
+  background:var(--page);border-left:1px solid var(--rule);
+  transform:translateX(100%);transition:transform .26s cubic-bezier(.2,.7,.3,1);
+  display:flex;flex-direction:column;
+}
+.drawer.on{transform:none}
+.drawer header{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  padding:.7rem .9rem;padding-top:calc(.7rem + env(safe-area-inset-top));
+  border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.82rem;
+}
+.drawer header button{background:none;border:0;color:var(--ink-soft);cursor:pointer;
+  padding:.5rem;line-height:0;border-radius:.4rem}
+.search{padding:.7rem .9rem;border-bottom:1px solid var(--rule)}
+#q{
+  width:100%;padding:.6rem .8rem;border:1px solid var(--rule);border-radius:.5rem;
+  background:var(--page-2);color:var(--ink);font-family:var(--sans);font-size:.85rem;
+}
+#q::placeholder{color:var(--ink-soft);opacity:.75}
+.toc{overflow-y:auto;padding:.4rem 0 2rem;-webkit-overflow-scrolling:touch;flex:1}
+.toc-item{
+  display:block;width:100%;text-align:right;background:none;border:0;cursor:pointer;
+  padding:.55rem 1rem;font-family:var(--sans);font-size:.82rem;color:var(--ink);
+  line-height:1.7;text-decoration:none;
+}
+.toc-item:hover{background:var(--page-2)}
+.toc-item.t-ch{font-weight:700;color:var(--rubric);
+  border-top:1px solid var(--rule);margin-top:.35rem;padding-top:.7rem}
+.toc-item.t-sec{padding-right:1.6rem;color:var(--ink-soft)}
+.toc-item.t-part{padding-right:1.2rem;color:var(--gold);font-weight:500}
+.toc-item.t-sub{padding-right:2rem;color:var(--ink-soft);opacity:.85}
+.toc-item.hide{display:none}
+.toc .empty{padding:1.2rem 1rem;font-family:var(--sans);font-size:.78rem;color:var(--ink-soft)}
+
+/* ---------- settings sheet ---------- */
+.sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:51;background:var(--page);
+  border-top:1px solid var(--rule);border-radius:1rem 1rem 0 0;
+  padding:1rem 1.1rem calc(1.4rem + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .26s cubic-bezier(.2,.7,.3,1);
+  font-family:var(--sans);box-shadow:0 -8px 30px rgba(0,0,0,.14);
+}
+.sheet.on{transform:none}
+.handle{width:2.5rem;height:4px;border-radius:2px;background:var(--rule);
+  margin:0 auto .6rem}
+.sheet .row{display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.65rem 0}
+.sheet .row + .row{border-top:1px solid var(--rule)}
+.sheet .lab{font-size:.8rem;color:var(--ink-soft)}
+.seg{display:flex;border:1px solid var(--rule);border-radius:.55rem;overflow:hidden}
+.seg button{
+  background:var(--page-2);border:0;color:var(--ink);cursor:pointer;
+  padding:.5rem .85rem;font-family:var(--sans);font-size:.8rem;min-width:2.6rem;
+}
+.seg button + button{border-right:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--rubric);color:#fff}
+#thSeg button{padding:.5rem .9rem}
+#thSeg button[aria-pressed="true"]{background:var(--page-2);
+  box-shadow:inset 0 0 0 2px var(--rubric)}
+.sw-dot{width:14px;height:14px;border-radius:50%;display:inline-block;
+  border:1px solid rgba(0,0,0,.18)}
+
+/* ---------- footer + fab ---------- */
+footer{
+  max-width:var(--measure);margin:0 auto;padding:2.4rem 1.25rem 6rem;
+  border-top:1px solid var(--rule);font-family:var(--sans);font-size:.72rem;
+  color:var(--ink-soft);line-height:2;text-align:center;
+}
+footer a{color:var(--rubric-soft)}
+.totop{
+  position:fixed;left:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:30;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);
+  background:var(--page);color:var(--ink-soft);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 14px rgba(0,0,0,.1);
+}
+.totop.on{opacity:1;pointer-events:auto}
+
+@media (min-width:760px){
+  :root{--fs:20px;--measure:36rem}
+  .grid{grid-template-columns:repeat(11,1fr)}
+  .prose{text-align:justify;text-justify:inter-word}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  .bar,.drawer,.scrim,.sheet,.totop,.grid-wrap{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <button id="menuBtn" aria-label="الفصول والبحث">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <span>الفصول</span>
+  </button>
+  <span class="now" id="now">إنجيل القدّيس يوحنّا</span>
+  <button id="setBtn" aria-label="إعدادات القراءة">
+    <span class="aa"><span class="aa-lg">ا</span><span class="aa-sm">ا</span></span>
+    <span>الخطّ</span>
+  </button>
+  <div class="progress" id="prog"></div>
+</div>
+
+<div class="hero">
+  <p class="eyebrow">العهد الجديد · الترجمة الكاثوليكيّة</p>
+  <h1><small>إنجيل يسوع المسيح بحسب</small>القدّيس يوحنّا</h1>
+  <div class="rule-orn"><span>✦</span></div>
+</div>
+
+<div class="grid-wrap">
+  <p class="hint">اختر فصلًا للبدء ــ واحد وعشرون فصلًا</p>
+  <div class="grid">
+<a class="cg" href="#ch1">١</a>
+<a class="cg" href="#ch2">٢</a>
+<a class="cg" href="#ch3">٣</a>
+<a class="cg" href="#ch4">٤</a>
+<a class="cg" href="#ch5">٥</a>
+<a class="cg" href="#ch6">٦</a>
+<a class="cg" href="#ch7">٧</a>
+<a class="cg" href="#ch8">٨</a>
+<a class="cg" href="#ch9">٩</a>
+<a class="cg" href="#ch10">١٠</a>
+<a class="cg" href="#ch11">١١</a>
+<a class="cg" href="#ch12">١٢</a>
+<a class="cg" href="#ch13">١٣</a>
+<a class="cg" href="#ch14">١٤</a>
+<a class="cg" href="#ch15">١٥</a>
+<a class="cg" href="#ch16">١٦</a>
+<a class="cg" href="#ch17">١٧</a>
+<a class="cg" href="#ch18">١٨</a>
+<a class="cg" href="#ch19">١٩</a>
+<a class="cg" href="#ch20">٢٠</a>
+<a class="cg" href="#ch21">٢١</a>
+  </div>
+</div>
+
+<main id="text">
+<section class="chapter" id="ch1" data-ch="1"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١</span></h2>
+<h3 class="rubric" id="h1">المقدِّمة</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v1-1" data-v="1">١</span>في البَدءِ كانَ الكَلِمَة</p>
+<p class="line">والكَلِمَةُ كانَ لَدى الله</p>
+<p class="line">والكَلِمَةُ هوَ الله.</p>
+<p class="line"><span class="vn" id="v1-2" data-v="2">٢</span>كانَ في البَدءِ لَدى الله.</p>
+<p class="line"><span class="vn" id="v1-3" data-v="3">٣</span>بِه كانَ كُلُّ شَيء</p>
+<p class="line">وبِدونِه ما كانَ شَيءٌ مِمَّا كان.</p>
+<p class="line"><span class="vn" id="v1-4" data-v="4">٤</span>فيهِ كانَتِ الحَياة</p>
+<p class="line">والحَياةُ نورُ النَّاس</p>
+<p class="line"><span class="vn" id="v1-5" data-v="5">٥</span>والنُورُ يُشرِقُ في الظُّلُمات</p>
+<p class="line">ولَم تُدرِكْه الظُّلُمات.</p>
+<p class="line"><span class="vn" id="v1-6" data-v="6">٦</span>ظَهَرَ رَجُلٌ مُرسَلٌ مِن لَدُنِ اللهِ</p>
+<p class="line">ٱسْمُه يوحَنَّا.</p>
+<p class="line"><span class="vn" id="v1-7" data-v="7">٧</span>جاءَ شاهِدًا لِيَشهَدَ لِلنُّور</p>
+<p class="line">فَيُؤمِنَ عن شَهادتِه جَميعُ النَّاس.</p>
+<p class="line"><span class="vn" id="v1-8" data-v="8">٨</span>لم يَكُنْ هو النُّور</p>
+<p class="line">بل جاءَ لِيَشهَدَ لِلنُّور.</p>
+<p class="line"><span class="vn" id="v1-9" data-v="9">٩</span>كان النُّورُ الحَقّ</p>
+<p class="line">الَّذي يُنيرُ كُلَّ إِنْسان</p>
+<p class="line">آتِيًا إِلى العالَم.</p>
+<p class="line"><span class="vn" id="v1-10" data-v="10">١٠</span>كانَ في العالَم</p>
+<p class="line">وبِه كانَ العالَم</p>
+<p class="line">والعالَمُ لَم يَعرِفْهُ.</p>
+<p class="line"><span class="vn" id="v1-11" data-v="11">١١</span>جاءَ إِلى بَيتِه</p>
+<p class="line">فما قَبِلَه أَهْلُ بَيتِه.</p>
+<p class="line"><span class="vn" id="v1-12" data-v="12">١٢</span>أَمَّا الَّذينَ قَبِلوه</p>
+<p class="line">وهُمُ الَّذينَ يُؤمِنونَ بِٱسمِه</p>
+<p class="line">فقَد مَكَّنَهم أَنْ يَصيروا أَبْناءَ الله:</p>
+<p class="line"><span class="vn" id="v1-13" data-v="13">١٣</span>فَهُمُ الَّذينَ لا مِن دَمٍ</p>
+<p class="line">ولا مِن رَغبَةِ لَحْمٍ</p>
+<p class="line">ولا مِن رَغبَةِ رَجُل</p>
+<p class="line">بل مِنَ اللهِ وُلِدوا.</p>
+<p class="line"><span class="vn" id="v1-14" data-v="14">١٤</span>والكَلِمَةُ صارَ بَشَرًا</p>
+<p class="line">فسَكَنَ بَينَنا</p>
+<p class="line">فرأَينا مَجدَه</p>
+<p class="line">مَجدًا مِن لَدُنِ الآبِ لِٱبنٍ وَحيد</p>
+<p class="line">مِلؤُه النِّعمَةُ والحَقّ.</p>
+<p class="line"><span class="vn" id="v1-15" data-v="15">١٥</span>شَهِدَ له يوحَنَّا فهَتَف:</p>
+<p class="line">«هٰذا الَّذي قُلتُ فيه:</p>
+<p class="line">إِنَّ الآتِيَ بَعْدي</p>
+<p class="line">قد تَقَدَّمَني</p>
+<p class="line">لأَنَّه كانَ مِن قَبْلي».</p>
+<p class="line"><span class="vn" id="v1-16" data-v="16">١٦</span>فمِن مِلْئِه نِلْنا بِأَجمَعِنا</p>
+<p class="line">وقَد نِلْنا نِعمَةً على نِعمَة.</p>
+<p class="line"><span class="vn" id="v1-17" data-v="17">١٧</span>لِأَنَّ الشَّريعَةَ أُعطِيَت عن يَدِ موسى</p>
+<p class="line">وأَمَّا النِّعمَةُ والحَقّ</p>
+<p class="line">فقَد أَتَيا عن يَدِ يسوعَ المسيح.</p>
+<p class="line"><span class="vn" id="v1-18" data-v="18">١٨</span>إِنَّ اللهَ ما رآهُ أَحدٌ قطّ</p>
+<p class="line">الِٱبنُ الوَحيدُ الَّذي في حِضْنِ الآب</p>
+<p class="line">هو الَّذي أَخبَرَ عَنه.</p>
+</div>
+<div class="part" id="h2"><span class="part-num">١</span><h3 class="part-title">عيد الفصح الأوّل</h3></div>
+<h4 class="subpart" id="h3"><span class="sub-mark">أ</span>الأسبوع الأوّل</h4>
+<h3 class="rubric" id="h4">شهادة يوحنّا ليسوع</h3>
+<p class="prose"><span class="vn" id="v1-19" data-v="19">١٩</span>وهٰذه شَهادَةُ يوحَنَّا، إِذ أَرسَلَ إِلَيه اليَهودُ مِن أُورَشَليمَ بَعضَ الكَهَنَةِ واللَّاوِيِّينَ يَسأَلونَه: «مَن أَنتَ؟» <span class="vn" id="v1-20" data-v="20">٢٠</span>فٱعتَرفَ ولَم يُنكِرْ، اِعتَرَفَ: «لَستُ المسيح». <span class="vn" id="v1-21" data-v="21">٢١</span>فسأَلوه: «مَن أَنتَ إِذًا؟ أَأَنتَ إِيلِيَّا» قال: «لَستُ إِيَّاه». «أَأَنتَ النَّبِيّ؟» أَجابَ: «لا!» <span class="vn" id="v1-22" data-v="22">٢٢</span>فقالوا له: «مَن أَنتَ فنَحمِلَ الجَوابَ إِلى الَّذينَ أَرسَلونا؟ ماذا تَقولُ في نَفسِكَ؟» <span class="vn" id="v1-23" data-v="23">٢٣</span>قال:</p>
+<div class="poem">
+<p class="line">«أَنا صَوتُ مُنادٍ في البَرِّيَّة:</p>
+<p class="line">قَوِّموا طَريقَ الرَّبّ.</p>
+<p class="line">كَما قالَ النَّبِيُّ أَشَعْيا».</p>
+</div>
+<p class="prose"><span class="vn" id="v1-24" data-v="24">٢٤</span>وكانَ المُرسَلونَ مِنَ الفِرِّيسِيِّين، <span class="vn" id="v1-25" data-v="25">٢٥</span>فسَأَلوهُ أَيضًا: «إِذا لم تَكُنِ المسيحَ ولا إِيلِيَّا ولا النَّبِيّ، فلِمَ تُعَمِّدُ إِذًا؟» <span class="vn" id="v1-26" data-v="26">٢٦</span>أَجابَهُم يوحَنَّا: «أَنا أُعَمِّدُ في الماء، وبَينَكم مَن لا تَعرِفونَه، <span class="vn" id="v1-27" data-v="27">٢٧</span>ذاكَ الآتي بَعدِي، مَن لَستُ أَهلًا لِأَن أَفُكَّ رِباطَ حِذائِه». <span class="vn" id="v1-28" data-v="28">٢٨</span>وجَرى ذٰلك في بَيتَ عَنْيا، عِبْرَ الأُردُنّ، حَيثُ كانَ يوحَنَّا يُعَمِّد.</p>
+<p class="prose"><span class="vn" id="v1-29" data-v="29">٢٩</span>وفي الغَد رأَى يسوعَ آتِيًا نَحوَه فقال: «هُوَذا حَمَلُ اللهِ الَّذي يَرفَعُ خَطيئَةَ العالَم. <span class="vn" id="v1-30" data-v="30">٣٠</span>هٰذا الَّذي قُلتُ فيه:</p>
+<div class="poem">
+<p class="line">يأتي بَعْدي رَجُلٌ قد تَقَدَّمَني</p>
+<p class="line">لِأَنَّه كانَ مِن قَبْلي.</p>
+</div>
+<p class="prose"><span class="vn" id="v1-31" data-v="31">٣١</span>وأَنا لم أَكُنْ أَعرِفُه، ولكِنِّي ما جِئْتُ أُعَمِّدُ في الماء إِلَّا لِكَي يَظهَرَ أَمرُه لإِسْرائيل». <span class="vn" id="v1-32" data-v="32">٣٢</span>وشَهِدَ يوحَنَّا قال: «رَأَيتُ الرُّوحَ يَنزِلُ مِنَ السَّماءِ كأَنَّه حَمامَة فيَستَقِرُّ علَيه. <span class="vn" id="v1-33" data-v="33">٣٣</span>وأَنا لَم أَكُنْ أَعرِفُه، ولٰكِنَّ الَّذي أَرسَلَني أُعَمِّدُ في الماءِ هو قالَ لي: إِنَّ الَّذي تَرى الرُّوحَ يَنزِلُ فيَستَقِرُّ علَيهِ هو ذاكَ الَّذي يُعَمِّدُ في الرُّوحِ القُدُس. <span class="vn" id="v1-34" data-v="34">٣٤</span>وأَنا رَأَيتُ وشَهِدتُ أَنَّه هو ٱبنُ الله».</p>
+<h3 class="rubric" id="h5">التلاميذ الأوّلون</h3>
+<p class="prose"><span class="vn" id="v1-35" data-v="35">٣٥</span>وكانَ يوحَنَّا في الغَدِ أَيضًا قائِمًا هُناكَ، ومَعَه ٱثْنانِ مِن تَلاميذِه. <span class="vn" id="v1-36" data-v="36">٣٦</span>فحَدَّقَ إِلى يَسوعَ وهو سائرٌ وقال: «هُوَذا حَمَلُ الله!» <span class="vn" id="v1-37" data-v="37">٣٧</span>فسَمِعَ التِّلْميذانِ كَلامَه فتَبِعا يسوع. <span class="vn" id="v1-38" data-v="38">٣٨</span>فَالتَفَتَ يسوعُ فرآهُما يَتبَعانِه فقالَ لَهما: «ماذا تُريدان؟» قالا له: «رابِّي (أَيْ يا مُعَلِّم) أَينَ تُقيم؟» <span class="vn" id="v1-39" data-v="39">٣٩</span>فقالَ لَهما: «هَلُمَّا فَٱنْظُرا!» فَذَهَبا ونظَرا أَينَ يُقيم، فأَقاما عِندَه ذٰلك اليَوم، وكانَتِ السَّاعَةُ نَحوَ الرَّابِعَةِ بَعدَ الظُّهْر. <span class="vn" id="v1-40" data-v="40">٤٠</span>وكانَ أَندَراوُس أَخو سِمْعانَ بُطرُس أَحَدَ اللَّذَينِ سَمِعا كَلامَ يوحَنَّا فَتبِعا يسوع. <span class="vn" id="v1-41" data-v="41">٤١</span>ولَقِيَ أَوَّلًا أَخاهُ سِمْعان فقالَ له: «وَجَدْنا المَشيح» ومَعناهُ المسيح. <span class="vn" id="v1-42" data-v="42">٤٢</span>وجاءَ بِه إِلى يَسوعَ فحَدَّقَ إِلَيه يسوعُ وقال: «أَنتَ سِمْعانُ بنُ يونا، وسَتُدعَى كِيفا»، أَي صَخرًا.</p>
+<p class="prose"><span class="vn" id="v1-43" data-v="43">٤٣</span>وأَرادَ يسوعُ في الغَدِ أَن يَذهَبَ إِلى الجَليل، فلَقِيَ فيلِبُّس فقالَ لَه: «إِتْبَعْني!» <span class="vn" id="v1-44" data-v="44">٤٤</span>وكانَ فيلِبُّس مِن بَيتَ صَيدا مَدينَةِ أَندَراوسَ وبُطرُس. <span class="vn" id="v1-45" data-v="45">٤٥</span>ولَقِيَ فيلِبُّسُ نَتَنائيل فقالَ له: «الَّذي كَتَبَ في شأنِه موسى في الشَّريعَةِ وذَكَرَه الأَنبِياء، وَجَدْناه، وهو يسوعُ بنُ يوسُفَ مِنَ النَّاصِرَة». <span class="vn" id="v1-46" data-v="46">٤٦</span>فقالَ لَه نَتَنائيل: «أَمِنَ النَّاصِرَةِ يُمكِنُ أَن يَخرُجَ شَيءٌ صالِح؟» فقالَ له فيلِبُّس: «هٰلُمَّ فَٱنْظُرْ!» <span class="vn" id="v1-47" data-v="47">٤٧</span>ورأَى يسوعُ نَتَنائيلَ آتِيًا نَحوَه فقالَ فيه: «هُوَذا إِسرائيليٌّ خالِصٌ لا غِشَّ فيه». <span class="vn" id="v1-48" data-v="48">٤٨</span>فقالَ له نَتَنائيل: «مِن أَينَ تَعرِفُني؟» أَجابَه يسوع: «قبلَ أَن يَدعُوَكَ فيلِبُّس وأَنتَ تَحتَ التِّينَة، رأَيتُك». <span class="vn" id="v1-49" data-v="49">٤٩</span>أَجابَه نَتَنائيل: «رابِّي، أَنتَ ٱبنُ الله، أَنتَ مَلِكُ إِسرائيل». <span class="vn" id="v1-50" data-v="50">٥٠</span>أَجابَه يسوع: «أَلِأَنِّي قُلتُ لَكَ إِنِّي رأَيتُكَ تَحتَ التِّينَةِ آمَنتَ؟ ستَرى أَعظَمَ مِن هٰذا». <span class="vn" id="v1-51" data-v="51">٥١</span>وقالَ له: «الحَقَّ الحَقَّ أَقولُ لَكم: ستَرونَ السَّماءَ مُنفَتِحَة، وملائِكَةَ اللهِ صاعِدينَ نازِلينَ فَوقَ ٱبنِ الإِنْسان».</p>
+</section>
+<section class="chapter" id="ch2" data-ch="2"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٢</span></h2>
+<h3 class="rubric" id="h6">معجزة الخمر في عرس قانا الجليل</h3>
+<p class="prose"><span class="vn" id="v2-1" data-v="1">١</span>وفي اليَومِ الثَّالِث، كانَ في قانا الجَليلِ عُرسٌ وكانَت أُمُّ يَسوعَ هُناك. <span class="vn" id="v2-2" data-v="2">٢</span>فدُعِيَ يسوعُ أَيضًا وتلاميذُه إِلى العُرس. <span class="vn" id="v2-3" data-v="3">٣</span>ونَفَدَتِ الخَمْر، فقالَت لِيَسوعَ أُمُّه: «لَيسَ عِندَهم خَمْر». <span class="vn" id="v2-4" data-v="4">٤</span>فقالَ لها يسوع: «ما لي وما لكِ، أَيَّتُها المَرأَة؟ لَم تَأتِ ساعتي بَعْد». <span class="vn" id="v2-5" data-v="5">٥</span>فقالَت أُمُّه لِلخَدَم: «مَهما قالَ لَكم فٱفعَلوه». <span class="vn" id="v2-6" data-v="6">٦</span>وكانَ هُناكَ سِتَّةُ أَجْرانٍ مِن حَجَر لِما تَقْتَضيه الطَّهارةُ عِندَ اليَهود، يَسَعُ كُلُّ واحِدٍ مِنها مِقدارَ مِكيالَينِ أَو ثَلاثَة. <span class="vn" id="v2-7" data-v="7">٧</span>فَقالَ يسوعُ لِلخَدَم: «إِمْلأُوا الأَجرانَ ماءً». فمَلأُوها إِلى أَعْلاها. <span class="vn" id="v2-8" data-v="8">٨</span>فقالَ لَهم: «إِغرِفوا الآنَ وناوِلوا وَكيلَ المائِدَة». فناوَلوه، <span class="vn" id="v2-9" data-v="9">٩</span>فلَمَّا ذاقَ الماءَ الَّذي صارَ خَمْرًا، وكانَ لا يَدري مِن أَينَ أَتَت، في حينِ أَنَّ الخَدَمَ الَّذينَ غَرَفوا الماءَ كانوا يَدْرُون، دَعا العَريسَ <span class="vn" id="v2-10" data-v="10">١٠</span>وقالَ له: «كُلُّ ٱمرِئٍ يُقَدِّمُ الخَمرَةَ الجَيِّدَةَ أَوَّلًا، فإِذا سَكِرَ النَّاس، قَدَّمَ ما كانَ دونَها في الجُودَة. أَمَّا أَنتَ فحَفِظتَ الخَمرَةَ الجَيِّدَةَ إِلى الآن». <span class="vn" id="v2-11" data-v="11">١١</span>هٰذِه أُولى آياتِ يسوع أَتى بها في قانا الجَليل، فأَظهَرَ مَجدَه فآمَنَ بِه تَلاميذُه. <span class="vn" id="v2-12" data-v="12">١٢</span>ونَزَلَ بَعدَ ذٰلكَ إِلى كَفَرناحوم هو وأُمُّه وإِخوَتُه وتَلاميذُه، فأَقاموا فيها بِضعَةَ أَيَّام.</p>
+<h4 class="subpart" id="h7"><span class="sub-mark">ب</span>عيد الفصح</h4>
+<h3 class="rubric" id="h8">طرد الباعة من الهيكل</h3>
+<p class="prose"><span class="vn" id="v2-13" data-v="13">١٣</span>وكان فِصحُ اليَهود قريبًا، فصَعِدَ يسوعُ إِلى أُورَشَليم، <span class="vn" id="v2-14" data-v="14">١٤</span>فوَجَدَ في الهَيكَلِ باعةَ البقَرِ والغَنَمِ والحَمامِ والصَّيارِفَةَ جالِسين. <span class="vn" id="v2-15" data-v="15">١٥</span>فَصَنَعَ مِجلَدًا مِن حِبال، وطَرَدَهم جَميعًا مِنَ الهَيكَلِ مع الغَنَمِ والبَقَر، ونَثَرَ دَراهِمَ الصَّيارِفَةِ وقلَبَ طاوِلاتِهم، <span class="vn" id="v2-16" data-v="16">١٦</span>وقالَ لِباعَةِ الحَمام: «إِرفَعوا هٰذا مِن ههُنا، ولا تَجعَلوا مِن بَيتِ أَبي بَيتَ تِجارَة». <span class="vn" id="v2-17" data-v="17">١٧</span>فتَذَكَّرَ تَلاميذُه أَنَّه مَكْتوب: «الغَيْرَةُ على بَيْتِكَ ستَأكُلُني». <span class="vn" id="v2-18" data-v="18">١٨</span>فأَجابَه اليَهود: «أَيَّ آيةٍ تُرينا حتَّى تَعمَلَ هٰذِه الأَعْمال؟» <span class="vn" id="v2-19" data-v="19">١٩</span>أَجابَهم يسوع: «أُنقُضوا هٰذا الهَيكَل أُقِمْهُ في ثَلاثَةِ أَيَّام!» <span class="vn" id="v2-20" data-v="20">٢٠</span>فقالَ اليَهود: «بُنِيَ هٰذا الهَيكَلُ في سِتٍّ وأَربَعينَ سَنَة، أَوَأَنتَ تُقيمُه في ثَلاثَةِ أَيَّام؟» <span class="vn" id="v2-21" data-v="21">٢١</span>أَمَّا هو فكانَ يَعْني هَيكَلَ جَسَدِه. <span class="vn" id="v2-22" data-v="22">٢٢</span>فلمَّا قامَ مِن بَينِ الأموات، تذكَّرَ تَلاميذُه أَنَّه قالَ ذٰلك، فآمنوا بِالكِتاب وبِالكَلِمَةِ الَّتي قالَها يسوع.</p>
+<h3 class="rubric" id="h9">يسوع في أورشليم</h3>
+<p class="prose"><span class="vn" id="v2-23" data-v="23">٢٣</span>ولمَّا كانَ في أُورَشَليمَ مُدَّةَ عيدِ الفِصْح، آمَنَ بِٱسمِه كثيرٌ مِنَ النَّاس، لمَّا رَأَوا الآياتِ الَّتي أَتى بِها. <span class="vn" id="v2-24" data-v="24">٢٤</span>غَيرَ أَنَّ يسوعَ لم يَطمَئِنَّ إِلَيهم، لأَنَّه كانَ يَعرِفُهم كُلَّهم <span class="vn" id="v2-25" data-v="25">٢٥</span>ولا يَحتاجُ إِلى مَن يَشهَدُ لَه في شَأنِ الإِنْسان، فقَد كانَ يَعلَمُ ما في الإِنسان.</p>
+</section>
+<section class="chapter" id="ch3" data-ch="3"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٣</span></h2>
+<h4 class="subpart" id="h10"><span class="sub-mark">ج</span>يسوع يكشف عن سرّ الروح لنيقوديمس</h4>
+<h3 class="rubric" id="h11">الإنسان الجديد</h3>
+<p class="prose"><span class="vn" id="v3-1" data-v="1">١</span>وكانَ في الفِرِّيسيِّينَ رَجُلٌ ٱسمُه نيقوديمُس، وكانَ مِن رُؤَساءِ اليَهود. <span class="vn" id="v3-2" data-v="2">٢</span>فجاءَ إِلى يَسوعَ ليلًا وقالَ له: «رابِّي، نَحنُ نَعلَمُ أَنَّكَ جِئتَ مِن لَدُنِ اللهِ مُعَلِّمًا، فما مِن أَحَدٍ يَستَطيعُ أَن يَأتِيَ بِتِلكَ الآياتِ الَّتي تَأتي بِها أَنتَ إِلَّا إِذا كانَ اللهُ معَه». <span class="vn" id="v3-3" data-v="3">٣</span>فأَجابَه يسوع:</p>
+<div class="poem">
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكَ:</p>
+<p class="line">ما مِن أَحَدٍ يُمكِنُه أَن يَرى مَلَكوتَ الله</p>
+<p class="line">إِلَّا إِذا وُلِدَ مِن عَلُ».</p>
+</div>
+<p class="prose"><span class="vn" id="v3-4" data-v="4">٤</span>قالَ لهُ نيقوديمُس: «كَيفَ يُمكِنُ الإِنسانَ أَن يُولَدَ وهوَ شَيخٌ كَبير؟ أَيَستَطيعُ أَن يَعودَ إِلى بَطنِ أُمِّهِ ويُولَد؟» <span class="vn" id="v3-5" data-v="5">٥</span>أَجابَ يسوع:</p>
+<div class="poem">
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكَ:</p>
+<p class="line">ما مِن أَحَدٍ يُمكِنُه</p>
+<p class="line">أَن يَدخُلَ مَلَكوتَ الله</p>
+<p class="line">إِلَّا إِذا وُلِدَ مِنَ الماءِ والرُّوح.</p>
+<p class="line"><span class="vn" id="v3-6" data-v="6">٦</span>فَمَولودُ الجَسَدِ يَكونُ جَسدًا</p>
+<p class="line">ومَولودُ الرُّوحِ يَكونُ روحًا.</p>
+<p class="line"><span class="vn" id="v3-7" data-v="7">٧</span>لا تَعْجَبْ مِن قَولي لَكَ:</p>
+<p class="line">يَجِبُ علَيكم أَن تُولَدوا مِن عَلُ.</p>
+<p class="line"><span class="vn" id="v3-8" data-v="8">٨</span>فالرِّيحُ تَهُبُّ حَيثُ تَشاء</p>
+<p class="line">فتَسمَعُ صَوتَها</p>
+<p class="line">ولكنَّكَ لا تَدْري مِن أَينَ تَأتي</p>
+<p class="line">وإِلى أَينَ تَذهَب.</p>
+<p class="line">تِلكَ حالَةُ كُلِّ مَولودٍ لِلرُّوح».</p>
+<p class="line"><span class="vn" id="v3-9" data-v="9">٩</span>أَجابَه نيقوديمُس: «كيفَ يَكونُ هٰذا؟»</p>
+<p class="line"><span class="vn" id="v3-10" data-v="10">١٠</span>أَجابَ يسوع: «أَأَنتَ مُعَلِّمٌ في إِسرائيل وتَجهَلُ هٰذِه الأَشْياء؟</p>
+<p class="line"><span class="vn" id="v3-11" data-v="11">١١</span>الحَقَّ الحَقَّ أَقولُ لَكَ:</p>
+<p class="line">إِنَّنا نَتكلَّمُ بِما نَعلَم، ونَشهَدُ بِما رَأَينا</p>
+<p class="line">ولٰكِنَّكُم لا تَقبَلونَ شَهادَتَنا.</p>
+<p class="line"><span class="vn" id="v3-12" data-v="12">١٢</span>فإِذا كُنتُم لا تُؤمِنونَ</p>
+<p class="line">عِندَما أُكَلِّمُكم في أُمورِ الأَرْض</p>
+<p class="line">فكَيفَ تُؤمِنونَ</p>
+<p class="line">إِذا كَلَّمتُكُم في أُمورِ السَّماء؟</p>
+<p class="line"><span class="vn" id="v3-13" data-v="13">١٣</span>فما مِن أَحَدٍ يَصعَدُ إِلى السَّماء</p>
+<p class="line">إِلَّا الَّذي نَزَلَ مِنَ السَّماء</p>
+<p class="line">وهو ٱبنُ الإِنسان.</p>
+<p class="line"><span class="vn" id="v3-14" data-v="14">١٤</span>وكما رَفَعَ مُوسى الحَيَّةَ في البَرِّيَّة</p>
+<p class="line">فكذٰلِكَ يَجِبُ أَن يُرفَعَ ٱبنُ الإِنسان</p>
+<p class="line"><span class="vn" id="v3-15" data-v="15">١٥</span>لِتَكونَ بِهِ الحَياةُ الأَبديَّةُ لِكُلِّ مَن يُؤمِن.</p>
+<p class="line"><span class="vn" id="v3-16" data-v="16">١٦</span>فإِنَّ اللهَ أَحبَّ العالَمَ</p>
+<p class="line">حتَّى إِنَّه جادَ بِٱبنِه الوَحيد</p>
+<p class="line">لِكَي لا يَهلِكَ كُلُّ مَن يُؤمِنُ بِه</p>
+<p class="line">بل تكونَ له الحياةُ الأَبدِيَّة</p>
+<p class="line"><span class="vn" id="v3-17" data-v="17">١٧</span>فإِنَّ اللهَ لَم يُرسِلِ ٱبنَه إِلى العالَم</p>
+<p class="line">لِيَدينَ العالَم</p>
+<p class="line">بل لِيُخَلَّصَ بِه العالَم.</p>
+<p class="line"><span class="vn" id="v3-18" data-v="18">١٨</span>مَن آمَنَ بِه لا يُدان</p>
+<p class="line">ومَن لم يُؤمِنْ بِه فقَد دِينَ مُنذُ الآن</p>
+<p class="line">لِأَنَّه لم يُؤمِنْ</p>
+<p class="line">بِٱسمِ ٱبنِ اللهِ الوَحيد.</p>
+<p class="line"><span class="vn" id="v3-19" data-v="19">١٩</span>وإِنَّما الدَّينونَةُ هي</p>
+<p class="line">أَنَّ النُّورَ جاءَ إِلى العالَم</p>
+<p class="line">ففضَّلَ النَّاسُ الظَّلامَ على النُّور</p>
+<p class="line">لِأَنَّ أَعمالَهم كانت سَيِّئَة.</p>
+<p class="line"><span class="vn" id="v3-20" data-v="20">٢٠</span>فكُلُّ مَن يَعمَلُ السَّيِّئات يُبغِضُ النُّور</p>
+<p class="line">فلا يُقبِلُ إِلى النُّور لِئَلَّا تُفضَحَ أَعمالُه.</p>
+<p class="line"><span class="vn" id="v3-21" data-v="21">٢١</span>وأَمَّا الَّذي يَعمَلُ لِلحَقّ</p>
+<p class="line">فيُقبِلُ إِلى النُّور</p>
+<p class="line">لِتُظهَرَ أَعمالُه وقَد صُنِعَت في الله».</p>
+</div>
+<div class="part" id="h12"><span class="part-num">٢</span><h3 class="part-title">يسوع في السامرة والجليل</h3></div>
+<h3 class="rubric" id="h13">يوحنّا يشهد شهادته الأخيرة ليسوع</h3>
+<p class="prose"><span class="vn" id="v3-22" data-v="22">٢٢</span>وبَعدَ ذٰلكَ ذَهَبَ يسوعُ وتلاميذُه إِلى أَرضِ اليَهودِيَّة، فَأَقامَ فيها معَهم وأَخذَ يُعَمِّد. <span class="vn" id="v3-23" data-v="23">٢٣</span>وكانَ يوحَنَّا أَيضًا يُعَمِّدُ في عَيْنون، بِالقُرْبِ مِن سالِيم لِما فيها مِنَ الماء، وكانَ النَّاسُ يَأتونَ فيَعتَمِدون، <span class="vn" id="v3-24" data-v="24">٢٤</span>لِأَنَّ يوحَنَّا لم يَكُنْ وقتَئِذٍ قد أُلقِيَ في السِّجن. <span class="vn" id="v3-25" data-v="25">٢٥</span>وقامَ جِدالٌ بَينَ تَلاميذِ يوحَنَّا وأَحَدِ اليَهودِ في شَأنِ الطَّهارَة، <span class="vn" id="v3-26" data-v="26">٢٦</span>فجاؤوا إِلى يوحَنَّا وقالوا له: «رابِّي، ذاكَ الَّذي كانَ معَكَ في عِبْرِ الأُردُنّ، ذاك الَّذي شَهِدتَ له، ها إِنَّه يُعَمِّدُ فيَذهَبُ إِليهِ جَميعُ النَّاس». <span class="vn" id="v3-27" data-v="27">٢٧</span>أَجابَ يوحَنَّا: «لَيسَ لِأَحدٍ أَن يَأخُذَ شَيئًا لم يُعطَه مِنَ السَّماء. <span class="vn" id="v3-28" data-v="28">٢٨</span>أَنتُم بِأَنفُسِكم تَشهَدونَ لِي بِأَنِّي قُلتُ إِنِّي لَستُ المَسيح، بل مُرسَلٌ قُدَّامَه.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v3-29" data-v="29">٢٩</span>مَن كانَت لَه العَروس فهوَ العَريس.</p>
+<p class="line">وأَمَّا صَديقُ العَريس</p>
+<p class="line">الَّذي يَقِفُ يَستَمِعُ إِلَيه</p>
+<p class="line">فإِنَّه يَفرَحُ أَشَدَّ الفَرَحِ لِصَوتِ العَريس.</p>
+<p class="line">فهُوذا فَرَحي قد تَمَّ.</p>
+<p class="line"><span class="vn" id="v3-30" data-v="30">٣٠</span>لا بُدَّ له مِن أَن يَكبُر</p>
+<p class="line">وَلا بُدَّ لي مِن أَن أَصغُر.</p>
+<p class="line"><span class="vn" id="v3-31" data-v="31">٣١</span>إِنَّ الَّذي يأتي مِن عَلُ هو فَوقَ كُلِّ شَيء</p>
+<p class="line">والَّذي مِنَ الأَرض هُوَ أَرضِيّ</p>
+<p class="line">يتكلَّمُ بِكلامِ أَهلِ الأَرض.</p>
+<p class="line">إِنَّ الَّذي يأتي مِنَ السَّماء</p>
+<p class="line"><span class="vn" id="v3-32" data-v="32">٣٢</span>يَشهَدُ بِما رأَى وسَمِع</p>
+<p class="line">وما مِن أَحَدٍ يَقبَلُ شَهادَتَه.</p>
+<p class="line"><span class="vn" id="v3-33" data-v="33">٣٣</span>مَن قَبِلَ شَهادَتَه أَثبَتَ أَنَّ اللهَ حَقّ.</p>
+<p class="line"><span class="vn" id="v3-34" data-v="34">٣٤</span>فإِنَّ الَّذي أَرسَلَه الله يتَكلَّمُ بِكَلامِ الله</p>
+<p class="line">ذٰلِكَ بِأَنَّ اللهَ</p>
+<p class="line">يَهَبُ الرُّوحَ بِغَيرِ حِساب.</p>
+<p class="line"><span class="vn" id="v3-35" data-v="35">٣٥</span>إِنَّ الآبَ يُحِبُّ الِٱبن</p>
+<p class="line">فجَعَلَ كُلَّ شَيءٍ في يَدِه.</p>
+<p class="line"><span class="vn" id="v3-36" data-v="36">٣٦</span>مَن آمَنَ بِالِٱبن فلهُ الحَياةُ الأَبدِيَّة</p>
+<p class="line">ومَن لم يُؤمِنْ بِالِٱبن لا يَرَ الحَياة</p>
+<p class="line">بل يَحِلُّ علَيه غَضَبُ الله».</p>
+</div>
+</section>
+<section class="chapter" id="ch4" data-ch="4"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٤</span></h2>
+<h3 class="rubric" id="h14">يسوع عند السامريّين</h3>
+<p class="prose"><span class="vn" id="v4-1" data-v="1">١</span>ولَمَّا عَلِمَ يسوعُ أَنَّ الفِرِّيسيِّينَ سَمِعوا أَنَّه ٱتَّخَذَ مِنَ التَّلاميذِ وعمَّدَ أَكثَرَ مِمَّا ٱتَّخَذَ يوحَنَّا وعمَّدَ <span class="vn" id="v4-2" data-v="2">٢</span>(مَعَ أَنَّ يسوعَ نَفْسَه لم يَكُنْ يُعَمِّد، بل تَلاميذُه)، <span class="vn" id="v4-3" data-v="3">٣</span>تَرَكَ اليَهودِيَّةَ ورَجَعَ إِلى الجَليل. <span class="vn" id="v4-4" data-v="4">٤</span>وكانَ علَيه أَن يَمُرَّ بِالسَّامِرَة. <span class="vn" id="v4-5" data-v="5">٥</span>فوَصَلَ إِلى مَدينةٍ في السَّامِرَةِ يُقالُ لَها سيخارَة، بِالقُرْبِ مِنَ الأَرضِ الَّتي أَعْطاها يَعقوبُ لِٱبنِه يُوسُف، <span class="vn" id="v4-6" data-v="6">٦</span>وفيها بِئرُ يَعقوب. وكانَ يسوعُ قد تَعِبَ مِنَ المَسير، فَجَلَسَ دونَ تَكَلُّفٍ على حافَةِ البِئر. وكانَتِ السَّاعةُ تُقارِبُ الظُّهر. <span class="vn" id="v4-7" data-v="7">٧</span>فجاءَتِ ٱمرَأَةٌ مِنَ السَّامِرَةِ تَستَقي. فقالَ لَها يسوع: «إِسْقيني». <span class="vn" id="v4-8" data-v="8">٨</span>وكانَ التَّلاميذُ قد مَضَوا إِلى المَدينَةِ لِيَشتَروا طَعامًا. <span class="vn" id="v4-9" data-v="9">٩</span>فقالَت له المرأَةُ السَّامِريَّة: «كَيفَ تسأَلُني أَن أَسقِيَكَ وأَنتَ يَهوديٌّ وأَنا امرَأَةٌ سامِرِيَّة؟» لأَنَّ اليَهودَ لا يُخالِطونَ السَّامِرِيِّين.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v4-10" data-v="10">١٠</span>أَجابَها يسوع:</p>
+</div>
+<p class="prose">«لو كُنتِ تَعرِفينَ عَطاءَ الله ومَن هوَ الَّذي يقولُ لَكِ: إِسقيني، لَسَأَلتِه أَنتِ فأَعطاكِ ماءً حَيًّا».</p>
+<p class="prose"><span class="vn" id="v4-11" data-v="11">١١</span>قالَت لَه المَرأَة: «يا ربّ، لا دَلْوَ عِندَكَ، والبِئرُ عَميقة، فَمِن أَينَ لَكَ الماءُ الحَيّ؟ <span class="vn" id="v4-12" data-v="12">١٢</span>هل أَنتَ أَعظَمُ مِن أَبينا يَعقوبَ الَّذي أَعْطانا البِئْرَ، وشرِبَ مِنها هو وبَنوهُ وماشِيَتُه؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v4-13" data-v="13">١٣</span>أَجابَها يسوع:</p>
+<p class="line">«كُلُّ مَن يَشرَبُ مِن هٰذا الماء</p>
+<p class="line">يَعطَشُ ثانِيَةً</p>
+<p class="line"><span class="vn" id="v4-14" data-v="14">١٤</span>وأَمَّا الَّذي يَشرَبُ مِنَ الماءِ</p>
+<p class="line">الَّذي أُعطيهِ أَنا إِيَّاه</p>
+<p class="line">فلَن يَعطَشَ أَبدًا</p>
+<p class="line">بلِ الماءُ الَّذي أُعطِيهِ إِيَّاهُ</p>
+<p class="line">يصيرُ فيه عَينَ ماءٍ</p>
+<p class="line">يَتفَجَّرُ حَياةً أَبَدِيَّة».</p>
+</div>
+<p class="prose"><span class="vn" id="v4-15" data-v="15">١٥</span>قالَت له المَرأَة: «يا رَبّ، أَعطِني هٰذا الماء، لِكَي لا أَعطَشَ فأَعودَ إِلى الِٱستِقاءِ مِن هُنا». <span class="vn" id="v4-16" data-v="16">١٦</span>قالَ لَها: «إِذهَبي فَٱدْعي زَوجَكِ، وٱرجِعي إِلى هٰهُنا». <span class="vn" id="v4-17" data-v="17">١٧</span>أَجابَتِ المَرأَة: «لَيسَ لي زَوج». فقالَ لَها يسوع: «أَصَبتِ إِذ قُلتِ: لَيسَ لي زَوج. <span class="vn" id="v4-18" data-v="18">١٨</span>فَقَد كانَ لَكِ خَمسَةُ أَزْواج، والَّذي عِندَكِ الآنَ لَيسَ بِزَوجِكِ، لقَد صَدَقتِ في ذٰلكَ». <span class="vn" id="v4-19" data-v="19">١٩</span>قالَتِ المَرأَة: «يا ربّ، أَرى أَنَّكَ نَبِيّ. <span class="vn" id="v4-20" data-v="20">٢٠</span>تَعَبَّدَ آباؤُنا في هٰذا الجَبَل، وأَنتُم تَقولونَ إنَّ المَكانَ الَّذي فيه يَجِبُ التَّعَبُّد هو في أُورَشَليم».</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v4-21" data-v="21">٢١</span>قالَ لَها يسوع:</p>
+<p class="line">«صَدِّقيني أَيَّتُها المَرأَة.</p>
+<p class="line">تَأتي ساعةٌ فيها تَعبُدونَ الآب</p>
+<p class="line">لا في هٰذا الجَبَل ولا في أُورَشَليم.</p>
+<p class="line"><span class="vn" id="v4-22" data-v="22">٢٢</span>أَنتُم تَعبُدونَ ما لا تَعلَمون</p>
+<p class="line">ونَحنُ نَعبُدُ ما نَعلَم</p>
+<p class="line">لِأَنَّ الخَلاصَ يَأتي مِنَ اليَهود.</p>
+<p class="line"><span class="vn" id="v4-23" data-v="23">٢٣</span>ولٰكِن تَأتي ساعةٌ</p>
+<p class="line">– وقد حَضَرتِ الآن –</p>
+<p class="line">فيها العِبادُ الصَّادِقونَ</p>
+<p class="line">يَعبُدونَ الآبَ بِالرُّوحِ والحَقّ</p>
+<p class="line">فمِثْلَ أُولٰئِكَ العِبادِ يُريدُ الآب.</p>
+<p class="line"><span class="vn" id="v4-24" data-v="24">٢٤</span>إِنَّ اللهَ رُوح</p>
+<p class="line">فعَلَى العِبادِ أَن يَعبُدوهُ بِالرُّوحِ والحَقّ».</p>
+</div>
+<p class="prose"><span class="vn" id="v4-25" data-v="25">٢٥</span>قالَت له المَرْأَة: «إِنِّي أَعلَمُ أَنَّ المَشيحَ آتٍ، وهو الَّذي يُقالُ لَه المسيح، وإِذا أَتى، أَخبَرَنا بِكُلِّ شَيء». <span class="vn" id="v4-26" data-v="26">٢٦</span>قالَ لَها يسوع: «أَنا هو، أَنا الَّذي يُكَلِّمُكِ».</p>
+<p class="prose"><span class="vn" id="v4-27" data-v="27">٢٧</span>ووَصَلَ عِندَئِذٍ تَلاميذُه، فعَجِبوا مِن أَنَّه يُكَلِّمُ ٱمرَأَة، ولٰكِن لم يَقُلْ أَحَدٌ مِنهم: «ماذا تُريد؟» أَو «لِماذا تُكَلِّمُها؟» <span class="vn" id="v4-28" data-v="28">٢٨</span>فتَركَتِ المَرأَةُ جَرَّتَها، وذَهَبَت إِلى المَدينة فقالَت لِلنَّاس: <span class="vn" id="v4-29" data-v="29">٢٩</span>«هَلُمُّوا فَٱنْظُروا رَجُلًا قالَ لي كُلَّ ما فَعَلتُ. أَتُراهُ المَسيح؟» <span class="vn" id="v4-30" data-v="30">٣٠</span>فخَرَجوا مِنَ المَدينةِ وساروا إِليه.</p>
+<p class="prose"><span class="vn" id="v4-31" data-v="31">٣١</span>وكانَ تَلاميذُه خِلالَ ذٰلكَ يقولونَ لَه مُلِحِّين: «رابِّي، كُلْ». <span class="vn" id="v4-32" data-v="32">٣٢</span>فقالَ لَهم: «لي طَعامٌ آكُلُه أَنتُم لا تَعرِفونَه». <span class="vn" id="v4-33" data-v="33">٣٣</span>فأَخَذَ التَّلاميذُ يتساءَلون: «هل جاءَهُ أَحَدٌ بِما يُؤكَل؟». <span class="vn" id="v4-34" data-v="34">٣٤</span>قالَ لَهم يسوع: «طَعامي أَن أَعمَلَ بِمَشيئَةِ الَّذي أَرسَلَني وأَن أُتِمَّ عَمَلَه. <span class="vn" id="v4-35" data-v="35">٣٥</span>أَما تَقولونَ أَنتُم: هي أَربعةُ أَشهُر ويأتي وَقْتُ الحَصاد؟ وإِنِّي أَقولُ لَكم: إِرفَعوا عُيونَكم وٱنظُروا إِلى الحُقُول، فقَدِ ٱبْيَضَّت لِلحَصاد.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v4-36" data-v="36">٣٦</span>هُوَذا الحاصِدُ يَأخُذُ أُجرَتَه</p>
+<p class="line">فيَجمَعُ الثَّمَرَ لِلحَياةِ الأَبَدِيَّة</p>
+<p class="line">فيَفرَحُ الزَّارِعُ والحاصِدُ معًا</p>
+<p class="line"><span class="vn" id="v4-37" data-v="37">٣٧</span>وبِذٰلِكَ يَصدُقُ المَثَلُ القائل:</p>
+<p class="line">الواحِدُ يَزرَعُ والآخَرُ يَحصُد.</p>
+<p class="line"><span class="vn" id="v4-38" data-v="38">٣٨</span>إِنِّي أَرسَلتُكُم لِتَحصُدوا ما لم تَتعَبوا فيه.</p>
+<p class="line">فغَيرُكُم تَعِبوا</p>
+<p class="line">وأَنتُم دَخَلْتُم ما تَعِبوا فيه».</p>
+</div>
+<p class="prose"><span class="vn" id="v4-39" data-v="39">٣٩</span>فآمَنَ بِه عَدَدٌ كَثيرٌ مِن سامِرِيِّي تِلكَ المَدينَة عن كَلامِ المَرأَةِ الَّتي كانَت تَشهَدُ فتَقول: «إِنَّه قالَ لي كُلَّ ما فَعَلتُ». <span class="vn" id="v4-40" data-v="40">٤٠</span>فلَمَّا وَصَلَ إِلَيه السَّامِريُّونَ سَأَلوهُ أَن يُقيمَ عِندَهم، فَأَقامَ هُناكَ يَومَيْن. <span class="vn" id="v4-41" data-v="41">٤١</span>فآمَنَ مِنهُم عَدَدٌ أَكبَرُ كَثيرًا عن كَلامِه، <span class="vn" id="v4-42" data-v="42">٤٢</span>وقالوا لِلمَرأَة: «لا نُؤمِنُ الآنَ عن قَولِك، فقَد سَمِعناهُ نَحنُ وعَلِمنا أَنَّه مُخَلِّصُ العالَمِ حَقًّا».</p>
+<h3 class="rubric" id="h15">يسوع يشفي طفلًا في كفرناحوم</h3>
+<p class="prose"><span class="vn" id="v4-43" data-v="43">٤٣</span>وبَعدَ ٱنقِضاءِ اليَومَين مَضى من هُناكَ إِلى الجَليل. <span class="vn" id="v4-44" data-v="44">٤٤</span>وكانَ يسوعُ نَفسُه قَد أَعلَنَ أَن لا يُكرَّمُ نَبِيٌّ في وَطَنِه. <span class="vn" id="v4-45" data-v="45">٤٥</span>فلَمَّا وَصَلَ إِلى الجَليل، رَحَّبَ بِهِ الجَليلِيُّون، وكانوا قد شاهَدوا جَميعَ ما صَنعَ في أُورَشَليمَ مُدَّةَ العيد، لِأَنَّهم هم أَيضًا ذَهَبوا لِلعيد. <span class="vn" id="v4-46" data-v="46">٤٦</span>ورَجَعَ إِلى قانا الجَليل، حَيثُ جَعَلَ الماءَ خَمرًا. وكانَ هُناكَ عامِلٌ لِلمَلِك له ٱبنٌ مَريضٌ في كَفَرناحوم. <span class="vn" id="v4-47" data-v="47">٤٧</span>فلمَّا سَمِعَ أَنَّ يسوعَ جاءَ مِنَ اليَهودِيَّةِ إِلى الجَليل، ذَهَبَ إِلَيه وسأَلَه أَن يَنزِلَ فيُبرِئَ ٱبنَه وقَد أَشرَفَ على المَوت. <span class="vn" id="v4-48" data-v="48">٤٨</span>فقالَ لَه يسوع: «إِذا لم تَرَوا الآياتِ والأَعاجيبَ لا تُؤمِنون؟» <span class="vn" id="v4-49" data-v="49">٤٩</span>فقالَ له عامِلُ المَلِك: «يا ربّ، اِنزِلْ قَبلَ أَن يموتَ وَلَدي». <span class="vn" id="v4-50" data-v="50">٥٠</span>فقالَ له يسوع: «إِذهَبْ، إِنَّ ٱبنَكَ حَيّ». فآمَنَ الرَّجُلُ بِالكَلِمَةِ الَّتي قالَها يسوعُ وذَهَب. <span class="vn" id="v4-51" data-v="51">٥١</span>وبَينما هو نازِل، تَلَقَّاهُ خَدَمُه فقالوا له إِنَّ وَلَدَه حَيّ. <span class="vn" id="v4-52" data-v="52">٥٢</span>فٱستَخبَرَهم عنِ السَّاعَةِ الَّتي فيها تَعافى. فقالوا له: «أَمْسِ في السَّاعَةِ الواحِدَةِ بَعدَ الظُّهْر فارَقَته الحُمَّى». <span class="vn" id="v4-53" data-v="53">٥٣</span>فعَلِمَ الأَبُ أَنَّها السَّاعةُ الَّتي قالَ له فيها يسوع: «إِنَّ ٱبنَكَ حَيّ». فآمَنَ هو وأَهلُ بَيتِه جَميعًا. <span class="vn" id="v4-54" data-v="54">٥٤</span>تِلكَ ثانِيَةُ آياتِ يسوع، أَتى بِها بَعدَ رُجوعِه مِنَ اليَهودِيَّةِ إِلى الجَليل.</p>
+</section>
+<section class="chapter" id="ch5" data-ch="5"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٥</span></h2>
+<div class="part" id="h16"><span class="part-num">٣</span><h3 class="part-title">يسوع في أورشليم في العيد مرّة ثانية</h3></div>
+<h3 class="rubric" id="h17">يسوع يشفي مُقعدًا</h3>
+<p class="prose"><span class="vn" id="v5-1" data-v="1">١</span>وبَعدَ ذٰلك كانَ أَحَدُ أَعيادِ اليَهود، فصَعِدَ يسوعُ إِلى أُورَشَليم. <span class="vn" id="v5-2" data-v="2">٢</span>وفي أُورَشَليمَ بِرْكَةٌ عِندَ بابِ الغَنَم، يُقالُ لَها بالعِبرِيَّةِ بَيتَ ذاتا، ولها خَمسَةُ أَروِقَة، <span class="vn" id="v5-3" data-v="3">٣</span>يَضَّجِعُ فيها جُمْهورٌ مِنَ المَرْضَى بَينَ عُمْيانٍ وعُرْجٍ وكُسْحان [<span class="vn" id="v5-4" data-v="4">٤</span>]. <span class="vn" id="v5-5" data-v="5">٥</span>وكانَ هُناكَ رَجُلٌ عَليلٌ مُنذُ ثَمانٍ وثَلاثينَ سَنَة. <span class="vn" id="v5-6" data-v="6">٦</span>فرَآهُ يسوعُ مُضَّجِعًا، فعَلِمَ أَنَّ له مُدَّةً طَويلَةً على هٰذِه الحال. فقالَ له: «أَتُريدُ أَن تُشفى؟» <span class="vn" id="v5-7" data-v="7">٧</span>أَجابَه العَليل: «يا ربّ، لَيس لي مَن يَغُطُّني في البِركَةِ عِندَما يَفورُ الماء. فبَينَما أَنا ذاهِبٌ إِلَيها، يَنزِلُ قَبْلي آخَر». <span class="vn" id="v5-8" data-v="8">٨</span>فقالَ له يسوع: «قُم فَٱحمِلْ فِراشَكَ وَٱمشِ». <span class="vn" id="v5-9" data-v="9">٩</span>فشُفِيَ الرَّجُلُ لِوَقتِه، فحَمَلَ فِراشَه ومشى. وكانَ ذٰلكَ اليَومُ يومَ السَّبْت. <span class="vn" id="v5-10" data-v="10">١٠</span>فقالَ اليَهودُ لِلَّذي شُفِيَ: هٰذا يَومُ السَّبْت، فلا يَحِلُّ لكَ أَن تَحمِلَ فِراشَكَ». <span class="vn" id="v5-11" data-v="11">١١</span>فأَجابَهم: «إِنَّ الَّذي شَفاني قالَ لي: إِحمِل فِراشَكَ وٱمْشِ». <span class="vn" id="v5-12" data-v="12">١٢</span>فسأَلوه: «مَن الرَّجُلُ الَّذي قالَ لكَ: إِحمِلْ فِراشَكَ وٱمشِ؟» <span class="vn" id="v5-13" data-v="13">١٣</span>وكانَ الَّذي شُفِيَ لا يَعرِفُ مَن هو، لِأَنَّ يسوعَ ٱنصَرَفَ عنِ الجَمْعِ الَّذي في المَكان. <span class="vn" id="v5-14" data-v="14">١٤</span>ولَقِيَه يسوعُ بَعدَ ذٰلكَ في الهَيكل، فقالَ له: «ها إِنَّكَ قد تَعافَيتَ، فلا تَعُدْ إِلى الخَطيئَة، لِئَلَّا تُصابَ بِأَسوَأَ». <span class="vn" id="v5-15" data-v="15">١٥</span>فذَهَبَ الرَّجُلُ إِلى اليَهود، فأَخبَرَهُم أَنَّ يسوعَ هوَ الَّذي شَفاه. <span class="vn" id="v5-16" data-v="16">١٦</span>فأَخذَ اليَهودُ يَضطَهِدونَ يسوعَ لِأَنَّه كانَ يَفعَلُ ذٰلكَ يَومَ السَّبْت. <span class="vn" id="v5-17" data-v="17">١٧</span>فقالَ لَهم: «إِنَّ أَبي ما يَزالُ يَعمَل، وأَنا أَعمَلُ أَيضًا». <span class="vn" id="v5-18" data-v="18">١٨</span>فَٱشْتَدَّ سَعْيُ اليَهودِ لِقَتلِه، لِأَنَّه لم يَقتَصِرْ على ٱستِباحَةِ حُرمَةِ السَّبْت، بل قالَ إِنَّ اللهَ أَبوهُ، فَساوى نَفْسَه بِالله.</p>
+<h3 class="rubric" id="h18">الآب والابن</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v5-19" data-v="19">١٩</span>فقالَ لَهم يسوع:</p>
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">لا يَستَطيعُ الِٱبنُ أَن يَفعَلَ شيئًا مِن عندِه</p>
+<p class="line">بل لا يَفعَلُ إِلَّا ما يَرى الآبَ يَفعَلُه.</p>
+<p class="line">فما فَعَلَه الآب يَفعَلُه الِٱبنُ على مِثالِه</p>
+<p class="line"><span class="vn" id="v5-20" data-v="20">٢٠</span>لِأَنَّ الآبَ يُحِبُّ الِٱبنَ</p>
+<p class="line">ويُريه جَميعَ ما يَفعَل</p>
+<p class="line">وسيُرِيه أَعْمالًا أَعظَمَ فتَعجَبون.</p>
+<p class="line"><span class="vn" id="v5-21" data-v="21">٢١</span>فكَما أَنَّ الآبَ يُقيمُ الموتى ويُحيِيهِم</p>
+<p class="line">فكَذٰلِكَ الِٱبنُ يُحيِي مَن يَشاء.</p>
+<p class="line"><span class="vn" id="v5-22" data-v="22">٢٢</span>لِأَنَّ الآبَ لا يَدينُ أَحَدًا</p>
+<p class="line">بل أَولى القَضاءَ كُلَّه لِلِٱبن</p>
+<p class="line"><span class="vn" id="v5-23" data-v="23">٢٣</span>لِكَي يُكرِمَ الِٱبنَ جَميعُ النَّاس</p>
+<p class="line">كما يُكرِمونَ الآب:</p>
+<p class="line">فمَن لم يُكرِمِ الِٱبن</p>
+<p class="line">لا يُكرِمِ الآبَ الَّذي أَرسَلَه.</p>
+<p class="line"><span class="vn" id="v5-24" data-v="24">٢٤</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">مَن سَمِعَ كَلامي وآمَنَ بِمَن أَرسَلَني</p>
+<p class="line">فلَه الحَياةُ الأَبَدِيَّة</p>
+<p class="line">ولا يَمثُلُ لَدى القَضاء</p>
+<p class="line">بلِ ٱنتَقَلَ مِنَ المَوتِ إِلى الحَياة.</p>
+<p class="line"><span class="vn" id="v5-25" data-v="25">٢٥</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">تَأتي ساعةٌ – وقد حَضَرَتِ الآن –</p>
+<p class="line">فيها يَسمَعُ الأَمواتُ صَوتَ ٱبنِ الله</p>
+<p class="line">والَّذينَ يَسمَعونَه يَحيَوْن.</p>
+<p class="line"><span class="vn" id="v5-26" data-v="26">٢٦</span>فكَما أَنَّ الآبَ له الحَياةُ في ذاتِه</p>
+<p class="line">فكذٰلِكَ أَعْطى الِٱبنَ</p>
+<p class="line">أَن تَكونَ له الحَياةُ في ذاتِه</p>
+<p class="line"><span class="vn" id="v5-27" data-v="27">٢٧</span>وأَولاهُ سُلطَةَ إِجْراءِ القَضاء</p>
+<p class="line">لِأَنَّه ٱبنُ الإِنسان.</p>
+<p class="line"><span class="vn" id="v5-28" data-v="28">٢٨</span>لا تَعجَبوا مِن هٰذا</p>
+<p class="line">فتَأتي ساعةٌ فيها يَسمَعُ صَوتَه</p>
+<p class="line">جَميعُ الَّذينَ في القُبور <span class="vn" id="v5-29" data-v="29">٢٩</span>فيَخرُجونَ مِنها</p>
+<p class="line">أَمَّا الَّذينَ عَمِلوا الصَّالحات</p>
+<p class="line">فيَقومونَ لِلحَياة</p>
+<p class="line">وأَمَّا الَّذينَ عَمِلوا السَّيِّئات</p>
+<p class="line">فيقومونَ للقضاء.</p>
+<p class="line"><span class="vn" id="v5-30" data-v="30">٣٠</span>أَنا لا أَستَطيعُ أَن أَفعَلَ شَيئًا مِن عِندي</p>
+<p class="line">بل أَحكُمُ على ما أَسمَع</p>
+<p class="line">وحُكمي عادِل</p>
+<p class="line">لِأَنِّي لا أَتَوَخَّى مَشيئَتي</p>
+<p class="line">بل مَشيئَةَ الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v5-31" data-v="31">٣١</span>لو كُنتُ أَشهَدُ أَنا لِنَفْسي</p>
+<p class="line">لَما صَحَّت شَهادَتي.</p>
+<p class="line"><span class="vn" id="v5-32" data-v="32">٣٢</span>هُناكَ آخَرُ يَشهَدُ لي</p>
+<p class="line">وأَنا أَعلَمُ أَنَّ الشَّهادَةَ</p>
+<p class="line">الَّتي يَشهَدُها لي صادِقَة.</p>
+<p class="line"><span class="vn" id="v5-33" data-v="33">٣٣</span>أَنتُم أَرسَلْتُم رُسُلًا إِلى يوحَنَّا</p>
+<p class="line">فشَهِدَ لِلحَقّ.</p>
+<p class="line"><span class="vn" id="v5-34" data-v="34">٣٤</span>أَمَّا أَنا فلا أَتَلَقَّى شَهادَةَ إِنسان</p>
+<p class="line">ولٰكِنِّي أَقولُ هٰذا لِتَنالوا أَنتُمُ الخَلاص.</p>
+<p class="line"><span class="vn" id="v5-35" data-v="35">٣٥</span>كانَ يوحَنَّا السِّراجَ المُوقَدَ المُنير</p>
+<p class="line">ولقَد شِئتُم أَنتُم</p>
+<p class="line">أَن تَبتَهِجوا بِنورِه ساعةً.</p>
+<p class="line"><span class="vn" id="v5-36" data-v="36">٣٦</span>أَمَّا أَنا فَلي شَهادَةٌ</p>
+<p class="line">أَعظَمُ مِن شَهادَةِ يوحَنَّا:</p>
+<p class="line">إِنَّ الأَعمالَ الَّتي وَكَلَ إِلَيَّ الآبُ أَن أُتِمَّها</p>
+<p class="line">هٰذِه الأَعمالُ الَّتي أَعمَلُها</p>
+<p class="line">هي تَشهَدُ لي بِأَنَّ الآبَ أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v5-37" data-v="37">٣٧</span>والآبُ الَّذي أَرسَلَني هو شَهِدَ لي.</p>
+<p class="line">أَنتُم لم تُصْغُوا إِلى صَوتِه قَطّ</p>
+<p class="line">ولا رأَيتُم وَجهَه.</p>
+<p class="line"><span class="vn" id="v5-38" data-v="38">٣٨</span>وكَلِمَتُه لا تَثبُتُ فيكم،</p>
+<p class="line">لِأَنَّكم لا تُؤمِنونَ بِمَن أَرْسَل.</p>
+<p class="line"><span class="vn" id="v5-39" data-v="39">٣٩</span>تَتصَفَّحونَ الكُتُب</p>
+<p class="line">تَظُنُّونَ أَنَّ لَكُم فيها الحَياةَ الأَبديَّة</p>
+<p class="line">فهِيَ الَّتي تَشهَدُ لي</p>
+<p class="line"><span class="vn" id="v5-40" data-v="40">٤٠</span>وأَنتُم لا تُريدونَ أَن تُقبِلوا إِليَّ</p>
+<p class="line">فتَكونَ لَكُمُ الحَياة.</p>
+<p class="line"><span class="vn" id="v5-41" data-v="41">٤١</span>لا أَتَلَقَّى المَجدَ مِن عِندِ النَّاس.</p>
+<p class="line"><span class="vn" id="v5-42" data-v="42">٤٢</span>قد عَرَفتُكم</p>
+<p class="line">فَعَرَفتُ أَن لَيْسَت فيكم مَحَبَّةُ الله.</p>
+<p class="line"><span class="vn" id="v5-43" data-v="43">٤٣</span>جِئتُ أَنا بِٱسْمِ أَبي، فلَم تَقبَلوني.</p>
+<p class="line">ولو جاءَكُم آخَرُ بِٱسمِ نَفْسِه</p>
+<p class="line">لَقَبِلتُموه.</p>
+<p class="line"><span class="vn" id="v5-44" data-v="44">٤٤</span>كَيْفَ لَكُم أَن تُؤمِنوا</p>
+<p class="line">وأَنتُم تَتَلَقَّونَ المَجدَ بَعضُكم مِن بَعض</p>
+<p class="line">وأَمَّا المَجدُ الَّذي يأتي مِنَ اللهِ وَحدَه</p>
+<p class="line">فَلا تَطلُبون؟</p>
+<p class="line"><span class="vn" id="v5-45" data-v="45">٤٥</span>لا تَظُنُّوا أَنِّي سأَشْكوكُم إِلى الآب</p>
+<p class="line">فهُناكَ مَن يَشكوكم:</p>
+<p class="line">مُوسى الَّذي جَعَلتُم فيه رَجاءَكم.</p>
+<p class="line"><span class="vn" id="v5-46" data-v="46">٤٦</span>لو كُنتُم تُؤمِنونَ بِموسى لآمَنتُم بي</p>
+<p class="line">لِأَنَّه في شَأني كَتَب.</p>
+<p class="line"><span class="vn" id="v5-47" data-v="47">٤٧</span>وإِذا كُنتُم لا تُؤمِنونَ بِكُتُبِه</p>
+<p class="line">فكَيفَ تُؤمِنونَ بِكَلامي؟»</p>
+</div>
+</section>
+<section class="chapter" id="ch6" data-ch="6"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٦</span></h2>
+<div class="part" id="h19"><span class="part-num">٤</span><h3 class="part-title">الفصح وخبز الحياة</h3></div>
+<h3 class="rubric" id="h20">معجزة الخبز والسمكتين</h3>
+<p class="prose"><span class="vn" id="v6-1" data-v="1">١</span>وعبَرَ يسوعُ بَعدَ ذٰلك بَحرَ الجَليل (أَي بُحَيرَةَ طَبَرِيَّة). <span class="vn" id="v6-2" data-v="2">٢</span>فتَبِعَه جَمعٌ كثير، لِما رَأَوا مِنَ الآياتِ الَّتي أَجْراها على المَرْضى. <span class="vn" id="v6-3" data-v="3">٣</span>فصَعِدَ يسوعُ الجَبَل وجَلَسَ مع تلاميذِه. <span class="vn" id="v6-4" data-v="4">٤</span>وكانَ الفِصْحُ، عيدُ اليَهود، قَريبًا. <span class="vn" id="v6-5" data-v="5">٥</span>فرَفَعَ يسوعُ عَينَيه، فرأَى جَمعًا كثيرًا مُقبِلًا إِلَيه. فقالَ لِفيلِبُّس: «مِن أَينَ نَشتَري خُبزًا لِيأكُلَ هٰؤلاء؟» <span class="vn" id="v6-6" data-v="6">٦</span>وإِنَّما قالَ هٰذا لِيَمتَحِنَه، لأَنَّه كانَ يَعلَمُ ما سَيَصنَع. <span class="vn" id="v6-7" data-v="7">٧</span>أَجابَه فيلِبُّس: «لوِ ٱشتَرَينا خُبزًا بِمائَتَي دينار، لما كفَى أَن يَحصُلَ الواحِدُ مِنهُم على كِسرَةٍ صَغيرة». <span class="vn" id="v6-8" data-v="8">٨</span>وقالَ له أَحَدُ تَلاميذِه، أَندَراوُس أَخو سِمْعانَ بُطرُس: <span class="vn" id="v6-9" data-v="9">٩</span>هٰهُنا صَبِيٌّ معَهُ خَمسَةُ أَرغِفَةٍ مِن شَعير وسَمَكتان، ولٰكِن ما هٰذا لِمِثلِ هٰذا العَدَدِ الكَبير؟» <span class="vn" id="v6-10" data-v="10">١٠</span>فقالَ يسوع: «أَقعِدوا النَّاس». وكان هُناكَ عُشبٌ كَثير. فقَعَدَ الرِّجالُ وكانَ عَدَدُهم نَحوَ خَمسَةِ آلاف. <span class="vn" id="v6-11" data-v="11">١١</span>فأَخَذَ يسوعُ الأَرغِفَةَ وشَكَر، ثُمَّ وزَّعَ مِنها على الآكِلين، وفَعَلَ مِثلَ ذٰلك بِالسَّمَكَتَين، على قَدْرِ ما أَرادوا. <span class="vn" id="v6-12" data-v="12">١٢</span>فلَمَّا شَبِعوا قالَ لِتَلاميذِه: «إِجمَعوا ما فَضَلَ مِنَ الكِسَرِ لِئَلَّا يَضيعَ شَيءٌ مِنها». <span class="vn" id="v6-13" data-v="13">١٣</span>فجَمَعوها ومَلأُوا ٱثنَتَي عَشْرَةَ قُفَّةً مِنَ الكِسَرِ الَّتي فَضَلَت عنِ الآكِلينَ مِن خَمسَةِ أَرغِفَةِ الشَّعير. <span class="vn" id="v6-14" data-v="14">١٤</span>فلَمَّا رأَى النَّاسُ الآيةَ الَّتي أَتى بِها يسوع، قالوا: «حَقًّا، هٰذا هوَ النَّبِيُّ الآتي إِلى العالَم». <span class="vn" id="v6-15" data-v="15">١٥</span>وعَلِمَ يسوعُ أَنَّهم يَهُمُّونَ بِٱختِطافِه لِيُقيموهُ مَلِكًا، فٱنصَرَفَ وعادَ وَحدَه إِلى الجَبَل.</p>
+<h3 class="rubric" id="h21">يسوع يمشي على الماء</h3>
+<p class="prose"><span class="vn" id="v6-16" data-v="16">١٦</span>ولَمَّا جاءَ المَساء، نَزَلَ تَلاميذُه إِلى البَحر. <span class="vn" id="v6-17" data-v="17">١٧</span>فرَكِبوا سَفينَةً وأَخَذوا يَعبُرونَ البُحَيرَةَ إِلى كَفَرناحوم. وكانَ الظَّلامُ قَد خَيَّمَ ويسوعُ لم يَلحَقْهم بَعْد. <span class="vn" id="v6-18" data-v="18">١٨</span>وهَبَّت رِيحٌ شَديدة، فٱضطَرَبَ البَحر. <span class="vn" id="v6-19" data-v="19">١٩</span>وبَعدَ ما جَذَّفوا نَحوَ خَمسٍ وعِشرينَ أَو ثَلاثينَ غَلوَة، رأَوا يسوعَ ماشيًا على البَحر، وقَدِ ٱقتَرَبَ مِنَ السَّفينَة، فخافوا. <span class="vn" id="v6-20" data-v="20">٢٠</span>فقالَ لَهم: «أَنا هو، لا تَخافوا!» <span class="vn" id="v6-21" data-v="21">٢١</span>فَأَرادوا أَن يُصعِدوه إِلى السَّفينَة، فإِذا بِالسَّفينَةِ قد وَصَلَت إِلى الأَرضِ الَّتي كانوا يَقصِدونَها.</p>
+<h3 class="rubric" id="h22">يسوع خبز الحياة</h3>
+<p class="prose"><span class="vn" id="v6-22" data-v="22">٢٢</span>وفي الغَد، رأَى الجَمعُ الَّذي باتَ على الشَّاطِئِ الآخَر أَن لم يَكُنْ هُناكَ إِلَّا سَفينَةٌ واحِدة، وأَنَّ يسوعَ لم يَرْكَبْها معَ تَلاميذِه، بل ذَهَبَ التَّلاميذُ وَحدَهُم، <span class="vn" id="v6-23" data-v="23">٢٣</span>على أَنَّ بَعضَ السُّفُنِ وصَلَت مِن طَبَرِيَّة إِلى مكانٍ قَريبٍ مِنَ المَوضِعِ الَّذي أَكلوا فيه الخُبز، بعد أَن شَكَرَ الرَّبّ. <span class="vn" id="v6-24" data-v="24">٢٤</span>فلَمَّا رأَى الجَمعُ أَنَّ يسوعَ لَيسَ هُناك، ولا تَلاميذَه، رَكِبوا السُّفُنَ وساروا إِلى كَفَرناحوم يَطلُبونَ يسوع. <span class="vn" id="v6-25" data-v="25">٢٥</span>فلَمَّا وَجَدوه على الشَّاطِئِ الآخَر قالوا له: «رَابِّي، مَتى وَصَلتَ إِلى هُنا؟» <span class="vn" id="v6-26" data-v="26">٢٦</span>فأَجابَهم يسوع: «الحَقَّ الحَقَّ أَقولُ لَكم: أَنتُم تَطلُبونَني، لا لِأَنَّكم رَأَيتُمُ الآيات، بل لِأَنَّكُم أَكَلتُمُ الخُبزَ وشَبِعتُم.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v6-27" data-v="27">٢٧</span>لا تَعمَلوا لِلطَّعامِ الَّذي يَفْنى</p>
+<p class="line">بلِ ٱعمَلوا لِلطَّعامِ الَّذي يَبْقى</p>
+<p class="line">فَيَصيرُ حَياةً أَبَدِيَّة</p>
+<p class="line">ذاكَ الَّذي يُعطيكموهُ ٱبنُ الإِنسان</p>
+<p class="line">فهوَ الَّذي ثَبَّتَه الآبُ</p>
+<p class="line">اللهُ نَفْسُه، بِخَتْمِه».</p>
+<p class="line"><span class="vn" id="v6-28" data-v="28">٢٨</span>قالوا له: «ماذا نَعمَلُ لِنَقومَ بِأَعمالِ الله؟».</p>
+</div>
+<p class="prose"><span class="vn" id="v6-29" data-v="29">٢٩</span>فأَجابَهُم يسوع: «عَمَلُ اللهِ أَن تُؤمِنوا بِمَن أَرسَل». <span class="vn" id="v6-30" data-v="30">٣٠</span>قالوا له: «فأَيُّ آيةٍ تَأتينا بِها أَنتَ فَنَراها ونُؤمِنَ بكَ؟ ماذا تَعمَل؟ <span class="vn" id="v6-31" data-v="31">٣١</span>آباؤُنا أَكَلوا المَنَّ في البَرِّيَّة، كما وَرَدَ في الكِتاب:</p>
+<div class="poem">
+<p class="line">«أَعْطاهم خُبزًا مِنَ السَّماءِ لِيأكُلوا».</p>
+<p class="line"><span class="vn" id="v6-32" data-v="32">٣٢</span>فقالَ لَهم يسوع:</p>
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">لم يُعطِكُم موسى خُبزَ السَّماء</p>
+<p class="line">بل أَبي يُعطيكُم خُبزَ السَّماءِ الحَقّ</p>
+<p class="line"><span class="vn" id="v6-33" data-v="33">٣٣</span>لِأَنَّ خُبزَ اللهِ هُوَ الَّذي يَنزِلُ مِنَ السَّماء</p>
+<p class="line">ويَهَبُ الحَياةَ لِلعالَم».</p>
+<p class="line"><span class="vn" id="v6-34" data-v="34">٣٤</span>فقالوا له: «يا رَبّ، أَعطِنا هٰذا الخُبزَ دائِمًا أَبَدًا».</p>
+<p class="line"><span class="vn" id="v6-35" data-v="35">٣٥</span>قالَ لَهُم يسوع:</p>
+<p class="line">«أَنا خُبزُ الحَياة.</p>
+<p class="line">مَن يُقبِلْ إِلَيَّ فَلَن يَجوع</p>
+<p class="line">ومَن يُؤمِنْ بي فلَن يَعطَشَ أَبَدًا.</p>
+<p class="line"><span class="vn" id="v6-36" data-v="36">٣٦</span>على أَنِّي قُلتُ لَكم:</p>
+<p class="line">رَأَيتُموني ولا تُؤمِنون.</p>
+<p class="line"><span class="vn" id="v6-37" data-v="37">٣٧</span>جَميعُ الَّذينَ يُعطيني الآبُ إِيَّاهُم</p>
+<p class="line">يُقبِلونَ إِلَيَّ</p>
+<p class="line">ومَن أَقبَلَ إِليَّ لا أُلقيهِ في الخارِج</p>
+<p class="line"><span class="vn" id="v6-38" data-v="38">٣٨</span>فقَد نَزَلتُ مِنَ السَّماء</p>
+<p class="line">لا لِأَعمَلَ بِمَشيئتي</p>
+<p class="line">بل بِمَشيئَةِ الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v6-39" data-v="39">٣٩</span>ومَشيئَةُ الَّذي أَرسَلَني</p>
+<p class="line">أَلَّا أُهلِكَ أَحَدًا</p>
+<p class="line">مِن جَميعِ ما أَعْطانيه</p>
+<p class="line">بل أُقيمُه في اليَومِ الأَخير.</p>
+<p class="line"><span class="vn" id="v6-40" data-v="40">٤٠</span>فمَشيئَةُ أَبي هِيَ</p>
+<p class="line">أَنَّ كُلَّ مَن رأَى الِٱبنَ وآمَنَ بِه</p>
+<p class="line">كانَت له الحَياةُ الأَبَدِيَّة</p>
+<p class="line">وأَنا أُقيمُهُ في اليَومِ الأَخير».</p>
+</div>
+<p class="prose"><span class="vn" id="v6-41" data-v="41">٤١</span>فتَذَمَّرَ اليَهودُ علَيه لِأَنَّه قال: «أَنا الخُبزُ الَّذي نَزَلَ مِنَ السَّماء»، <span class="vn" id="v6-42" data-v="42">٤٢</span>وقالوا: «أَلَيسَ هٰذا يسوعَ بنَ يُوسُف، ونَحنُ نَعرِفُ أَباهُ وأُمَّه؟ فكَيفَ يَقولُ الآن: إِنِّي نَزَلتُ مِنَ السَّماء؟» <span class="vn" id="v6-43" data-v="43">٤٣</span>أَجابَهم يسوع: «لا تَتَذمَّروا فيما بَينَكم.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v6-44" data-v="44">٤٤</span>ما مِن أَحَدٍ يَستَطيعُ أَن يُقبِلَ إِلَيَّ</p>
+<p class="line">إِلَّا إِذا ٱجتَذَبَه الآبُ الَّذي أَرسَلَني.</p>
+<p class="line">وأَنا أُقيمُه في اليَومِ الأَخير.</p>
+<p class="line"><span class="vn" id="v6-45" data-v="45">٤٥</span>كُتِبَ في أَسفارِ الأَنبِياء:</p>
+<p class="line">وسيَكونونَ كُلُّهم تَلامِذَةَ الله.</p>
+<p class="line">فكُلُّ مَن سَمِعَ لِلآب وتَعَلَّمَ مِنه</p>
+<p class="line">أَقبَلَ إِليَّ.</p>
+<p class="line"><span class="vn" id="v6-46" data-v="46">٤٦</span>وما ذٰلِكَ أَنَّ أَحَدًا رأَى الآب</p>
+<p class="line">سِوى الَّذي أَتى مِن لَدُنِ الآب</p>
+<p class="line">فهو الَّذي رأَى الآب.</p>
+<p class="line"><span class="vn" id="v6-47" data-v="47">٤٧</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">مَن آمَنَ فلَهُ الحَياةُ الأَبَدِيَّة.</p>
+<p class="line"><span class="vn" id="v6-48" data-v="48">٤٨</span>أَنا خُبزُ الحَياة.</p>
+<p class="line"><span class="vn" id="v6-49" data-v="49">٤٩</span>آباؤُكُم أَكَلوا المَنَّ في البَرِّيَّة ثُمَّ ماتوا.</p>
+<p class="line"><span class="vn" id="v6-50" data-v="50">٥٠</span>إِنَّ الخُبزَ النَّازِلَ مِنَ السَّماء</p>
+<p class="line">هوَ الَّذي يأكُلُ مِنه الإِنسانُ ولا يَموت.</p>
+<p class="line"><span class="vn" id="v6-51" data-v="51">٥١</span>أَنا الخُبزُ الحَيُّ الَّذي نَزَلَ مِنَ السَّماء:</p>
+<p class="line">مَن يَأكُلْ مِن هٰذا الخُبزِ يَحيَ لِلأَبَد.</p>
+<p class="line">والخُبزُ الَّذي سأُعْطيه أَنا</p>
+<p class="line">هو جَسَدي</p>
+<p class="line">أَبذِلُه لِيَحيا العالَم».</p>
+</div>
+<p class="prose"><span class="vn" id="v6-52" data-v="52">٥٢</span>فخاصَمَ اليَهودُ بَعضُهم بَعضًا وقالوا: «كَيفَ يَستَطيعُ هٰذا أَن يُعطِيَنا جسدَهُ لِنأكُلَه؟» <span class="vn" id="v6-53" data-v="53">٥٣</span>فقالَ لَهم يسوع: «الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<div class="poem">
+<p class="line">إِذا لم تَأكُلوا جَسَدَ ٱبنِ الإِنسانِ</p>
+<p class="line">وتَشرَبوا دَمَه</p>
+<p class="line">فلَن تَكونَ فيكُمُ الحَياة.</p>
+<p class="line"><span class="vn" id="v6-54" data-v="54">٥٤</span>مَن أَكَلَ جَسَدي وشَرِبَ دَمي</p>
+<p class="line">فلَه الحَياةُ الأَبَدِيَّة</p>
+<p class="line">وأَنا أُقيمُه في اليَومِ الأَخير.</p>
+<p class="line"><span class="vn" id="v6-55" data-v="55">٥٥</span>لِأَنَّ جَسَدي طَعامٌ حَقّ</p>
+<p class="line">ودَمي شَرابٌ حَقّ.</p>
+<p class="line"><span class="vn" id="v6-56" data-v="56">٥٦</span>مَن أَكَلَ جَسدي وشَرِبَ دَمي</p>
+<p class="line">ثبَتَ فِيَّ وثَبَتُّ فيه.</p>
+<p class="line"><span class="vn" id="v6-57" data-v="57">٥٧</span>وكما أَنَّ الآبَ الحَيَّ أَرسَلَني</p>
+<p class="line">وأَنِّي أَحْيا بِالآب</p>
+<p class="line">فكَذٰلِكَ الَّذي يأكُلُني سيَحْيا بي.</p>
+<p class="line"><span class="vn" id="v6-58" data-v="58">٥٨</span>هُوَذا الخُبزُ الَّذي نَزَلَ مِن السَّماء</p>
+<p class="line">غَيرُ الَّذي أَكلَهُ آباؤُكُم ثُمَّ ماتوا.</p>
+<p class="line">مَن يأكُلْ هٰذا الخُبْز يَحيَ لِلأَبَد».</p>
+</div>
+<p class="prose"><span class="vn" id="v6-59" data-v="59">٥٩</span>قالَ هٰذا وهو يُعَلِّمُ في المَجمَعِ في كَفَرْناحوم. <span class="vn" id="v6-60" data-v="60">٦٠</span>فقالَ كَثيرٌ مِن تَلاميذِه لَمَّا سَمِعوه: «هٰذا كَلامٌ عَسير، مَن يُطيقُ سَماعَه؟» <span class="vn" id="v6-61" data-v="61">٦١</span>فعَلِمَ يسوعُ في نَفْسِه أَنَّ تَلاميذَه يَتَذَمَّرونَ مِن ذٰلك، فقالَ لَهم: «أَهٰذا حَجَرُ عَثرَةٍ لكُم؟ <span class="vn" id="v6-62" data-v="62">٦٢</span>فكَيفَ لو رَأَيتُمُ ٱبنَ الإِنْسانِ يَصعَدُ إِلى حَيثُ كانَ قَبْلًا؟ <span class="vn" id="v6-63" data-v="63">٦٣</span>إِنَّ الرُّوحَ هو الَّذي يُحيي، وأَمَّا الجَسَدُ فلا يُجْدي نَفْعًا، والكَلامُ الَّذي كَلَّمتُكُم به رُوحٌ وحَياة، <span class="vn" id="v6-64" data-v="64">٦٤</span>ولٰكِنَّ فيكم مَن لا يُؤمِنون». ذٰلكَ بِأَنَّ يسوعَ كانَ يَعلَمُ مُنذُ بَدءِ الأَمْرِ مَنِ الَّذينَ لا يُؤمِنون ومَنِ الَّذي سَيُسلِمُه. <span class="vn" id="v6-65" data-v="65">٦٥</span>ثُمَّ قال: «ولِذٰلِكَ قُلتُ لكم: ما مِن أَحَدٍ يَستَطيعُ أَن يُقبِلَ إِلَيَّ إِلَّا بِهبَةٍ مِنَ الآب». <span class="vn" id="v6-66" data-v="66">٦٦</span>فٱرتَدَّ عِندَئِذٍ كثيرٌ مِن تَلاميذِه وٱنقَطعوا عنِ السَّيرِ معَه.</p>
+<h3 class="rubric" id="h23">إيمان بطرس بيسوع</h3>
+<p class="prose"><span class="vn" id="v6-67" data-v="67">٦٧</span>فقالَ يسوعُ لِلٱثْنَيْ عَشَر: «أَفلا تُريدونَ أَن تَذهَبوا أَنتُم أَيضًا؟» <span class="vn" id="v6-68" data-v="68">٦٨</span>أَجابَه سِمْعانُ بُطرُس: «يا رَبّ، إِلى مَن نَذهَب وكَلامُ الحَياةِ الأَبَدِيَّةِ عِندَك؟ <span class="vn" id="v6-69" data-v="69">٦٩</span>ونَحنُ آمَنَّا وعَرَفنا أَنَّكَ قُدُّوسُ الله». <span class="vn" id="v6-70" data-v="70">٧٠</span>أَجابَهم يسوع: «أَما أَنا ٱختَرتُكُم أَنتُمُ الِٱثنَيْ عَشَر؟ ومعَ ذٰلك فواحِدٌ مِنكم شَيطان». <span class="vn" id="v6-71" data-v="71">٧١</span>وأَرادَ بِه يَهوذا بْنَ سِمْعانَ الإسخَريوطيّ، فهُوَ الَّذي سيُسلِمُه، معَ أَنَّه أَحَدُ الِٱثنَي عَشَر.</p>
+</section>
+<section class="chapter" id="ch7" data-ch="7"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٧</span></h2>
+<div class="part" id="h24"><span class="part-num">٥</span><h3 class="part-title">عيد الأكواخ</h3></div>
+<p class="prose"><span class="vn" id="v7-1" data-v="1">١</span>وجَعَلَ يسوعُ يَسيرُ بَعدَ ذٰلكَ في الجَليل، ولَم يَشَأْ أَن يَسيرَ في اليَهودِيَّة، لأَنَّ اليَهودَ كانوا يُريدونَ قَتلَه. <span class="vn" id="v7-2" data-v="2">٢</span>وكانَ عيدُ الأَكْواخِ عِندَ اليَهود قَريبًا. <span class="vn" id="v7-3" data-v="3">٣</span>فقالَ لَهُ إِخوَتُه: «إِذهَبْ مِن هٰهُنا وٱمضِ إِلى اليَهودِيَّة، حتَّى يَرى تَلاميذُكَ أَيضًا ما تَعمَلُ مِنَ الأَعْمال، <span class="vn" id="v7-4" data-v="4">٤</span>فما مِن أَحَدٍ يَعمَلُ في الخُفيَة إِذا أَرادَ أَن يُعرَف. وما دُمتَ تَعمَلُ هٰذهِ الأَعمال، فأَظهِرْ نَفْسَكَ لِلْعالَم». <span class="vn" id="v7-5" data-v="5">٥</span>ذٰلك بِأَنَّ إِخوَتَه أَنفُسَهم لم يَكونوا يُؤمِنونَ بِه. <span class="vn" id="v7-6" data-v="6">٦</span>فقالَ لَهم يَسوع: «لم يَأتِ وَقْتي بَعْد، وأَمَّا وَقْتُكم فهوَ مُؤاتٍ لَكم أَبَدًا. <span class="vn" id="v7-7" data-v="7">٧</span>لا يَستَطيعُ العالَمُ أَن يُبغِضَكم، وأَمَّا أَنا فيُبغِضُني لِأَنِّي أَشهَدُ علَيه بِأَنَّ أَعمالَه سَيِّئَة. <span class="vn" id="v7-8" data-v="8">٨</span>إِصعَدوا أَنتُم إِلى العيد، فأَنا لا أَصعَدُ إِلى هٰذا العيد، لِأَنَّ وَقْتي لَم يَحِنْ بَعْد». <span class="vn" id="v7-9" data-v="9">٩</span>قالَ هٰذا ولَبِثَ في الجَليل. <span class="vn" id="v7-10" data-v="10">١٠</span>ولَمَّا صَعِدَ إِخوَتُه إِلى العيد، صَعِد هو أَيضًا خُفيَةً لا عَلانِيَةً. <span class="vn" id="v7-11" data-v="11">١١</span>فكانَ اليَهودُ يَطلُبونَه في العيد ويَقولون: «أَينَ هو؟» <span class="vn" id="v7-12" data-v="12">١٢</span>والجُموعُ تَتَهامَسُ في شَأنِه، فبَعضُهم يَقول: «إِنَّه رَجُلٌ صالِح»، وبَعضُهُم الآخَرُ يَقول: «كَلَّا، بل يُضَلِّلُ الشَّعْب». <span class="vn" id="v7-13" data-v="13">١٣</span>ولٰكِن لم يَتَحَدَّثْ بِه أَحَدٌ جِهارًا خَوفًا مِنَ اليَهود.</p>
+<p class="prose"><span class="vn" id="v7-14" data-v="14">١٤</span>وصَعِدَ يَسوعُ إِلى الهَيكَل وكانَ العيدُ قد بَلَغَ إِلى أَوسَطِه فأَخَذَ يُعَلِّم. <span class="vn" id="v7-15" data-v="15">١٥</span>فتَعَجَّبَ اليَهودُ وقالوا: «كَيفَ يَعرِفُ هٰذا الكُتُبَ ولَم يَتَعَلَّم؟» <span class="vn" id="v7-16" data-v="16">١٦</span>فأَجابَهم يسوع:</p>
+<div class="poem">
+<p class="line">«لَيسَ تَعليمي مِن عِندي</p>
+<p class="line">بل مِن عِندِ الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v7-17" data-v="17">١٧</span>فَإِذا أَرادَ أَحَدٌ أَن يَعمَلَ بِمَشيئَتِه</p>
+<p class="line">عَرفَ هل ذَاكَ التَّعليمُ مِن عِندِ الله</p>
+<p class="line">أَو أَنِّي أَتَكَلَّمُ مِن عِندِ نَفْسي.</p>
+<p class="line"><span class="vn" id="v7-18" data-v="18">١٨</span>فَالَّذي يَتَكَلَّمُ مِن عِندِ نَفْسِه</p>
+<p class="line">يَطلُبُ المَجدَ لِنَفْسِه</p>
+<p class="line">أَمَّا مَن يَطلُبُ المَجدَ لِلَّذي أَرسَلَه</p>
+<p class="line">فهوُ صادِقٌ لا نِفاقَ فيه.</p>
+<p class="line"><span class="vn" id="v7-19" data-v="19">١٩</span>أَلَم يُعطِكُم موسى الشَّريعة؟</p>
+<p class="line">وما مِن أَحَدٍ مِنكُم</p>
+<p class="line">يَعمَلُ بِأَحْكام الشَّريعة.</p>
+<p class="line">لِمَاذا تُريدونَ قَتْلي؟»</p>
+</div>
+<p class="prose"><span class="vn" id="v7-20" data-v="20">٢٠</span>أَجابَ الجَمْع: «بِكَ مَسٌّ مِنَ الشَّيطان، فمَن يُريدُ قَتْلَكَ؟» <span class="vn" id="v7-21" data-v="21">٢١</span>أَجابَ يسوع: «ما عَمِلتُ إِلَّا عَمَلًا واحِدًا، فتعَجَّبتُم كُلُّكم. <span class="vn" id="v7-22" data-v="22">٢٢</span>سَنَّ موسى فيكُمُ الخِتان (ولَم يَكُنِ الخِتانُ مِن موسى، بل مِنَ الآباء) فتَختِنونَ الإِنسانَ يَومَ السَّبْت. <span class="vn" id="v7-23" data-v="23">٢٣</span>فإِذا كانَ الإِنسانُ يَتَلَقَّى الخِتانَ يَومَ السَّبْتِ لِئَلَّا تُخالَفَ شَريعةُ مُوسى، أَفتَحنَقونَ عَلَيَّ لِأَنِّي أَبرَأْتُ يَومَ السَّبْتِ إِنسانًا بِكُلِّ ما فيه؟ <span class="vn" id="v7-24" data-v="24">٢٤</span>لا تَحكُموا على الظَّاهِر، بلِ ٱحكُموا بِالعَدْل»</p>
+<h3 class="rubric" id="h25">أقوال الناس في يسوع</h3>
+<p class="prose"><span class="vn" id="v7-25" data-v="25">٢٥</span>فقالَ أُناسٌ مِن أَهلِ أُورَشَليم: «أَليسَ هٰذا الَّذي يُريدونَ قَتْلَه؟ <span class="vn" id="v7-26" data-v="26">٢٦</span>فها إِنَّه يَتَكلَّمُ جِهارًا ولا يَقولونَ له شَيئًا. تُرى هل تَبَيَّنَ لِلرُّؤساءِ أَنَّه المسيح؟ <span class="vn" id="v7-27" data-v="27">٢٧</span>على أَنَّ هٰذا نَعرِفُ مِن أَينَ هو، وأَمَّا المسيح فلا يُعرَفُ حينَ يأتي مِن أَينَ هو». <span class="vn" id="v7-28" data-v="28">٢٨</span>فرَفَعَ يسوعُ صَوتَه وهُو يُعَلِّمُ في الهَيكَلِ قال:</p>
+<div class="poem">
+<p class="line">«أَجَل، إِنَّكُم تَعرِفونَني</p>
+<p class="line">وتعرفونَ مِن أَينَ أَنا.</p>
+<p class="line">على أَنِّي ما جئتُ مِن نَفْسي</p>
+<p class="line">فالَّذي أَرسَلني هو صادِق.</p>
+<p class="line">ذاكَ الَّذي لا تَعرِفونَه أَنتُم</p>
+<p class="line"><span class="vn" id="v7-29" data-v="29">٢٩</span>وأَمَّا أَنا فَأَعرِفُه</p>
+<p class="line">لأَنِّي مِن عِندِه</p>
+<p class="line">وهوَ الَّذي أَرسَلَني».</p>
+</div>
+<p class="prose"><span class="vn" id="v7-30" data-v="30">٣٠</span>فأَرادوا أَن يُمسِكوه، ولٰكِن لم يَبسُطْ إِليه أَحَدٌ يَدًا، لأَنَّ ساعتَه لم تَكُن قد جاءَت. <span class="vn" id="v7-31" data-v="31">٣١</span>فآمنَ بِه مِنَ الجَمْعِ خَلْقٌ كَثيرٌ وقالوا: «أَيُجري المسيحُ مِنَ الآياتِ حينَ يأتي أَكثَر مِمَّا أَجْرى هٰذا الرَّجُل؟» <span class="vn" id="v7-32" data-v="32">٣٢</span>فسَمِعَ الفِرِّيسيُّونَ الجَمْعَ يَتَهامَسونَ بِذٰلِكَ في شَأنِه، فأَرسَلَ عُظَماءُ الكَهَنَةِ والفِرِّيسيُّونَ بَعضَ الحَرَسِ لِيُمسِكوه.</p>
+<h3 class="rubric" id="h26">يسوع ينبئ بموته</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v7-33" data-v="33">٣٣</span>فقالَ يسوع:</p>
+<p class="line">«أَنا باقٍ مَعَكم وَقْتًا قليلًا</p>
+<p class="line">ثُمَّ أَذهَبُ إِلى الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v7-34" data-v="34">٣٤</span>ستَطلُبوني فلا تَجِدوني</p>
+<p class="line">وحَيثُ أَكونُ أَنا</p>
+<p class="line">لا تَستَطيعونَ أَنتُم أَن تَأتوا».</p>
+</div>
+<p class="prose"><span class="vn" id="v7-35" data-v="35">٣٥</span>فقالَ اليَهودُ بَعضُهم لِبَعضٍ: «إِلى أَينَ يَذهَبُ هٰذا فلا نَجِدَه؟ أَيَذهَبُ إِلى المُشَتَّتينَ مِنَ اليَهودِ بَينَ اليونانِيِّين، فيُعَلِّمَ اليونانِيِّين؟ <span class="vn" id="v7-36" data-v="36">٣٦</span>ما مَعْنى هٰذه الكَلِمَةِ الَّتي قالَها: ستَطلُبوني فلا تَجِدوني، وحَيثُ أَكونُ أَنا لا تَستَطيعونَ أَنتُم أَن تَأتوا»؟</p>
+<h3 class="rubric" id="h27">الماء الحيّ</h3>
+<p class="prose"><span class="vn" id="v7-37" data-v="37">٣٧</span>وفي آخِرِ يَومٍ مِنَ العيد، وهُو أَعظَمُ أَيَّامِه، وقَفَ يسوع ورفَعَ صَوتَه قال:</p>
+<div class="poem">
+<p class="line">«إِن عَطِشَ أَحَدٌ فليُقْبِلْ إِلَيَّ</p>
+<p class="line"><span class="vn" id="v7-38" data-v="38">٣٨</span>ومَن آمَنَ بي فَلْيَشْرَبْ</p>
+</div>
+<p class="prose">كما وَرَدَ في الكِتاب: ستَجْري مِن جوفِه أَنهارٌ مِنَ الماءِ الحَيّ». <span class="vn" id="v7-39" data-v="39">٣٩</span>وأَرادَ بِقَولِه الرُّوحَ الَّذي سيَنالُه المؤمِنونَ بِه، فلَم يَكُنْ هُناكَ بَعدُ مِن رُوح، لِأَنَّ يسوعَ لم يَكُنْ قد مُجِّد.</p>
+<h3 class="rubric" id="h28">أقوال مختلفة في يسوع</h3>
+<p class="prose"><span class="vn" id="v7-40" data-v="40">٤٠</span>فقالَ أَناسٌ مِنَ الجَمعِ وقَد سَمِعوا ذٰلك الكَلام: «هٰذا هو النَّبِيُّ حَقًّا!» <span class="vn" id="v7-41" data-v="41">٤١</span>وقالَ غَيرُهُم: «هٰذا هو المَسيح!» ولٰكِنَّ آخَرينَ قالوا: «أَفتُرى مِنَ الجَليلِ يَأتي المَسيح؟ <span class="vn" id="v7-42" data-v="42">٤٢</span>أَلَم يَقُلِ الكِتابُ إِنَّ المَسيحَ هُوَ مِن نَسلِ داود وإِنَّه يَأتي مِنَ بَيتَ لَحْمَ، القَريَةِ الَّتي مِنها خَرَجَ داود؟» <span class="vn" id="v7-43" data-v="43">٤٣</span>فوقَعَ بَينَ الجَمعِ خَلافٌ في شأنِه. <span class="vn" id="v7-44" data-v="44">٤٤</span>وأَرادَ بَعضُهم أَن يُمسِكوه، ولٰكِن لم يَبسُطْ إِلَيه أَحَدٌ يَدًا. <span class="vn" id="v7-45" data-v="45">٤٥</span>ورَجَعَ الحَرَسُ إِلى عُظَماءِ الكَهَنَةِ والفِرِّيسيِّين <span class="vn" id="v7-46" data-v="46">٤٦</span>فقالَ لَهم هٰؤلاء: «لِماذا لم تَأتوا بِه؟» أَجابَ الحَرَس: «ما تَكَلَّمَ إِنسانٌ قَطّ مِثلَ هٰذا الرَّجُل». <span class="vn" id="v7-47" data-v="47">٤٧</span>فأَجابَهُمُ الفِرِّيسيُّون: «أَخُدِعْتُم أَنتُم أَيضًا؟ <span class="vn" id="v7-48" data-v="48">٤٨</span>هل آمنَ بِه أَحَدٌ مِنَ الرُّؤَساءِ أَوِ الفِرِّيسيِّين؟ <span class="vn" id="v7-49" data-v="49">٤٩</span>أَمَّا هٰؤُلاءِ الرَّعاعُ الَّذينَ لا يَعرِفونَ الشَّريعَة، فهُم مَلعونون». <span class="vn" id="v7-50" data-v="50">٥٠</span>فقالَ لَهم نيقوديمُس وكانَ مِنهم، وهُو ذاكَ الَّذي جاءَ قَبْلًا إِلى يَسوع: <span class="vn" id="v7-51" data-v="51">٥١</span>«أَتَحكُمُ شَريعَتُنا على أَحَدٍ قَبلَ أَن يُستَمعَ إِلَيه ويُعرَفَ ما فَعَل؟» <span class="vn" id="v7-52" data-v="52">٥٢</span>أَجابوه: «أَوأَنتَ أَيضًا مِنَ الجَليل؟ إِبْحَثْ تَرَ أَنَّه لا يَقومُ مِنَ الجَليلِ نَبِيّ».</p>
+<h3 class="rubric" id="h29">يسوع يعفو عن الزانية</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v7-53" data-v="53">٥٣</span>ثُمَّ ٱنصَرَفَ كُلٌّ مِنهُم إِلى بَيتِه.</p>
+</div>
+</section>
+<section class="chapter" id="ch8" data-ch="8"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٨</span></h2>
+<p class="prose"><span class="vn" id="v8-1" data-v="1">١</span>أَمَّا يسوع فذَهَبَ إِلى جَبَلِ الزَّيتون. <span class="vn" id="v8-2" data-v="2">٢</span>وعادَ عِندَ الفَجرِ إِلى الهَيكَل، فأَقبَلَ الشَّعْبُ كُلُّه. فجلَسَ وجَعلَ يُعَلِّمُهم. <span class="vn" id="v8-3" data-v="3">٣</span>فأَتاهُ الكَتَبَةُ والفِرِّيسيُّونَ بِٱمرَأَةٍ أُخِذَت في زِنًى. فأَقاموها في وسَطِ الحَلقَةِ <span class="vn" id="v8-4" data-v="4">٤</span>وقالوا له: «يا مُعَلِّم، إِنَّ هٰذِه المَرأَةَ أُخِذَت في الزِّنى المَشْهود. <span class="vn" id="v8-5" data-v="5">٥</span>وقد أَوصانا مُوسى في الشَّريعَةِ بِرَجْمِ أَمثالِها، فأَنتَ ماذا تقول؟» <span class="vn" id="v8-6" data-v="6">٦</span>وإِنَّما قالوا ذٰلكَ لِيُحرِجوهُ فيَجِدوا ما يَشْكونَه بِه. فٱنحَنى يسوعُ يَخُطُّ بإِصبَعِه في الأَرض. <span class="vn" id="v8-7" data-v="7">٧</span>فلَمَّا أَلحُّوا علَيه في السُّؤال ٱنتَصَبَ وقالَ لَهم: «مَن كانَ مِنكُم بِلا خَطيئة، فلْيَكُنْ أَوَّلَ مَن يَرميها بِحَجَر!» <span class="vn" id="v8-8" data-v="8">٨</span>ثُمَّ ٱنحَنى ثانِيَةً يَخُطُّ في الأَرض. <span class="vn" id="v8-9" data-v="9">٩</span>فلَمَّا سَمِعوا هٰذا الكَلام، اِنصَرَفوا واحِدًا بَعدَ واحِد يَتَقَدَّمُهم كِبارُهم سِنًّا. وبَقِيَ يسوعُ وَحدَهُ والمَرأَةُ في وَسَطِ الحَلْقَة. <span class="vn" id="v8-10" data-v="10">١٠</span>فٱنتَصَبَ يسوعُ وقالَ لَها: «أَينَ هُم، أَيَّتُها المَرأَة؟ أَلَم يَحكُمْ عَليكِ أَحَد؟» <span class="vn" id="v8-11" data-v="11">١١</span>فقالت: «لا، يا ربّ». فقالَ لها يسوع: «وأَنا لا أَحكُمُ علَيكِ. إِذهَبي ولا تَعودي بَعدَ الآنَ إِلى الخَطيئَة».</p>
+<h3 class="rubric" id="h30">يسوع نور العالم</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-12" data-v="12">١٢</span>وكَلَّمَهم أَيضًا يسوعُ قال:</p>
+<p class="line">«أَنا نُورُ العالَم:</p>
+<p class="line">مَن يَتبَعْني لا يَمْشِ في الظَّلام</p>
+<p class="line">بل يكونُ لَه نورُ الحَياة».</p>
+</div>
+<p class="prose"><span class="vn" id="v8-13" data-v="13">١٣</span>فقالَ له الفِرِّيسيُّونَ: «أَنتَ تَشهَدُ لِنَفسِكَ، فشهادَتُكَ لا تَصِحّ». <span class="vn" id="v8-14" data-v="14">١٤</span>أَجابَهم يسوع:</p>
+<div class="poem">
+<p class="line">إِنِّي، وإِن شهِدتُ لِنَفْسي</p>
+<p class="line">فشَهادتي تَصِحّ</p>
+<p class="line">فأَنا أَعلَمُ مِن أَينَ أَتَيتُ</p>
+<p class="line">وإِلى أَينَ أَذهَب.</p>
+<p class="line">أَمَّا أَنتُم فلا تَعلَمونَ مِن أَينَ أَتَيتُ</p>
+<p class="line">ولا إِلى أَينَ أَذهَب.</p>
+<p class="line"><span class="vn" id="v8-15" data-v="15">١٥</span>أَنتُم تَحكُمونَ حُكْمَ البَشَر</p>
+<p class="line">وأَنا لا أَحكُمُ على أَحَد.</p>
+<p class="line"><span class="vn" id="v8-16" data-v="16">١٦</span>وإِذا حَكَمتُ، فحُكْمي صَحيح</p>
+<p class="line">لِأَنِّي لَستُ وَحْدي</p>
+<p class="line">بل أَنا والَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v8-17" data-v="17">١٧</span>وكُتِبَ في شَريعَتِكم:</p>
+<p class="line">شَهادَةُ شاهِدَيْنِ تَصِحّ.</p>
+<p class="line"><span class="vn" id="v8-18" data-v="18">١٨</span>أَنا أَشهَدُ لِنَفْسي</p>
+<p class="line">والآبُ الَّذي أَرسَلَني يَشهَدُ لي أَيضًا».</p>
+<p class="line"><span class="vn" id="v8-19" data-v="19">١٩</span>فقالوا له: «أَينَ أَبوك؟»</p>
+</div>
+<p class="prose">أَجابَ يسوع: «أَنتُم لا تَعرِفوني ولا تَعرِفونَ أَبي، ولَو عَرَفتُموني لَعَرَفتُم أَبي أَيضًا».</p>
+<p class="prose"><span class="vn" id="v8-20" data-v="20">٢٠</span>قالَ هٰذا الكَلامَ عِندَ الخِزانَة وهو يُعَلِّمُ في الهَيكَل، فلَم يُمسِكْه أَحَدٌ لِأَنَّ ساعتَه لم تَكُنْ قد جاءَت.</p>
+<h3 class="rubric" id="h31">يسوع ينذر اليهود</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-21" data-v="21">٢١</span>فقالَ لَهم ثانِيَةً:</p>
+<p class="line">«أَنا ذاهِب:</p>
+<p class="line">سَتَطلُبوني</p>
+<p class="line">ومعَ ذٰلك تَموتونَ في خَطيئَتِكم.</p>
+<p class="line">وحَيثُ أَنا ذاهِبٌ</p>
+<p class="line">فأَنتُم لا تَستَطيعونَ أَن تَأتوا».</p>
+</div>
+<p class="prose"><span class="vn" id="v8-22" data-v="22">٢٢</span>فقالَ اليَهود: «أَتُراهُ يَقتُلُ نَفسَه؟ فقد قال: حَيثُ أَنا ذاهِبٌ فأَنتُم لا تَستَطيعونَ أَن تَأتوا».</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-23" data-v="23">٢٣</span>قال لَهم:</p>
+<p class="line">«أَنتُم مِن أَسفَل، وأَنا مِن عَلُ.</p>
+<p class="line">أَنتُم مِن هٰذا العالَم</p>
+<p class="line">وأَنا لَسْتُ مِنَ العالَمِ هٰذا.</p>
+<p class="line"><span class="vn" id="v8-24" data-v="24">٢٤</span>لِذٰلك قُلتُ لَكم:</p>
+<p class="line">ستَموتونَ في خَطاياكم.</p>
+<p class="line">فإِذا لم تُؤمِنوا بِأَنِّي أَنا هو</p>
+<p class="line">تَموتون في خَطاياكم».</p>
+<p class="line"><span class="vn" id="v8-25" data-v="25">٢٥</span>فقالوا له: «مَن أَنتَ؟»</p>
+<p class="line">فقالَ يسوع:</p>
+<p class="line">«أَنا ما أَقولُه لَكم مُنذُ بَدءِ الأَمْر.</p>
+<p class="line"><span class="vn" id="v8-26" data-v="26">٢٦</span>عِندي في شَأنِكُم أَشْياءُ كَثيرة</p>
+<p class="line">أَقولُها وأَحكُمُ فيها.</p>
+<p class="line">على أَنَّ الَّذي أَرسَلَني صادِق</p>
+<p class="line">وما سَمِعتُه مِنهُ أَقولُه لِلعالَم».</p>
+<p class="line"><span class="vn" id="v8-27" data-v="27">٢٧</span>فلَم يَفهَموا أَنَّه كَلَّمَهم على الآب.</p>
+<p class="line"><span class="vn" id="v8-28" data-v="28">٢٨</span>فقالَ لَهم يسوع:</p>
+<p class="line">«متى رَفَعتُمُ ٱبْنَ الإِنسان</p>
+<p class="line">عَرَفتُم أَنِّي أَنا هو</p>
+<p class="line">وأَنِّي لا أَعمَلُ شَيئًا مِن عِندي</p>
+<p class="line">بل أَقولُ ما عَلَّمَني الآب.</p>
+<p class="line"><span class="vn" id="v8-29" data-v="29">٢٩</span>إِنَّ الَّذي أَرسَلَني هو معي</p>
+<p class="line">لَم يَترُكْني وَحْدي</p>
+<p class="line">لِأَنِّي أَعمَلُ دائِمًا أَبَدًا ما يُرْضيه».</p>
+<p class="line"><span class="vn" id="v8-30" data-v="30">٣٠</span>وبَينَما هُو يَتَكَلَّمُ بِذٰلِكَ، آمَنَ بِه خَلْقٌ كَثير.</p>
+</div>
+<h3 class="rubric" id="h32">يسوع وإبراهيم</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-31" data-v="31">٣١</span>فقالَ يسوعُ لِليَهودِ الَّذينَ آمَنوا بِه:</p>
+<p class="line">«إِن ثَبتُّم في كلامي</p>
+<p class="line">كُنتُم تلاميذي حَقًّا</p>
+<p class="line"><span class="vn" id="v8-32" data-v="32">٣٢</span>تَعرِفونَ الحَقّ</p>
+<p class="line">والحَقُّ يُحَرِّرُكُم».</p>
+</div>
+<p class="prose"><span class="vn" id="v8-33" data-v="33">٣٣</span>أَجابوه: «نَحنُ نَسْلُ إِبْراهيم، لم نَكُنْ يَومًا عَبيدًا لِأَحَد! فكَيفَ تَقولُ: سَتَصيرونَ أَحْرارًا؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-34" data-v="34">٣٤</span>أَجابَهم يسوع:</p>
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">«كُلُّ مَن يَرتَكِبُ الخَطيئَة</p>
+<p class="line">يَكونُ عَبدًا لِلخَطيئَة.</p>
+<p class="line"><span class="vn" id="v8-35" data-v="35">٣٥</span>والعَبدُ لا يُقيمُ في البَيتِ دائِمًا أَبَدًا</p>
+<p class="line">بلِ الِٱبنُ يُقيمُ فيه لِلأَبَد.</p>
+<p class="line"><span class="vn" id="v8-36" data-v="36">٣٦</span>فإِذا حَرَّرَكُمُ الِٱبنُ</p>
+<p class="line">كُنتُم أَحرارًا حَقًّا.</p>
+<p class="line"><span class="vn" id="v8-37" data-v="37">٣٧</span>أَنا أَعلَمُ أَنَّكم نَسْلُ إِبراهيم</p>
+<p class="line">ولٰكِنَّكُم تُريدونَ قَتْلي</p>
+<p class="line">لِأَنَّ كَلامي لا يَجِدُ إِلَيكم سَبيلًا.</p>
+<p class="line"><span class="vn" id="v8-38" data-v="38">٣٨</span>أَنا أَتَكَلَّمُ بِما رَأَيتُ عِندَ أَبي</p>
+<p class="line">وأَنتُم تَعمَلونَ بِما سَمِعتُم مِن أَبيكم».</p>
+<p class="line"><span class="vn" id="v8-39" data-v="39">٣٩</span>أَجابوه: «إِنَّ أَبانا هو إِبراهيم».</p>
+<p class="line">فقالَ لَهم يسوع:</p>
+<p class="line">«لَو كُنتُم أَبناءَ إِبراهيم</p>
+<p class="line">لَعَمِلتُم أَعمالَ إِبراهيم».</p>
+</div>
+<p class="prose"><span class="vn" id="v8-40" data-v="40">٤٠</span>ولٰكِنَّكُم تُريدونَ الآنَ قَتْلي، أَنا الَّذي قالَ لَكُمُ الحَقَّ الَّذي سَمِعَهُ مِنَ الله، وذٰلكَ عمَلٌ لم يَعمَلْهُ إِبْراهيم.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-41" data-v="41">٤١</span>أَنتُم تَعمَلونَ أَعمالَ أَبيكم».</p>
+</div>
+<p class="prose">قالوا له: «نَحنُ لم نولَدْ لِزِنًى، ولَنا أَبٌ واحِدٌ هوَ الله». <span class="vn" id="v8-42" data-v="42">٤٢</span>فقالَ لَهم يسوع:</p>
+<div class="poem">
+<p class="line">«لَو كانَ اللهُ أَباكم لَأَحْبَبتُموني</p>
+<p class="line">لِأَنِّي مِنَ اللهِ خَرجتُ وأَتَيت.</p>
+<p class="line">وما أَتَيتُ مِن نَفْسي</p>
+<p class="line">بل هوَ الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v8-43" data-v="43">٤٣</span>لِماذا لا تَفهَمونَ ما أَقول؟</p>
+<p class="line">لِأَنَّكُم لا تُطيقونَ الِٱستِماعَ</p>
+<p class="line">إِلى كَلامي.</p>
+<p class="line"><span class="vn" id="v8-44" data-v="44">٤٤</span>أَنتُم أَولادُ أَبيكُم إِبليس</p>
+<p class="line">تُريدونَ إِتمامَ شَهَواتِ أَبيكم.</p>
+<p class="line">كانَ مُنذُ البَدءِ قَتَّالًا لِلنَّاس</p>
+<p class="line">ولَم يَثبُتْ على الحَقّ</p>
+<p class="line">لِأَنَّه ليسَ فيه شَيءٌ مِنَ الحَقّ.</p>
+<p class="line">فَإِذا تَكَلَّمَ بِالكَذِب تَكَلَّمَ بِما عِندَه</p>
+<p class="line">لِأَنَّه كَذَّابٌ وأَبو الكَذِب.</p>
+<p class="line"><span class="vn" id="v8-45" data-v="45">٤٥</span>أَمَّا أَنا فلِأَنِّي أَقولُ الحَقّ لا تُؤمِنونَ بي.</p>
+<p class="line"><span class="vn" id="v8-46" data-v="46">٤٦</span>مَن مِنكم يُثبِتُ عَليَّ خَطيئة؟</p>
+<p class="line">فَإِذا كُنتُ أَقولُ الحَقّ</p>
+<p class="line">فلِماذا لا تُؤمِنونَ بي؟</p>
+<p class="line"><span class="vn" id="v8-47" data-v="47">٤٧</span>مَن كانَ مِنَ اللهِ ٱستَمَعَ إِلى كَلامِ الله.</p>
+<p class="line">فإِذا كُنتُم لا تَستَمِعونَ إِلَيه</p>
+<p class="line">فَلِأَنَّكُم لَستُم مِنَ الله».</p>
+</div>
+<p class="prose"><span class="vn" id="v8-48" data-v="48">٤٨</span>أَجابَه اليَهود: «أَلَسْنا على صوابٍ في قَولِنا إِنَّكَ سامِريّ، وإِنَّ بِكَ مَسًّا مِنَ الشَّيطان؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-49" data-v="49">٤٩</span>«أَجابَ يسوع:</p>
+<p class="line">«لَيسَ بي مَسٌّ مِنَ الشَّيطان</p>
+<p class="line">ولٰكِنِّي أُكرِمُ أَبي</p>
+<p class="line">وأَنتُم تُهينوني.</p>
+<p class="line"><span class="vn" id="v8-50" data-v="50">٥٠</span>أَنا لا أَطلُبُ مَجدي</p>
+<p class="line">فهُناكَ مَن يطلُبُه وَيَحكُم.</p>
+<p class="line"><span class="vn" id="v8-51" data-v="51">٥١</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">مَن يَحفَظْ كَلامي</p>
+<p class="line">لا يَرَ المَوتَ أَبَدًا».</p>
+</div>
+<p class="prose"><span class="vn" id="v8-52" data-v="52">٥٢</span>قالَ له اليَهود: «الآنَ عَرَفْنا أَنَّ بِكَ مَسًّا مِنَ الشَّيطان. ماتَ إِبراهيمُ وماتَ الأَنبياء، وأَنتَ تَقول: مَن يَحفَظْ كَلامي لا يَذُقِ المَوتَ أَبَدًا. <span class="vn" id="v8-53" data-v="53">٥٣</span>أَأَنتَ أَعظَمُ مِن أَبينا إِبراهيمَ الَّذي مات؟ وقد ماتَ الأَنبِياءُ أَيضًا. مَن تَجعَلُ نَفْسَكَ؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v8-54" data-v="54">٥٤</span>أَجابَ يسوع:</p>
+<p class="line">«لَو مَجَّدتُ نَفْسي لكانَ مَجْدي باطِلًا</p>
+<p class="line">ولكِنَّ أَبي هوَ الَّذي يُمَجِّدُني</p>
+<p class="line">ذٰلكَ الَّذي تَقولونَ أَنتُم: هو إِلٰهُنا.</p>
+<p class="line"><span class="vn" id="v8-55" data-v="55">٥٥</span>أَنتُم لم تَعرِفوه، أَمَّا أَنا فأَعرفُه.</p>
+<p class="line">ولَو قُلتُ إِنِّي لا أَعرِفُه</p>
+<p class="line">لكُنتُ مِثلَكُم كاذِبًا.</p>
+<p class="line">ولٰكِنِّي أَعرِفُه وأَحفَظُ كَلِمَتَه.</p>
+<p class="line"><span class="vn" id="v8-56" data-v="56">٥٦</span>إِبتَهَجَ أَبوكُم إِبراهيم</p>
+<p class="line">راجِيًا أَن يَرى يَومي</p>
+<p class="line">ورآهُ فَفَرِح».</p>
+<p class="line"><span class="vn" id="v8-57" data-v="57">٥٧</span>قالَ له اليَهود: «أَرَأَيتَ إِبراهيمَ وما بَلَغتَ الخَمسين؟»</p>
+<p class="line"><span class="vn" id="v8-58" data-v="58">٥٨</span>فقالَ لَهم يسوع:</p>
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">قَبلَ أَن يَكونَ إِبراهيم، أَنا هو».</p>
+<p class="line"><span class="vn" id="v8-59" data-v="59">٥٩</span>فأَخَذوا حِجارَةً لِيَرموه بِها، فتَوارى يسوع وخرَجَ مِنَ الهَيكَل.</p>
+</div>
+</section>
+<section class="chapter" id="ch9" data-ch="9"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٩</span></h2>
+<h3 class="rubric" id="h33">شفاء الأعمى</h3>
+<p class="prose"><span class="vn" id="v9-1" data-v="1">١</span>وبَينَما هو سائِرٌ رأَى رَجُلًا أَعْمى مُنذُ مَولِدِه. <span class="vn" id="v9-2" data-v="2">٢</span>فسأَلَه تَلاميذُه: «رابِّي، مَن خَطِئَ، أَهٰذا أَم والِداه، حَتَّى وُلِدَ أَعْمى؟». <span class="vn" id="v9-3" data-v="3">٣</span>أَجابَ يسوع: «لا هٰذا خَطِئَ ولا والِداه، ولٰكِن كانَ ذٰلك لِتَظهَرَ فيه أَعمالُ الله. <span class="vn" id="v9-4" data-v="4">٤</span>يَجِبُ علَينا، ما دامَ النَّهار، أَن نَعمَلَ أَعمالَ الَّذي أَرسَلَني. فاللَّيلُ آتٍ، وفيه لا يَستَطيعُ أَحَدٌ أَن يَعمَل. <span class="vn" id="v9-5" data-v="5">٥</span>ما دُمتُ في العالَم، فأَنا نورُ العالَم». <span class="vn" id="v9-6" data-v="6">٦</span>قالَ هٰذا وتَفَلَ في الأَرض، فجَبَلَ مِن تُفالِه طينًا، وطَلى بِه عَينَي الأَعْمى، <span class="vn" id="v9-7" data-v="7">٧</span>ثُمَّ قالَ له: «إِذهَبْ فَٱغتَسِلْ في بِركَةِ سِلوامَ»، أَي الرَّسول. فذَهَبَ فٱغتَسَلَ فَعادَ بَصيرًا. <span class="vn" id="v9-8" data-v="8">٨</span>فقالَ الجيرانُ والَّذينَ كانوا يَرونَه مِن قَبلُ، لِأَنَّه كانَ شحَّاذًا: «أَلَيسَ هو ذاكَ الَّذي كانَ يَقعُدُ فيَستَعْطي؟» <span class="vn" id="v9-9" data-v="9">٩</span>وقالَ آخَرون: «إِنَّه هو». وقالَ غَيرُهم: «لا، بل يُشبِهُه». أَمَّا هوَ فكانَ يقول: «أَنا هو». <span class="vn" id="v9-10" data-v="10">١٠</span>فقالوا له: «فكَيفَ ٱنفَتَحَت عَيناكَ؟» <span class="vn" id="v9-11" data-v="11">١١</span>فأَجابَ: «إِنَّ الرَّجُلَ الَّذي يُقالُ لَه يسوع جَبَلَ طينًا فطَلى بِه عَينَيَّ وقالَ لي: «إِذهَبْ إِلى سِلوامَ فٱغتَسِل». فذَهَبتُ فَٱغتَسَلتُ فَأَبصَرتُ». <span class="vn" id="v9-12" data-v="12">١٢</span>فقالوا له: «أَينَ هو؟» قال: «لا أَعلَم».</p>
+<p class="prose"><span class="vn" id="v9-13" data-v="13">١٣</span>فَذَهبوا إِلى الفِرِّيسيِّينَ بِذاكَ الَّذي كانَ مِن قَبْلُ أَعْمى. <span class="vn" id="v9-14" data-v="14">١٤</span>وكانَ اليَومُ الَّذي فيه جَبَلَ يسوعُ طينًا وفَتحَ عَينَيِ الأَعمى يَومَ سَبْت. <span class="vn" id="v9-15" data-v="15">١٥</span>فسأَلَه الفِرِّيسيُّونَ أَيضًا كَيفَ أَبصَر. فقالَ لَهم: «جَعَلَ طينًا على عَينَيَّ ثُمَّ ٱغتَسَلتُ وها إِنِّي أُبصِر». <span class="vn" id="v9-16" data-v="16">١٦</span>فقالَ بَعضُ الفِرِّيسِيِّين: «لَيسَ هٰذا الرَّجُلُ مِنَ الله، لِأَنَّه لا يَحفَظُ شَريعةَ السَّبْت». وقالَ آخَرون: «كَيفَ يَستَطيعُ خاطِئٌ أَن يَأتيَ بِمِثلِ هٰذهِ الآيات؟» فوَقَعَ الخِلافُ بَينَهم. <span class="vn" id="v9-17" data-v="17">١٧</span>فقالوا أَيضًا لِلأَعمى: «وأَنتَ ماذا تَقولُ فيه وقَد فَتَحَ عَينَيكَ؟» قال: «إِنَّهُ نَبِيّ».</p>
+<p class="prose"><span class="vn" id="v9-18" data-v="18">١٨</span>على أَنَّ اليَهودَ لم يُصَدِّقوا أَنَّه كانَ أَعْمى فأَبصَر، حتَّى دَعَوا والِدَيه. <span class="vn" id="v9-19" data-v="19">١٩</span>فسأَلوهما: «أَهٰذا ٱبنُكما الَّذي تَقولانِ إِنَّه وُلِدَ أَعمى؟ فكَيفَ أَصبَحَ يُبصِرُ الآن؟» <span class="vn" id="v9-20" data-v="20">٢٠</span>فأَجابَ والِداه: «نَحنُ نَعلَمُ أَنَّ هٰذا ٱبنُنا، وأَنَّه وُلِدَ أَعْمى. <span class="vn" id="v9-21" data-v="21">٢١</span>أَمَّا كَيفَ أَصبَحَ يُبصِرُ الآن، فلا نَدْري، ومَن فَتَحَ عَينَيه فنَحنُ لا نَعلَم. إِسأَلوهُ، إِنَّه مُكتَمِلُ السِّنّ، سيَتَكَلَّمُ هو بِنَفسِه عن أَمرِه». <span class="vn" id="v9-22" data-v="22">٢٢</span>وإِنَّما قالَ والِداهُ هٰذا لِخَوفِهِما مِنَ اليَهود، لِأَنَّ اليَهودَ كانوا قدِ ٱتَّفَقوا على أَن يُفصَلَ مِنَ المَجمَعِ مَن يَعتَرِفُ بِأَنَّه المسيح. <span class="vn" id="v9-23" data-v="23">٢٣</span>فلِذٰلكَ قالَ والِداه: إِنَّه مُكتَمِلُ السِّنّ، فٱسأَلوه.</p>
+<p class="prose"><span class="vn" id="v9-24" data-v="24">٢٤</span>فَدَعَوا ثانِيَةً الرَّجُلَ الَّذي كانَ أَعمى وقالوا له: «مَجِّدِ الله، نَحنُ نَعلَمُ أَنَّ هٰذا الرَّجُلَ خاطِئ». <span class="vn" id="v9-25" data-v="25">٢٥</span>فأَجاب: «هل هو خاطِئٌ لا أَعلَم، وإِنَّما أَعلَمُ أَنِّي كُنتُ أَعْمى وها إِنِّي أُبصِرُ الآن». <span class="vn" id="v9-26" data-v="26">٢٦</span>فقالوا له: «ماذا صَنَعَ لكَ؟ وكَيفَ فتَحَ عَينَيكَ؟» <span class="vn" id="v9-27" data-v="27">٢٧</span>أَجابَهم: «لَقد قُلتُه لَكم فلَم تُصغُوا، فلِماذا تُريدونَ أَن تَسمَعوه ثانِيَةً؟ أَتُراكم تَرغَبونَ في أَن تَصيروا أَنتُم أَيضًا تَلاميذَه؟» <span class="vn" id="v9-28" data-v="28">٢٨</span>فشَتَموه وقالوا: «أَنتَ تِلميذُه، أَمَّا نَحنُ فَإِنَّنا تَلاميذُ مُوسى. <span class="vn" id="v9-29" data-v="29">٢٩</span>نَحنُ نَعلَمُ أَنَّ اللهَ كَلَّمَ مُوسى، أَمَّا هٰذا فلا نَعلَمُ مِن أَينَ هو». <span class="vn" id="v9-30" data-v="30">٣٠</span>أَجابَهُمُ الرَّجُل: «فعَجيبٌ أَن لا تَعلَموا مِن أَينَ هو وقَد فَتَحَ عَينَيَّ. <span class="vn" id="v9-31" data-v="31">٣١</span>نَحنُ نَعلَمُ أَنَّ اللهَ لا يَستَجيبُ لِلخاطِئين، بل يَستَجيبُ لِمَنِ ٱتَّقاهُ وعَمِلَ بِمَشيئَتِه. <span class="vn" id="v9-32" data-v="32">٣٢</span>ولَم يُسمَعْ يَومًا أَنَّ أَحَدًا مِنَ النَّاسِ فتَحَ عَينَي مَن وُلِدَ أَعْمى. <span class="vn" id="v9-33" data-v="33">٣٣</span>فلَو لَم يَكُن هٰذا الرَّجُلُ مِنَ الله، لَما ٱستَطاعَ أَن يَصنَعَ شَيئًا». <span class="vn" id="v9-34" data-v="34">٣٤</span>أَجابوه: «أَتُعلِّمُنا أَنتَ وقد وُلِدتَ كُلُّكَ في الخَطايا؟» ثمَّ طَردوه.</p>
+<p class="prose"><span class="vn" id="v9-35" data-v="35">٣٥</span>فَسَمِعَ يسوع أَنَّهم طَردوه، فلَقِيَه وقالَ له: «أَتُؤمِنُ أَنتَ بِٱبنِ الإِنسان؟» <span class="vn" id="v9-36" data-v="36">٣٦</span>أَجاب: «ومَن هو، يا ربّ، فأُومِنَ به؟» <span class="vn" id="v9-37" data-v="37">٣٧</span>قالَ له يسوع: «قد رَأَيتَه، هو الَّذي يُكَلِّمُكَ». <span class="vn" id="v9-38" data-v="38">٣٨</span>فقال: «آمنتُ، يا ربّ» وسَجَدَ له. <span class="vn" id="v9-39" data-v="39">٣٩</span>فقالَ يسوع: «إِنِّي جِئتُ هٰذا العالَمَ لإِصدارِ حُكْمٍ:</p>
+<div class="poem">
+<p class="line">أَن يُبصِرَ الَّذينَ لا يُبصِرون</p>
+<p class="line">ويَعْمى الَّذينَ يُبصِرون».</p>
+</div>
+<p class="prose"><span class="vn" id="v9-40" data-v="40">٤٠</span>فسَمِعَه بَعضُ الفِرِّيسيِّينَ الَّذينَ كانوا معَه فقالوا له: «أَفنَحنُ أَيضًا عُمْيان؟» <span class="vn" id="v9-41" data-v="41">٤١</span>قالَ لَهم يسوع:</p>
+<div class="poem">
+<p class="line">«لو كُنتُم عُمْيانًا</p>
+<p class="line">لَما كانَ علَيكُم خَطيئة.</p>
+<p class="line">ولٰكِنَّكُم تَقولونَ الآن: إِنَّنا نُبصِر</p>
+<p class="line">فخَطيئَتُكُم ثابِتَة».</p>
+</div>
+</section>
+<section class="chapter" id="ch10" data-ch="10"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٠</span></h2>
+<h3 class="rubric" id="h34">الراعي الصالح</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v10-1" data-v="1">١</span>«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">مَن لا يَدخُلُ حَظيرَةَ الخِرافِ</p>
+<p class="line">مِنَ الباب</p>
+<p class="line">بل يَتَسَلَّقُ إِلَيها مِن مَكانٍ آخَر</p>
+<p class="line">فهُو لِصٌّ سارِق.</p>
+<p class="line"><span class="vn" id="v10-2" data-v="2">٢</span>ومَن يدخُلُ مِنَ الباب</p>
+<p class="line">فهُو راعي الخِراف.</p>
+<p class="line"><span class="vn" id="v10-3" data-v="3">٣</span>لَه يَفتَحُ البَوَّاب</p>
+<p class="line">والخِرافُ إِلى صوتِه تُصغي.</p>
+<p class="line">يَدعو خِرافَه</p>
+<p class="line">كُلَّ واحدٍ مِنها بِٱسمِه ويُخرِجُها.</p>
+<p class="line"><span class="vn" id="v10-4" data-v="4">٤</span>فإِذا أَخرَجَ خِرافَه جَميعًا سارَ قُدَّامَها</p>
+<p class="line">وهي تَتبَعُه لِأَنَّها تَعرِفُ صَوتَه.</p>
+<p class="line"><span class="vn" id="v10-5" data-v="5">٥</span>أَمَّا الغَريب فَلَن تَتبَعَه</p>
+<p class="line">بل تَهرُبُ مِنه</p>
+<p class="line">لِأَنَّها لا تَعرِفُ صَوتَ الغُرَباء».</p>
+</div>
+<p class="prose"><span class="vn" id="v10-6" data-v="6">٦</span>ضَرَبَ يسوع لَهم هٰذا المَثَل، فلَم يَفهَموا مَعنى ما كَلَّمَهم بِه. <span class="vn" id="v10-7" data-v="7">٧</span>فقالَ يسوع:</p>
+<div class="poem">
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">أنا بابُ الخِراف.</p>
+<p class="line"><span class="vn" id="v10-8" data-v="8">٨</span>جَميعُ الَّذينَ جاؤوا قَبْلي</p>
+<p class="line">لُصوصٌ سارِقون</p>
+<p class="line">ولٰكِنَّ الخِرافَ لم تُصْغِ إِلَيهم.</p>
+<p class="line"><span class="vn" id="v10-9" data-v="9">٩</span>أَنا الباب</p>
+<p class="line">فمَن دَخَلَ مِنِّي يَخلُص:</p>
+<p class="line">يَدخُلُ ويَخرُجُ ويَجِدُ مَرْعًى.</p>
+<p class="line"><span class="vn" id="v10-10" data-v="10">١٠</span>السَّارِقُ لا يأتي</p>
+<p class="line">إِلَّا لِيَسرِقَ ويَذبَحَ ويُهلِك.</p>
+<p class="line">أَمَّا أَنا فقَد أَتَيتُ لِتَكونَ الحَياةُ لِلنَّاس</p>
+<p class="line">وتَفيضَ فيهِم.</p>
+<p class="line"><span class="vn" id="v10-11" data-v="11">١١</span>أَنا الرَّاعي الصَّالِح</p>
+<p class="line">والرَّاعي الصَّالِحُ يَبذِلُ نَفْسَه</p>
+<p class="line">في سَبيلِ الخِراف</p>
+<p class="line"><span class="vn" id="v10-12" data-v="12">١٢</span>وأَمَّا الأَجير، وهو لَيسَ بِراعٍ</p>
+<p class="line">ولَيستِ الخِرافُ له</p>
+<p class="line">فإِذا رأَى الذِّئبَ آتِيًا</p>
+<p class="line">تَرَكَ الخِرافَ وهَرَب</p>
+<p class="line">فيَخطَفُ الذِّئبُ الخِرافَ ويُبَدِّدُها.</p>
+<p class="line"><span class="vn" id="v10-13" data-v="13">١٣</span>وذٰلِكَ لأَنَّهُ أَجيرٌ لا يُبالي بِالخِراف.</p>
+<p class="line"><span class="vn" id="v10-14" data-v="14">١٤</span>أَنا الرَّاعي الصَّالح</p>
+<p class="line">أَعرِفُ خِرافي وخِرافي تَعرِفُني</p>
+<p class="line"><span class="vn" id="v10-15" data-v="15">١٥</span>كَما أَنَّ أَبي يَعرِفُني وأَنا أَعرِفُ أَبي</p>
+<p class="line">وأَبذِلُ نَفْسي في سَبيلِ الخِراف.</p>
+<p class="line"><span class="vn" id="v10-16" data-v="16">١٦</span>ولي خِرافٌ أُخْرى</p>
+<p class="line">لَيسَت مِن هٰذِه الحَظيرَة</p>
+<p class="line">فتِلكَ أَيضًا لا بُدَّ لي أَن أَقودَها</p>
+<p class="line">وسَتُصغي إِلى صَوتي</p>
+<p class="line">فيَكونُ هُناكَ رَعِيَّةٌ واحِدة</p>
+<p class="line">وراعٍ واحِد.</p>
+<p class="line"><span class="vn" id="v10-17" data-v="17">١٧</span>إِنَّ الآبَ يُحِبُّني</p>
+<p class="line">لِأَنِّي أَبذِلُ نَفْسي لِأَنالَها ثانِيَةً</p>
+<p class="line"><span class="vn" id="v10-18" data-v="18">١٨</span>ما مِن أَحَدٍ يَنتَزِعُها مِنِّي</p>
+<p class="line">بل إِنِّي أَبذِلُها بِرِضايَ.</p>
+<p class="line">فَلي أَن أَبذِلَها</p>
+<p class="line">ولي أَن أَنالَها ثانِيَةً</p>
+<p class="line">وهٰذا الأَمرُ تَلَقَّيتُه مِن أَبي».</p>
+</div>
+<p class="prose"><span class="vn" id="v10-19" data-v="19">١٩</span>فوَقَعَ الخِلافُ ثانِيَةً بَينَ اليَهودِ بِسَبَبِ هٰذا الكَلام، <span class="vn" id="v10-20" data-v="20">٢٠</span>فقالَ كثيرٌ مِنهم: «إِنَّ بِه مَسًّا مِنَ الشَّيطان، فهُو يَهْذي، فلِماذا تُصغُونَ إِلَيه؟». <span class="vn" id="v10-21" data-v="21">٢١</span>وقال آخَرون: «لَيسَ هٰذا كَلامَ مَن بِه مَسٌّ مِنَ الشَّيطان. أَيَستَطيعُ الشَّيطانُ أَن يَفتَحَ أَعيُنَ العُمْيان؟».</p>
+<div class="part" id="h35"><span class="part-num">٦</span><h3 class="part-title">عيد تجديد الهيكل</h3></div>
+<p class="prose"><span class="vn" id="v10-22" data-v="22">٢٢</span>وأُقيمَ في أُورَشَليمَ عيدُ التَّجديد، وكانَ فَصلُ الشِّتاء. <span class="vn" id="v10-23" data-v="23">٢٣</span>وكانَ يسوعُ يَتَمَشَّى في الهَيكَلِ تَحتَ رِواقِ سُلَيمان. <span class="vn" id="v10-24" data-v="24">٢٤</span>فٱلتَفَّ علَيه اليَهودُ وقالوا له: «حَتَّامَ تُدخِلُ الحَيرَةَ في نُفوسِنا؟ إِن كُنتَ المَسيح، فقُلْه لَنا صَراحَةً».</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v10-25" data-v="25">٢٥</span>أَجابَهم يسوع: «قُلتُه لَكُم ولٰكنَّكُم لا تُؤمِنون.</p>
+<p class="line">إِنَّ الأَعمالَ الَّتي أَعمَلُها بِٱسمِ أَبي</p>
+<p class="line">هي تَشهَدُ لي.</p>
+<p class="line"><span class="vn" id="v10-26" data-v="26">٢٦</span>ولٰكِنَّكُم لا تُؤمِنون</p>
+<p class="line">لِأَنَّكُم لستُم مِن خِرافي.</p>
+<p class="line"><span class="vn" id="v10-27" data-v="27">٢٧</span>إِنَّ خِرافي تُصْغي إِلى صَوتي</p>
+<p class="line">وأَنا أَعرِفُها وهي تَتبَعُني</p>
+<p class="line"><span class="vn" id="v10-28" data-v="28">٢٨</span>وأَنا أَهَبُ لَها الحَياةَ الأَبدِيَّة</p>
+<p class="line">فلا تَهلِكُ أَبدًا</p>
+<p class="line">ولا يَختَطِفُها أَحَدٌ مِن يَدي.</p>
+<p class="line"><span class="vn" id="v10-29" data-v="29">٢٩</span>إِنَّ أَبي الَّذي وَهَبَها لي</p>
+<p class="line">أَعظمُ مِن كُلِّ مَوجود.</p>
+<p class="line">ما مِن أَحَدٍ يستطيعُ</p>
+<p class="line">أَن يَختَطِفَ مِن يَدِ الآبِ شَيئًا.</p>
+<p class="line"><span class="vn" id="v10-30" data-v="30">٣٠</span>أَنا والآبُ واحِد».</p>
+<p class="line"><span class="vn" id="v10-31" data-v="31">٣١</span>فأَتى اليَهودُ بِحِجارَةٍ ثانِيَةً لِيَرجُموه.</p>
+<p class="line"><span class="vn" id="v10-32" data-v="32">٣٢</span>أَجابَهم يسوع:</p>
+</div>
+<p class="prose">«أَرَيتُكم كثيرًا مِنَ الأَعمالِ الحَسَنَةِ مِن عِندِ الآب، فَلِأَيِّ عَمَلٍ مِنها تَرجُموني؟»</p>
+<p class="prose"><span class="vn" id="v10-33" data-v="33">٣٣</span>أَجابَه اليَهود: «لا نَرجُمُكَ لِلعَمَلِ الحَسَن، بل لِلتَّجْديف، لِأَنَّكَ، وأَنتَ إِنْسان، تَجعَلُ نَفْسَكَ الله».</p>
+<p class="prose"><span class="vn" id="v10-34" data-v="34">٣٤</span>أَجابَهم يسوع: «أَلَم يُكتَبْ في شَريعَتِكم: قُلتُ إِنَّكُم آلِهَة؟ <span class="vn" id="v10-35" data-v="35">٣٥</span>فإِذا كانَتِ الشَّريعَةُ تَدعو آلِهَةً مَن أُلْقِيَت إِلَيهِم كَلِمَةُ الله – ولا يُنسَخُ الكِتاب – <span class="vn" id="v10-36" data-v="36">٣٦</span>فكَيفَ تَقولونَ لِلَّذي قَدَّسَه الآبُ وأَرسَلَه إِلى العالَم: أَنتَ تُجَدِّف، لِأَنِّي قُلتُ إِنِّي ٱبنُ الله؟</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v10-37" data-v="37">٣٧</span>إِذا كُنتُ لا أَعمَلُ أَعمالَ أَبي</p>
+<p class="line">فَلا تُصَدِّقوني.</p>
+<p class="line"><span class="vn" id="v10-38" data-v="38">٣٨</span>وإِذا كُنتُ أَعمَلُها</p>
+<p class="line">فصَدِّقوا هٰذهِ الأَعمال</p>
+<p class="line">إِن لَم تُصَدِّقوني.</p>
+<p class="line">فتَعلَموا وتُوقِنوا أَنَّ الآبَ فيَّ</p>
+<p class="line">وأَنِّي في الآب».</p>
+<p class="line"><span class="vn" id="v10-39" data-v="39">٣٩</span>فحاوَلوا مرَّةً أُخرى أَن يُمسِكوه، فأَفلَتَ مِن أَيديهِم.</p>
+</div>
+<h3 class="rubric" id="h36">يسوع في عبر الأردنّ</h3>
+<p class="prose"><span class="vn" id="v10-40" data-v="40">٤٠</span>وعبَرَ الأُردُنَّ مرَّةً أُخْرى فذهَب إِلى حَيثُ عَمَّدَ يوحَنَّا في أَوَّلِ الأَمْر، فَأَقامَ هُناك. <span class="vn" id="v10-41" data-v="41">٤١</span>فأَقبلَ إِلَيه خَلْقٌ كثيرٌ وقالوا: «إِنَّ يوحَنَّا لم يَأتِ بِآية، ولٰكِنَّ كُلَّ ما قالَه في هٰذا الرَّجُلِ كانَ حَقًّا». <span class="vn" id="v10-42" data-v="42">٤٢</span>فآمَنَ بِه هُنالِكَ خَلقٌ كَثير.</p>
+</section>
+<section class="chapter" id="ch11" data-ch="11"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١١</span></h2>
+<h3 class="rubric" id="h37">إحياء لعازر</h3>
+<p class="prose"><span class="vn" id="v11-1" data-v="1">١</span>وكانَ رَجُلٌ مَريضٌ وهو لَعازَر مِن بَيتَ عَنْيا، مِن قَريَةِ مَريَمَ وأُختِها مَرْتا. <span class="vn" id="v11-2" data-v="2">٢</span>ومَريَمُ هيَ الَّتي دَهَنَتِ الرَّبَّ بِالطِّيب ومَسَحَت قَدَمَيهِ بِشَعرِها. وكانَ المَريضُ أَخاها لَعازَر. <span class="vn" id="v11-3" data-v="3">٣</span>فأَرسَلَت أُختاهُ تقولانِ لِيَسوع: «يا ربّ، إِنَّ الَّذي تُحِبُّه مَريض». <span class="vn" id="v11-4" data-v="4">٤</span>فلمَّا سَمِعَ يسوع قال: «هٰذا المَرَضُ لا يَؤُولُ إِلى المَوت، بل إِلى مَجْدِ الله، لِيُمَجَّدَ بِه ٱبنُ الله».</p>
+<p class="prose"><span class="vn" id="v11-5" data-v="5">٥</span>وكانَ يسوعُ يُحِبُّ مَرْتا وأُختَها ولَعازَر، <span class="vn" id="v11-6" data-v="6">٦</span>ومعَ ذٰلك فلمَّا سَمِعَ أَنَّه مريض، بَقِيَ في مَكانِه يَومَين. <span class="vn" id="v11-7" data-v="7">٧</span>ثُمَّ قالَ لِلتَّلاميذِ بَعدَ ذٰلِك: «لِنَعُدْ إِلى اليَهودِيَّة». <span class="vn" id="v11-8" data-v="8">٨</span>فقالَ له تَلاميذُه: «رابِّي، قَبلَ قليلٍ حاوَلَ اليَهودُ أَن يَرجُموكَ، أَفَتعودُ إِلى هُناك؟». <span class="vn" id="v11-9" data-v="9">٩</span>أَجابَ يسوع: «أَلَيسَ النَّهارُ ٱثنَتَي عَشْرَةَ ساعَة؟ فمَن سارَ في النَّهار لا يَعثُر، لِأَنَّه يَرى نورَ هٰذا العالَم. <span class="vn" id="v11-10" data-v="10">١٠</span>ومَن سارَ في اللَّيلِ يَعثُر، لِأَنَّ النُّورَ لَيسَ فيه».</p>
+<p class="prose"><span class="vn" id="v11-11" data-v="11">١١</span>وقالَ لَهم بَعدَ ذٰلك: «إِنَّ صَديقَنا لَعازَرَ راقِد، ولٰكِنِّي ذاهِبٌ لِأُوقِظَه». <span class="vn" id="v11-12" data-v="12">١٢</span>فقالَ له تَلاميذُه: «يا ربّ، إِذا كانَ راقدًا فسَيَنْجو». <span class="vn" id="v11-13" data-v="13">١٣</span>وكانَ يسوعُ يَتَكَلَّمُ على مَوتِه، فظَنُّوا أَنَّهُ يَتَكَلَّمُ على رُقادِ النَّوم. <span class="vn" id="v11-14" data-v="14">١٤</span>فقالَ لَهُم يسوعُ عِندَئِذٍ صَراحَةً: «قد ماتَ لَعازَر، <span class="vn" id="v11-15" data-v="15">١٥</span>ويَسُرُّني، مِن أَجْلِكُم كي تُؤمِنوا، أَنِّي لم أَكُنْ هُناك. فَلْنَمْضِ إِلَيه!» <span class="vn" id="v11-16" data-v="16">١٦</span>فقالَ توما الَّذي يُقالُ لَه التَّوأَمُ لِسائِرِ التَّلاميذ: «فَلْنَمْضِ نَحنُ أَيضًا لِنَموتَ معَه!».</p>
+<p class="prose"><span class="vn" id="v11-17" data-v="17">١٧</span>«فلَمَّا وَصَلَ يسوع وَجَدَ أَنَّهُ في القَبرِ مُنذُ أَربَعَةِ أَيَّام. <span class="vn" id="v11-18" data-v="18">١٨</span>وبَيتَ عَنيا قَريبَةٌ مِن أُورَشَليم، على نَحوِ خَمسَ عَشْرَةَ غَلوَة، <span class="vn" id="v11-19" data-v="19">١٩</span>فكانَ كثيرٌ مِنَ اليَهودِ قد جاؤوا إِلى مَرْتا ومَريَم يُعَزُّونَهما عن أَخيهِما. <span class="vn" id="v11-20" data-v="20">٢٠</span>فلَمَّا سَمِعَت مَرتا بِقُدومِ يسوع خَرَجَت لِٱستِقبالِه، في حينِ أَنَّ مَريَمَ ظَلَّت جالِسَةً في البَيت. <span class="vn" id="v11-21" data-v="21">٢١</span>فقالَت مَرْتا لِيَسوع: «يا ربّ، لَو كُنتَ هٰهنا لَما ماتَ أَخي. <span class="vn" id="v11-22" data-v="22">٢٢</span>ولٰكِنِّي ما زِلتُ أَعلَمُ أَنَّ كُلَّ ما تَسأَلُ الله، فاللهُ يُعطيكَ إِيَّاه». <span class="vn" id="v11-23" data-v="23">٢٣</span>فقالَ لَها يسوع: «سَيَقومُ أَخوكِ». <span class="vn" id="v11-24" data-v="24">٢٤</span>قالَت لَه مَرْتا: «أَعلَمُ أَنَّه سيَقومُ في القِيامَةِ في اليَومِ الأَخير». <span class="vn" id="v11-25" data-v="25">٢٥</span>فقالَ لَها يسوع:</p>
+<div class="poem">
+<p class="line">«أَنا القِيامةُ والحَياة</p>
+<p class="line">مَن آمَنَ بي، وَإِن ماتَ، فسَيَحْيا</p>
+<p class="line"><span class="vn" id="v11-26" data-v="26">٢٦</span>وكُلُّ مَن يَحْيا ويُؤمِنُ بي</p>
+<p class="line">لن يَموتَ أَبَدًا.</p>
+<p class="line">أَتُؤمِنينَ بِهٰذا؟».</p>
+</div>
+<p class="prose"><span class="vn" id="v11-27" data-v="27">٢٧</span>قالَت له: «نَعَم، يا ربّ، إِنِّي أَومِنُ بِأَنَّكَ المسيحُ ٱبنُ اللهِ الآتي إِلى العالَم». <span class="vn" id="v11-28" data-v="28">٢٨</span>قالت ذٰلك ثُمَّ ذَهَبَت إِلى أُختِها مَريَمَ تَدعوها، فأَسَرَّت إِلَيها: «المُعَلِّمُ هٰهُنا، وهو يَدعوكِ». <span class="vn" id="v11-29" data-v="29">٢٩</span>وما إِن سَمِعَت مَريَمُ ذٰلك حتَّى قامَت على عَجَلٍ وذَهَبَت إِلَيه. <span class="vn" id="v11-30" data-v="30">٣٠</span>ولَم يَكُنْ يسوعُ قد وَصَلَ إِلى القَريَة، بل كانَ حَيثُ ٱستَقبَلَتْه مَرْتا. <span class="vn" id="v11-31" data-v="31">٣١</span>فلَمَّا رأَى اليَهودُ الَّذينَ كانوا في البَيتِ مَعَ مَريمَ يُعَزُّونَها أَنَّها قامَت على عَجَلٍ وخَرَجَت، لَحِقوا بِها وهم يَظُنُّونَ أَنَّها ذاهِبَةٌ إِلى القَبْرِ لِتَبكِيَ هُناك. <span class="vn" id="v11-32" data-v="32">٣٢</span>فما إِن وَصَلَت مَريَمُ إِلى حَيثُ كانَ يسوع وَرأَته، حتَّى ٱرتَمَت على قَدَمَيه وقالَت له: «يا رَبّ، لو كُنتَ هٰهُنا لَما مات أَخي». <span class="vn" id="v11-33" data-v="33">٣٣</span>فلَمَّا رآها يسوعُ تَبكي ويَبكي معَها اليَهودُ الَّذينَ رافَقوها، جاشَ صَدرُه وَٱضطَرَبَت نَفْسُه <span class="vn" id="v11-34" data-v="34">٣٤</span>وقال: «أَينَ وَضَعتُموه؟» قالوا لَه: «يا رَبّ، تَعالَ فٱنظُر». <span class="vn" id="v11-35" data-v="35">٣٥</span>فدَمعَت عَيْنا يسوع. <span class="vn" id="v11-36" data-v="36">٣٦</span>فقالَ اليَهود: «أُنظُروا أَيَّ مَحَبَّةٍ كانَ يُحِبُّه». <span class="vn" id="v11-37" data-v="37">٣٧</span>على أَنَّ بَعضَهم قالوا: «أَما كانَ بإِمكانِ هٰذا الَّذي فَتَحَ عَينَيِ الأَعمى أَن يَرُدَّ المَوتَ عَنه؟» <span class="vn" id="v11-38" data-v="38">٣٨</span>فجاشَ صَدرُ يسوعَ ثانِيَةً وذَهَبَ إِلى القبر، وكانَ مَغارةً وُضِعَ على مَدخلِها حَجَر. <span class="vn" id="v11-39" data-v="39">٣٩</span>فقالَ يسوع: «إِرفَعوا الحَجَر!» قالَت لَه مَرْتا، أُختُ المَيْت: «يا ربّ، لقَد أَنتَن، فهٰذا يَومُه الرَّابع».</p>
+<p class="prose"><span class="vn" id="v11-40" data-v="40">٤٠</span>قالَ لَها يسوع: «أَلَم أَقُلْ لَكِ إِنَّكِ إِن آمَنتِ تَرَينَ مَجدَ الله؟». <span class="vn" id="v11-41" data-v="41">٤١</span>فرَفَعوا الحَجَر ورفَعَ يسوعُ عَينَيه وقال:</p>
+<div class="poem">
+<p class="line">«شُكرًا لَكَ، يا أَبَتِ</p>
+<p class="line">على أَنَّكَ ٱستَجَبتَ لي</p>
+<p class="line"><span class="vn" id="v11-42" data-v="42">٤٢</span>وقَد عَلِمتُ</p>
+<p class="line">أَنَّكَ تَستَجيبُ لي دائِمًا أَبَدًا</p>
+<p class="line">ولكِنِّي قُلتُ هٰذا</p>
+<p class="line">مِن أَجْلِ الجَمْعِ المُحيطِ بي</p>
+<p class="line">لِكَي يُؤمِنوا أَنَّكَ أَنتَ أَرسَلتَني».</p>
+</div>
+<p class="prose"><span class="vn" id="v11-43" data-v="43">٤٣</span>قالَ هٰذا ثُمَّ صاحَ بِأَعلى صَوتِه: «يا لَعازَر، هَلُمَّ فٱخرُجْ» <span class="vn" id="v11-44" data-v="44">٤٤</span>فخَرَجَ المَيتُ مَشدودَ اليَدَينِ والرِّجلَينِ بِالعَصائِب، مَلفوفَ الوَجهِ في مِنْديل. فقالَ لَهم يسوع: «حُلُّوهُ ودَعوهُ يَذهَب». <span class="vn" id="v11-45" data-v="45">٤٥</span>فآمَنَ بِه كثيرٌ مِنَ اليَهودِ الَّذينَ جاؤوا إِلى مَريَم ورَأَوا ما صَنَع.</p>
+<h3 class="rubric" id="h38">عظماء الكهنة يعزمون على قتل يسوع</h3>
+<p class="prose"><span class="vn" id="v11-46" data-v="46">٤٦</span>على أَنَّ أُناسًا مِنهم مَضَوا إِلى الفِرِّيسيِّينَ فَأَخبَروهم بِما صَنَعَ يسوع. <span class="vn" id="v11-47" data-v="47">٤٧</span>فعَقَدَ عُظَماءُ الكَهَنَةِ والفِرِّيسيُّونَ مَجلِسًا وقالوا: «ماذا نَعمَل؟ فإِنَّ هٰذا الرَّجُلَ يَأتي بِآياتٍ كثيرة. <span class="vn" id="v11-48" data-v="48">٤٨</span>فإِذا تَركْناهُ وشَأنَه آمَنوا بِه جَميعًا، فيأتي الرُّومانِيُّونَ فيُدَمِّرونَ حَرَمَنا وأُمَّتَنا». <span class="vn" id="v11-49" data-v="49">٤٩</span>فقالَ أَحَدُهم قَيافا، وكانَ في تِلكَ السَّنَةِ عَظيمَ الكَهَنَة: «أَنتُم لا تُدرِكونَ شَيئًا. <span class="vn" id="v11-50" data-v="50">٥٠</span>ولا تَفطُنونَ أَنَّه خَيرٌ لكُم أَن يَموتَ رَجُلٌ واحدٌ عَنِ الشَّعْبِ ولا تَهلِكَ الأُمَّةُ بِأَسرِها». <span class="vn" id="v11-51" data-v="51">٥١</span>ولَم يَقُلْ هٰذا الكَلامَ مِن عِندِه، بَل قالَه لأَنَّه عظيمُ الكَهَنَةِ في تِلكَ السَّنَة، فتَنَبَّأَ أَنَّ يسوعَ سَيموتُ عَنِ الأُمَّة، <span class="vn" id="v11-52" data-v="52">٥٢</span>ولا عنِ الأُمَّةِ فَقَط، بل لِيَجمَعَ أَيضًا شَمْلَ أَبناءِ الله المُشَتَّتين. <span class="vn" id="v11-53" data-v="53">٥٣</span>فعَزَموا مُنذُ ذٰلك اليَومِ على قَتْلِه. <span class="vn" id="v11-54" data-v="54">٥٤</span>فكَفَّ يسوعُ عَنِ الجَوَلانِ بَينَ اليَهودِ عَلانِيَةً، فذهَبَ مِن هُناكَ إِلى النَّاحِيَةِ المُتاخِمَةِ لِلبَرِّيَّة إِلى مَدينَةٍ يُقالُ لَها أَفرامُ، فأَقامَ فيها مَعَ تَلاميذِه.</p>
+<div class="part" id="h39"><span class="part-num">٧</span><h3 class="part-title">الفصح الأخير</h3></div>
+<h4 class="subpart" id="h40"><span class="sub-mark">أ</span>ما قبل آلام يسوع</h4>
+<p class="prose"><span class="vn" id="v11-55" data-v="55">٥٥</span>وكانَ قدِ ٱقتَرَبَ فِصحُ اليَهود، فصَعِدَ خَلْقٌ كَثيرٌ مِن تِلكَ النَّاحِيَةِ إِلى أُورَشَليمَ قَبلَ الفِصْحِ لِيَطَّهِروا. <span class="vn" id="v11-56" data-v="56">٥٦</span>وكانوا يَبحَثونَ عن يسوع، فيقولُ بَعضُهم لِبَعضٍ وهُم قائمونَ في الهَيكَل: «ما رَأيُكم: أَتُراه لا يَأتي إِلى العيد؟» <span class="vn" id="v11-57" data-v="57">٥٧</span>وكانَ عُظَماءُ الكَهَنَةِ والفِرِّيسيُّونَ قد أَمروا بِأَن يُخبِرَ عنه كُلُّ مَن يَعلَمُ أَينَ هو، لِكَي يُمسِكوه.​</p>
+</section>
+<section class="chapter" id="ch12" data-ch="12"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٢</span></h2>
+<h3 class="rubric" id="h41">دهن يسوع بالطيب في بيت عنيا</h3>
+<p class="prose"><span class="vn" id="v12-1" data-v="1">١</span>وقبلَ الفِصحِ بِسِتَّةِ أَيَّامٍ جاءَ يسوعُ إِلى بَيتَ عَنْيا، حَيثُ كانَ لَعازرُ الَّذي أَقامَه مِن بَينِ الأَموات. <span class="vn" id="v12-2" data-v="2">٢</span>فأُقيمَ له عَشاءٌ هُناك، وكانَت مَرْتا تَخدُم، وكانَ لَعازَرُ في جُملَةِ الَّذينَ معَه على الطَّعام. <span class="vn" id="v12-3" data-v="3">٣</span>فتَناوَلَت مَريَمُ حُقَّةَ طِيبٍ مِنَ النَّارَدينِ الخالِصِ الغالي الثَّمَن، ودهَنَت قَدَمَي يسوع ثُمَّ مَسَحَتْهما بِشَعرِها. فعَبِقَ البَيتُ بِالطِّيب. <span class="vn" id="v12-4" data-v="4">٤</span>فقالَ يَهوذا الإِسخَريوطيُّ أَحَدُ تَلاميذِه، وهوَ الَّذي أَوشَكَ أَن يُسلِمَه: <span class="vn" id="v12-5" data-v="5">٥</span>«لِماذا لم يُبَعْ هٰذا الطِّيبُ بِثَلاثِمائَةِ دينار، فتُعْطى لِلفُقَراء؟» <span class="vn" id="v12-6" data-v="6">٦</span>ولَم يَقُلْ هٰذا لِٱهتِمامِه بِالفُقَراء، بل لِأَنَّه كانَ سارِقًا وكانَ صُندوقُ الدَّراهِمِ عِندَه، فيَختَلِسُ ما يُلْقى فيه. <span class="vn" id="v12-7" data-v="7">٧</span>فقالَ يسوع: «دَعْها، فإِنَّها حَفِظَت هٰذا الطِّيبَ لِيَومِ دَفْني. <span class="vn" id="v12-8" data-v="8">٨</span>إِنَّ الفُقَراء هم عِندكم دائِمًا أَبَدًا، وأَمَّا أَنا فَلَستُ عِندكم دائِمًا أَبَدًا».</p>
+<p class="prose"><span class="vn" id="v12-9" data-v="9">٩</span>وعَلِمَ جَمْعٌ كثيرٌ مِنَ اليَهودِ أَنَّ يسوعَ هُناك فجاؤوا، لا مِن أَجلِ يسوعَ فَقَط، بل لِيَرَوا أَيضًا لَعازَرَ الَّذي أَقامَهُ مِن بَينِ الأَموات. <span class="vn" id="v12-10" data-v="10">١٠</span>فعَزَمَ عُظَماءُ الكَهَنَةِ على أَن يَقتُلوا لَعازَرَ أَيضًا، <span class="vn" id="v12-11" data-v="11">١١</span>لأَنَّ كَثيرًا مِنَ اليَهودِ كانوا يَنصَرِفونَ عنهُم بِسبَبِه ويُؤمِنونَ بِيَسوع.</p>
+<h3 class="rubric" id="h42">يسوع يدخل أورشليم</h3>
+<p class="prose"><span class="vn" id="v12-12" data-v="12">١٢</span>ولمَّا كانَ الغَد سَمِعَ الجَمْعُ الكَثيرُ الَّذينَ أَتَوا لِلعيدِ أَنَّ يسوعَ قادِمٌ إِلى أُورَشَليم. <span class="vn" id="v12-13" data-v="13">١٣</span>فحَمَلوا سَعَفَ النَّخْلِ وخَرَجوا لِٱستِقبالِه وهُم يَهتِفون:</p>
+<div class="poem">
+<p class="line">«هُوشَعْنا!</p>
+<p class="line">تَبارَكَ الآتي بِٱسمِ الرَّبّ</p>
+<p class="line">مَلِكُ إِسرائيل!»</p>
+<p class="line"><span class="vn" id="v12-14" data-v="14">١٤</span>فوَجَدَ يسوعُ جَحْشًا فرَكِبَه، كما وَرَدَ في الكِتاب:</p>
+<p class="line"><span class="vn" id="v12-15" data-v="15">١٥</span>«لا تَخافي يا بِنتَ صِهْيون</p>
+<p class="line">هُوَذا مَلِكُكِ آتٍ</p>
+<p class="line">راكِبًا على جَحْشٍ ٱبنِ أَتان».</p>
+</div>
+<p class="prose"><span class="vn" id="v12-16" data-v="16">١٦</span>هٰذهِ الأَشياءُ لم يَفهَمْها تَلاميذُه أَوَّلَ الأَمرِ، ولٰكِنَّهم تَذَكَّروا، بَعدَما مُجِّدَ يسوع، أَنَّها فيهِ كُتِبَت، وأَنَّها هي نَفسُها لَه صُنِعَت. <span class="vn" id="v12-17" data-v="17">١٧</span>وكانَ الجَمْعُ الَّذي صَحِبَه، حينَ دَعا لَعازَرَ مِنَ القَبْرِ وأَقامَه مِن بَينِ الأَموات، يَشهَدُ له بِذٰلك. <span class="vn" id="v12-18" data-v="18">١٨</span>وما خَرَجَ الجَمْعُ لِٱستِقبالِه إِلَّا وقَد سَمِعَ أَنَّه أَتى بِتِلكَ الآيَة. <span class="vn" id="v12-19" data-v="19">١٩</span>فقالَ الفِرِّيسيُّونَ بَعضُهم لِبَعض: «تَرونَ أَنَّكم لا تَستَفيدونَ شَيئًا. هُوَذا العالَمُ قد تَبِعَه».</p>
+<h3 class="rubric" id="h43">يسوع ينبئ بموته وقيامته</h3>
+<p class="prose"><span class="vn" id="v12-20" data-v="20">٢٠</span>وكانَ بَعضُ اليونانِيِّينَ في جُملَةِ الَّذينَ صَعِدوا إِلى أُورَشَليمَ لِلْعِبادَةِ مُدَّةَ العيد. <span class="vn" id="v12-21" data-v="21">٢١</span>فقَصَدوا إِلى فيلِبُّس، وكانَ مِن بَيتَ صَيدا في الجَليل، فقالوا له مُلتَمِسين: «يا سَيِّد، نُريدُ أَن نَرى يسوع». <span class="vn" id="v12-22" data-v="22">٢٢</span>فذَهَبَ فيلِبُّس فأَخبَرَ أَندَراوس، وذَهَبَ أَندَراوس وفيلِبُّس فأَخبَرا يسوع. <span class="vn" id="v12-23" data-v="23">٢٣</span>فأَجابَهما يسوع: «أَتَتِ السَّاعَةُ الَّتي فيها يُمَجَّدُ ٱبنُ الإِنسان.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v12-24" data-v="24">٢٤</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">إِنَّ حَبَّةَ الحِنطَةِ الَّتي تَقَعُ في الأَرض</p>
+<p class="line">إِن لَم تَمُتْ تَبقَ وَحدَها.</p>
+<p class="line">وإِذا ماتَت، أَخرَجَت ثَمَرًا كثيرًا.</p>
+<p class="line"><span class="vn" id="v12-25" data-v="25">٢٥</span>مَن أَحَبَّ حياتَه فقَدَها</p>
+<p class="line">ومَن رَغِبَ عنها في هٰذا العالَم</p>
+<p class="line">حَفِظَها لِلحَياةِ الأَبَدِيَّة.</p>
+<p class="line"><span class="vn" id="v12-26" data-v="26">٢٦</span>مَن أَرادَ أَن يَخدُمَني، فَلْيَتْبَعْني</p>
+<p class="line">وحَيثُ أَكونُ أَنا يَكونُ خادِمي</p>
+<p class="line">ومَن خَدَمَني أَكرَمَه أَبي.</p>
+<p class="line"><span class="vn" id="v12-27" data-v="27">٢٧</span>الآنَ نَفْسي مُضطَرِبة، فماذا أَقول؟</p>
+<p class="line">يا أَبَتِ، نَجِّني مِن تِلكَ السَّاعة.</p>
+<p class="line">وما أَتَيتُ إِلَّا لِتلكَ السَّاعة.</p>
+<p class="line"><span class="vn" id="v12-28" data-v="28">٢٨</span>يا أَبَتِ، مَجِّدِ ٱسمَكَ».</p>
+<p class="line">فٱنطَلَقَ صَوتٌ مِنَ السَّماءِ يَقول:</p>
+<p class="line">«قَد مَجَّدتُه وسَأُمَجِّدُه أَيضًا».</p>
+</div>
+<p class="prose"><span class="vn" id="v12-29" data-v="29">٢٩</span>فقالَ الجَمْعُ الَّذي كانَ حاضِرًا وسَمِعَ الصَّوت: «إِنَّه دَوِيُّ رَعْد». وقال آخَرونَ: «إِنَّ مَلاكًا كَلَّمَه».</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v12-30" data-v="30">٣٠</span>أَجابَ يسوع:</p>
+<p class="line">«لم يَكُنْ هٰذا الصَّوتُ لِأَجلي</p>
+<p class="line">بل لِأَجلِكُم.</p>
+<p class="line"><span class="vn" id="v12-31" data-v="31">٣١</span>اليَومَ دَينونَةُ هٰذا العالَم.</p>
+<p class="line">اليَومَ يُطرَدُ سَيِّدُ هٰذا العالَمِ</p>
+<p class="line">إِلى الخارِج.</p>
+<p class="line"><span class="vn" id="v12-32" data-v="32">٣٢</span>وأَنا إِذا رُفِعتُ مِنَ الأَرض</p>
+<p class="line">جَذَبتُ إِلَيَّ النَّاسَ أَجمَعين».</p>
+<p class="line"><span class="vn" id="v12-33" data-v="33">٣٣</span>وقالَ ذٰلك مُشيرًا إِلى المِيتَةِ الَّتي سَيَموتُها.</p>
+</div>
+<p class="prose"><span class="vn" id="v12-34" data-v="34">٣٤</span>فأَجابَه الجَمْع: «نَحنُ عَرَفْنا مِنَ الشَّريعَةِ أَنَّ المَسيحَ يَبْقى لِلأَبَد. فكَيفَ تَقولُ أَنتَ إِنَّه لا بُدَّ لِٱبنِ الإِنسانِ أَن يُرفَع. فمَنِ ٱبنُ الإِنسانِ هٰذا؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v12-35" data-v="35">٣٥</span>فقالَ لَهم يسوع:</p>
+<p class="line">«النُّورُ باقٍ معَكم وقتًا قليلًا</p>
+<p class="line">فَٱمشوا ما دامَ لَكُمُ النُّور</p>
+<p class="line">لِئَلَّا يُدرِكَكُمُ الظَّلام.</p>
+<p class="line">لِأَنَّ الَّذي يَمْشي في الظَّلام</p>
+<p class="line">لا يَدْري إِلى أَينَ يَسير.</p>
+<p class="line"><span class="vn" id="v12-36" data-v="36">٣٦</span>آمِنوا بِالنُّور، ما دام لَكُمُ النُّور</p>
+<p class="line">لِتَصيروا أَبناءَ النُّور».</p>
+<p class="line">قالَ يسوعُ هٰذا، ثُمَّ ذَهَبَ فتَوارى عَنهُم.</p>
+</div>
+<h3 class="rubric" id="h44">عمى اليهود</h3>
+<p class="prose"><span class="vn" id="v12-37" data-v="37">٣٧</span>أَتى يسوعُ بِجَميعِ هٰذهِ الآياتِ بِمَرأًى مِنهم، ولَم يُؤمِنوا بِه، <span class="vn" id="v12-38" data-v="38">٣٨</span>فتَمَّتِ الكَلِمَةُ الَّتي قالَها النَّبِيُّ أَشَعْيا:</p>
+<div class="poem">
+<p class="line">«يا ربّ، مَنِ الَّذي آمَنَ بِما سَمِعَ مِنَّا؟</p>
+<p class="line">ولِمَن كُشِفَت ذِراعُ الرَّبّ؟»</p>
+<p class="line"><span class="vn" id="v12-39" data-v="39">٣٩</span>لم يَستَطيعوا أَن يُؤمِنوا، لِأَنَّ أَشَعْيا قالَ أَيضًا:</p>
+<p class="line"><span class="vn" id="v12-40" data-v="40">٤٠</span>«أَعْمى عُيونَهم وقَسَّى قُلوبَهم</p>
+<p class="line">لِئَلَّا يُبصِروا بِعُيونِهم</p>
+<p class="line">ويَفهَموا بقُلوبِهِم</p>
+<p class="line">ويَرجِعوا فَأَشفِيَهم».</p>
+</div>
+<p class="prose"><span class="vn" id="v12-41" data-v="41">٤١</span>قالَ أَشَعْيا هٰذا الكَلام لِأَنَّه رَأَى مَجدَه وتَكَلَّمَ في شَأنِه. <span class="vn" id="v12-42" data-v="42">٤٢</span>غَيرَ أَنَّ عَدَدًا كثيرًا مِنَ الرُّؤَساءِ أَنفُسِهِم آمَنوا بِه، ولٰكِنَّهم لم يُجاهِروا بِإِيمانِهِم، بِسَبَبِ الفِرِّيسيِّين، لِئَلَّا يُفصَلوا مِنَ المَجمَع، <span class="vn" id="v12-43" data-v="43">٤٣</span>ففضَّلوا المَجدَ الآتيَ مِنَ النَّاسِ على المَجدِ الآتي مِنَ الله.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v12-44" data-v="44">٤٤</span>ورَفَعَ يَسوعُ صَوتَه قال:</p>
+<p class="line">«مَن آمَنَ بي لم يُؤمِنْ بي أَنا</p>
+<p class="line">بل بالَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v12-45" data-v="45">٤٥</span>ومَن رآني رأَى الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v12-46" data-v="46">٤٦</span>جِئتُ أَنا إِلى العالَمِ نورًا</p>
+<p class="line">فكُلُّ مَن آمَنَ بي لا يَبْقَى في الظَّلام.</p>
+<p class="line"><span class="vn" id="v12-47" data-v="47">٤٧</span>وإِن سَمِعَ أَحَدٌ كَلامي</p>
+<p class="line">ولَم يَحفَظْه فأَنا لا أَدينُه</p>
+<p class="line">لِأَنِّي ما جِئتُ لِأَدينَ العالَم</p>
+<p class="line">بل لِأُخَلِّصَ العالَم.</p>
+<p class="line"><span class="vn" id="v12-48" data-v="48">٤٨</span>مَن أَعرَضَ عَنِّي ولَم يَقبَلْ كَلامي</p>
+<p class="line">فلَه ما يَدينُه:</p>
+<p class="line">الكَلامُ الَّذي قُلتُه</p>
+<p class="line">يَدينُه في اليَومِ الأَخير</p>
+<p class="line"><span class="vn" id="v12-49" data-v="49">٤٩</span>لِأَنِّي لم أَتَكَلَّمْ مِن عِندي</p>
+<p class="line">بلِ الآبُ الَّذي أَرسَلَني</p>
+<p class="line">هو الَّذي أَوصاني بِما أَقولُ وأَتَكَلَّم</p>
+<p class="line"><span class="vn" id="v12-50" data-v="50">٥٠</span>وأَنا أَعلَمُ أَنَّ وَصِيَّتَه حَياةٌ أَبَدِيَّة</p>
+<p class="line">فما أَتَكَلَّمُ بِه أَنا</p>
+<p class="line">أَتَكَلَّمُ بِه كما قالَه لِيَ الآب».</p>
+</div>
+</section>
+<section class="chapter" id="ch13" data-ch="13"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٣</span></h2>
+<h4 class="subpart" id="h45"><span class="sub-mark">ب</span>العشاء الأخير</h4>
+<p class="prose"><span class="vn" id="v13-1" data-v="1">١</span>قبلَ عيدِ الفِصح، كانَ يسوعُ يَعلَمُ بِأَن قد أَتَت ساعَةُ ٱنتِقالِه عن هٰذا العالَمِ إِلى أَبيه، وكانَ قد أَحَبَّ خاصَّتَه الَّذينَ في العالَم، فَبَلَغَ بِه الحُبُّ لَهم إِلى أَقْصى حُدودِه. <span class="vn" id="v13-2" data-v="2">٢</span>وفي أَثْناءِ العَشاء، وقَد أَلْقى إِبْليسُ في قَلْبِ يَهوذا بْنِ سِمعانَ الإِسخَريوطيِّ أَن يُسلِمَه، <span class="vn" id="v13-3" data-v="3">٣</span>وكانَ يسوعُ يَعلَمُ أَنَّ الآبَ جَعَلَ في يَدَيهِ كُلَّ شَيء، وأَنَّه خَرَجَ مِنَ الله، وإِلى اللهِ يَمْضي، <span class="vn" id="v13-4" data-v="4">٤</span>فقامَ عنِ العَشاءِ فخَلَعَ ثِيابَه، وأَخَذَ مِنديلًا فَٱئتَزَرَ بِه، <span class="vn" id="v13-5" data-v="5">٥</span>ثُمَّ صَبَّ ماءً في مَطهَرَةٍ وأَخَذَ يَغسِلُ أَقدامَ التَّلاميذ، ويَمسَحُها بِالمِنديلِ الَّذي ٱئْتَزَرَ بِه. <span class="vn" id="v13-6" data-v="6">٦</span>فجاءَ إِلى سِمعانَ بُطرُس فقالَ له: «أَأَنتَ، يا رَبُّ، تَغسِلُ قَدَمَيَّ؟» <span class="vn" id="v13-7" data-v="7">٧</span>أَجابَه يسوع: «ما أَنا فاعِلٌ، أَنتَ لا تَعرِفُه الآن، ولٰكِنَّكَ ستُدرِكُه بَعدَ حين». <span class="vn" id="v13-8" data-v="8">٨</span>قالَ له بُطرُس: «لن تَغسِلَ قَدَمَيَّ أَبَدًا». أَجابَه يسوع: «إِذا لم أَغسِلْكَ فلا نَصيبَ لَكَ معي». <span class="vn" id="v13-9" data-v="9">٩</span>فقالَ له سِمْعانُ بُطرُس: «يا ربّ، لا قَدَمَيَّ فَقَط، بل يَدَيَّ وَرأسي أَيضًا». <span class="vn" id="v13-10" data-v="10">١٠</span>فقالَ لَه يسوع: «مَنِ ٱستَحَمَّ لا يَحتاجُ إِلَّا إِلى غَسلِ قَدَمَيه، فهو كُلُّه طاهِر. وأَنتُم أَيضًا أَطهار، ولٰكِن لا كُلُّكم». <span class="vn" id="v13-11" data-v="11">١١</span>فقَد كانَ يَعرِفُ مَن سَيُسْلِمُه، ولِذٰلِكَ قال: لَستُم كُلُّكم أَطهارًا. <span class="vn" id="v13-12" data-v="12">١٢</span>فلَمَّا غَسَلَ أَقدامَهم لَبِسَ ثِيابَه وعادَ إِلى المائِدة فقالَ لَهم: «أَتَفهَمُونَ ما صَنَعتُ إِليكم؟</p>
+<p class="prose"><span class="vn" id="v13-13" data-v="13">١٣</span>أَنتُم تَدعونَني «المُعَلِّمَ والرَّبّ» وأَصَبتُم في ما تَقولون، فهٰكذا أَنا. <span class="vn" id="v13-14" data-v="14">١٤</span>فإِذا كُنتُ أَنا الرَّبَّ والمُعَلِّمَ قد غَسَلتُ أَقدامَكم، فيَجِبُ علَيكُم أَنتُم أَيضًا أَن يَغسِلَ بَعضُكم أَقدامَ بَعْض. <span class="vn" id="v13-15" data-v="15">١٥</span>فقَد جَعَلتُ لَكُم مِن نَفْسي قُدوَةً لِتَصنَعوا أَنتُم أَيضًا ما صَنَعتُ إِلَيكم.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v13-16" data-v="16">١٦</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">ما كانَ الخادِمُ أَعظَمَ مِن سَيِّدِه</p>
+<p class="line">ولا كانَ الرَّسولُ أَعظَمَ مِن مُرسِلِه.</p>
+<p class="line"><span class="vn" id="v13-17" data-v="17">١٧</span>أَمَّا وقد عَلِمتُم هٰذا</p>
+<p class="line">فطوبى لَكُم إِذا عَمِلتُم بِه.</p>
+</div>
+<h3 class="rubric" id="h46">يسوع ينبئ بخيانة يهوذا</h3>
+<p class="prose"><span class="vn" id="v13-18" data-v="18">١٨</span>لا أَقولُ هٰذا فيكم جَميعًا، فأَنا أَعرِفُ الَّذينَ ٱختَرتُهم، ولٰكِن لا بُدَّ أَن يَتِمَّ ما كُتِب:</p>
+<div class="poem">
+<p class="line">أَنَّ الآكِلَ خُبزي رَفَعَ علَيَّ عَقِبَه.</p>
+<p class="line"><span class="vn" id="v13-19" data-v="19">١٩</span>مُنذُ الآن أُكَلِّمُكُم بِالأَمر</p>
+<p class="line">قَبلَ حُدوثِه</p>
+<p class="line">حتَّى إِذا حَدَثَ تُؤمِنونَ بِأَنِّي أَنا هو.</p>
+<p class="line"><span class="vn" id="v13-20" data-v="20">٢٠</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">مَن قَبِلَ الَّذي أُرسِلُه قَبِلَني أَنا</p>
+<p class="line">ومَن قَبِلَني قَبِلَ الَّذي أَرسَلَني».</p>
+<p class="line"><span class="vn" id="v13-21" data-v="21">٢١</span>قالَ يسوعُ هٰذا فٱضطَرَبَت نَفْسُه فأَعلَنَ قال:</p>
+<p class="line">«الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">إِنَّ واحِدًا مِنكُم سَيُسلِمُني».</p>
+</div>
+<p class="prose"><span class="vn" id="v13-22" data-v="22">٢٢</span>فنَظَرَ التَّلاميذُ بَعضُهُم إِلى بَعضٍ حائِرينَ لا يَدرونَ على مَن يَتكلَّم. <span class="vn" id="v13-23" data-v="23">٢٣</span>وكانَ أَحدُ تَلاميذِه، وهو الَّذي أَحبَّه يسوع، مُتَّكِئًا إِلى جانِبِ يسوع، <span class="vn" id="v13-24" data-v="24">٢٤</span>فأَومَأَ لَه سِمْعانُ بُطرس وقالَ له: «سَلْهُ على مَن يَتَكَلَّم». <span class="vn" id="v13-25" data-v="25">٢٥</span>فمالَ دونَ تَكَلُّفٍ على صَدرِ يسوعَ وقالَ له: «يا ربّ، مَنْ هو؟». <span class="vn" id="v13-26" data-v="26">٢٦</span>فأَجابَ يسوع: «هو الَّذي أُناوِلُه اللُّقمَةَ الَّتي أَغمِسُها». فغَمَسَ اللُّقمَةَ ورَفَعَها وناوَلَها يَهوذا بْنَ سِمْعانَ الإِسخَريوطيّ. <span class="vn" id="v13-27" data-v="27">٢٧</span>فما إِن أَخَذَ اللُّقمَةَ حتَّى دَخَلَ فيه الشَّيطان. فقالَ له يسوع: «إِفعَلْ ما أَنتَ فاعِلٌ وعَجِّل». <span class="vn" id="v13-28" data-v="28">٢٨</span>فلَم يَعلَمْ أَحَدٌ مِنَ الَّذينَ عَلى الطَّعام لِماذا قالَ له ذٰلك، <span class="vn" id="v13-29" data-v="29">٢٩</span>ولمَّا كانَ صُندوقُ الدَّراهِمِ مع يَهوذا، ظَنَّ بَعضُهم أَنَّ يسوعَ قالَ له: إِشتَرِ ما نَحتاجُ إِلَيهِ لِلعيد، أَو أَمَرَه بِأَن يُعطِيَ الفُقَراءَ شَيئًا. <span class="vn" id="v13-30" data-v="30">٣٠</span>فتَناوَلَ اللُّقمَةَ إِذًا وخرَجَ مِن وَقتِه، وكانَ قد أَظلَمَ اللَّيل.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v13-31" data-v="31">٣١</span>فلَمَّا خَرَجَ قالَ يسوع:</p>
+<p class="line">«الآنَ مُجِّدَ ٱبنُ الإِنسان</p>
+<p class="line">ومُجِّدَ اللهُ فيه</p>
+<p class="line">وإِذا كانَ اللهُ قد مُجِّدَ فيه،</p>
+<p class="line"><span class="vn" id="v13-32" data-v="32">٣٢</span>فسَيُمَجِّدُه اللهُ في ذاتِه</p>
+<p class="line">وبَعدَ قليلٍ يُمَجِّدُه.</p>
+</div>
+<h3 class="rubric" id="h47">الوداع</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v13-33" data-v="33">٣٣</span>يا بَنِيَّ، لَستُ باقِيًا مَعَكُم</p>
+<p class="line">إِلَّا وَقْتًا قليلًا</p>
+<p class="line">فستَطلُبوني</p>
+<p class="line">وما قُلتُه لِليَهود أَقولُه الآنَ لَكُم أَيضًا:</p>
+<p class="line">حَيثُ أَنا ذاهِب</p>
+<p class="line">لا تَستَطيعونَ أَن تَأتوا.</p>
+<p class="line"><span class="vn" id="v13-34" data-v="34">٣٤</span>أُعْطيكم وَصِيَّةً جَديدَة:</p>
+<p class="line">أَحِبُّوا بَعضُكم بَعضًا</p>
+<p class="line">كما أَحبَبتُكم</p>
+<p class="line">أَحِبُّوا أَنتُم أَيضًا بَعضُكم بَعْضًا.</p>
+<p class="line"><span class="vn" id="v13-35" data-v="35">٣٥</span>إِذا أَحَبَّ بَعضُكُم بَعضًا</p>
+<p class="line">عَرَفَ النَّاسُ جَميعًا</p>
+<p class="line">أَنَّكُم تَلاميذي».</p>
+</div>
+<p class="prose"><span class="vn" id="v13-36" data-v="36">٣٦</span>فقالَ لَه سِمعانُ بُطرُس: «يا ربّ، إِلى أَينَ تَذهَب؟» أَجابَ يسوع: «إِلى حَيثُ أَنا ذاهبٌ لا تَستَطيعُ الآنَ أَن تَتبَعَني، ولٰكِن ستَتبَعُني بَعدَ حين».</p>
+<p class="prose"><span class="vn" id="v13-37" data-v="37">٣٧</span>قالَ لَه بُطرُس: «لِماذا لا أَستَطيعُ أَن أَتبَعَكَ الآن؟ لَأَبذِلَنَّ نَفْسي في سَبيلِكَ».</p>
+<p class="prose"><span class="vn" id="v13-38" data-v="38">٣٨</span>أَجابَ يسوع: «أَتَبذِلُ نَفْسَكَ في سبيلي؟ الحَقَّ الحَقَّ أَقولُ لَكَ: لا يَصيحُ الدِّيكُ إِلَّا وقَد أَنكَرتَني ثَلاثَ مَرَّات.</p>
+</section>
+<section class="chapter" id="ch14" data-ch="14"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٤</span></h2>
+<div class="poem">
+<p class="line"><span class="vn" id="v14-1" data-v="1">١</span>لا تَضْطَرِبْ قُلوبُكم:</p>
+<p class="line">إِنَّكُم تُؤمِنونَ بِاللهِ فآمِنوا بي أيضًا.</p>
+<p class="line"><span class="vn" id="v14-2" data-v="2">٢</span>في بَيتِ أَبي مَنازِلُ كثيرة</p>
+<p class="line">ولَو لم تَكُنْ، أَتُراني قُلتُ لَكم</p>
+<p class="line">إِنِّي ذاهِبٌ لِأُعِدَّ لَكُم مُقامًا؟</p>
+<p class="line"><span class="vn" id="v14-3" data-v="3">٣</span>وإِذا ذَهَبتُ وأَعددتُ لَكُم مُقامًا</p>
+<p class="line">أَرجِعُ فآخُذُكم إِلَيَّ</p>
+<p class="line">لِتَكونوا أَنتُم أَيضًا حَيثُ أَنا أَكون.</p>
+<p class="line"><span class="vn" id="v14-4" data-v="4">٤</span>أَنتُم تَعرِفونَ الطَّريقَ</p>
+<p class="line">إِلى حَيثُ أَنا ذاهِب».</p>
+</div>
+<p class="prose"><span class="vn" id="v14-5" data-v="5">٥</span>قالَ له توما: «يا ربّ، إِنَّنا لا نَعرِفُ إِلى أَينَ تَذهَب، فكَيفَ نَعرِفُ الطَّريق؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v14-6" data-v="6">٦</span>قالَ له يسوع:</p>
+<p class="line">«أَنا الطَّريقُ والحَقُّ والحَياة.</p>
+<p class="line">لا يَمْضي أَحَدٌ إِلى الآبِ إِلَّا بي.</p>
+<p class="line"><span class="vn" id="v14-7" data-v="7">٧</span>فلَو كُنتُم تَعرِفوني لَعَرفتُم أَبي أَيضًا.</p>
+<p class="line">مُنذُ الآنَ تَعرِفونَه وقَد رأَيتُموه».</p>
+<p class="line"><span class="vn" id="v14-8" data-v="8">٨</span>قالَ له فيلِبُّس: «يا ربّ، أَرِنا الآبَ وحَسْبُنا».</p>
+<p class="line"><span class="vn" id="v14-9" data-v="9">٩</span>قالَ له يسوع:</p>
+<p class="line">«إِنِّي معَكم مُنذُ وَقتٍ طَويل، أَفلا تَعرِفُني، يا فيلِبُّس؟</p>
+</div>
+<p class="prose">مَن رآني رأَى الآب. فكَيفَ تَقولُ: أرِنا الآب؟ <span class="vn" id="v14-10" data-v="10">١٠</span>أَلا تُؤمِنُ بِأَنِّي في الآبِ وأَنَّ الآبَ فيَّ؟</p>
+<div class="poem">
+<p class="line">إِنَّ الكَلامَ الَّذي أقولُه لكم</p>
+<p class="line">لا أَقولُه مِن عِندي</p>
+<p class="line">بلِ الآبُ المُقيمُ فِيَّ يَعمَلُ أَعمالَه.</p>
+<p class="line"><span class="vn" id="v14-11" data-v="11">١١</span>صَدِّقوني: إِنِّي في الآب وإِنَّ الآبَ فيَّ.</p>
+<p class="line">وإِذا كُنتُم لا تُصَدِّقوني</p>
+<p class="line">فصَدِّقوا مِن أَجْلِ تِلكَ الأَعمال.</p>
+<p class="line"><span class="vn" id="v14-12" data-v="12">١٢</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">مَن آمَنَ بي</p>
+<p class="line">يَعمَلُ هو أَيضًا الأَعمالَ الَّتي أَعمَلُها أَنا</p>
+<p class="line">بل يَعمَلُ أَعظَمَ مِنها</p>
+<p class="line">لأَنِّي ذاهِبٌ إِلى الآب</p>
+<p class="line"><span class="vn" id="v14-13" data-v="13">١٣</span>فكُلَّ شَيءٍ سأَلتُم بِٱسْمي أَعمَلُه</p>
+<p class="line">لِكَي يُمَجَّدَ الآبُ في الِٱبْن.</p>
+<p class="line"><span class="vn" id="v14-14" data-v="14">١٤</span>إِذا سَأَلتُموني شَيئًا بِٱسمي، فإِنِّي أَعمَلُه.</p>
+<p class="line"><span class="vn" id="v14-15" data-v="15">١٥</span>إِذا كُنتُم تُحِبُّوني، حَفِظتُم وَصاياي.</p>
+<p class="line"><span class="vn" id="v14-16" data-v="16">١٦</span>وَأَنا سأَسأَلُ الآب</p>
+<p class="line">فيَهَبُ لَكم مُؤَيِّدًا آخَرَ</p>
+<p class="line">يَكونُ معَكم لِلأَبَد</p>
+<p class="line"><span class="vn" id="v14-17" data-v="17">١٧</span>رُوحَ الحَقِّ</p>
+<p class="line">الَّذي لا يَستَطيعُ العالَمُ أَن يَتَلَقَّاه</p>
+<p class="line">لِأَنَّه لا يَراه ولا يَعرِفُه.</p>
+<p class="line">أَمَّا أَنتُم فتَعلَمون</p>
+<p class="line">أَنَّه يُقيمُ عِندَكم ويَكونُ فيكم.</p>
+<p class="line"><span class="vn" id="v14-18" data-v="18">١٨</span>لن أَدَعَكم يَتامى، فإِنِّي أَرجِعُ إِلَيكم.</p>
+<p class="line"><span class="vn" id="v14-19" data-v="19">١٩</span>بَعدَ قَليلٍ لَن يَراني العالَم.</p>
+<p class="line">أَمَّا أَنتُم فسَتَرونَني لِأَنِّي حَيٌّ</p>
+<p class="line">ولِأَنَّكُم أَنتُم أَيضًا سَتَحيَون.</p>
+<p class="line"><span class="vn" id="v14-20" data-v="20">٢٠</span>إِنَّكم في ذٰلك اليَومِ تَعرِفونَ</p>
+<p class="line">أَنِّي في أَبي</p>
+<p class="line">وأَنَّكم فِيَّ وأَنِّي فِيكُم.</p>
+<p class="line"><span class="vn" id="v14-21" data-v="21">٢١</span>مَن تَلَقَّى وَصايايَ وحَفِظَها</p>
+<p class="line">فذاكَ الَّذي يُحِبُّني</p>
+<p class="line">والَّذي يُحِبُّني يُحِبُّه أَبي</p>
+<p class="line">وأَنا أَيضًا أُحِبُّه فأُظهِرُ لَهُ نَفْسي».</p>
+</div>
+<p class="prose"><span class="vn" id="v14-22" data-v="22">٢٢</span>قالَ له يَهوذا، غَيرُ الإِسخَريوطيّ: «يا ربّ، ما الأَمرُ حتَّى إِنَّكَ تُظهِرُ نَفْسَكَ لَنا ولا تُظهِرُها لِلعالَم؟» <span class="vn" id="v14-23" data-v="23">٢٣</span>أَجابَه يسوع:</p>
+<div class="poem">
+<p class="line">«إِذا أَحَبَّني أَحَد</p>
+<p class="line">حَفِظَ كلامي فأَحَبَّه أَبي</p>
+<p class="line">ونأتي إِلَيه فنَجعَلُ لَنا عِندَه مُقامًا.</p>
+<p class="line"><span class="vn" id="v14-24" data-v="24">٢٤</span>ومَن لا يُحِبُّني لا يَحفَظُ كَلامي.</p>
+<p class="line">والكَلِمَةُ الَّتي تَسمَعونَها لَيسَت كَلِمَتي</p>
+<p class="line">بل كَلِمَةُ الآبِ الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v14-25" data-v="25">٢٥</span>قُلتُ لَكُم هٰذه الأَشياءَ وأَنا مُقيمٌ عِندكم</p>
+<p class="line"><span class="vn" id="v14-26" data-v="26">٢٦</span>ولٰكِنَّ المُؤَيِّد، الرُّوحَ القُدُس</p>
+<p class="line">الَّذي يُرسِلُه الآبُ بِٱسمي</p>
+<p class="line">هو يُعَلِّمُكم جَميعَ الأشياء</p>
+<p class="line">ويُذَكِّرُكُم جَميعَ ما قُلتُه لَكم.</p>
+<p class="line"><span class="vn" id="v14-27" data-v="27">٢٧</span>السَّلامَ أَستَودِعُكُم</p>
+<p class="line">وسَلامي أُعْطيكم.</p>
+<p class="line">لا أُعْطي أَنا كما يُعْطي العالَم.</p>
+<p class="line">فلا تَضْطَرِبْ قُلوبُكم ولا تَفْزَعْ.</p>
+<p class="line"><span class="vn" id="v14-28" data-v="28">٢٨</span>سمِعتُموني أَقولُ لَكم: أَنا ذاهِبٌ</p>
+<p class="line">ثُمَّ أَرجِعُ إِلَيكُم.</p>
+<p class="line">لو كُنتُم تُحِبُّوني</p>
+<p class="line">لَفَرِحتُم بِأَنِّي ذاهِبٌ إِلى الآب</p>
+<p class="line">لِأَنَّ الآبَ أَعظَمُ مِنِّي.</p>
+<p class="line"><span class="vn" id="v14-29" data-v="29">٢٩</span>لقَد أَنبَأتُكم مُنذُ الآنَ بِالأَمرِ قَبلَ حُدوثِه</p>
+<p class="line">حَتَّى إِذا حَدَثَ تُؤمِنون.</p>
+<p class="line"><span class="vn" id="v14-30" data-v="30">٣٠</span>لن أُطيلَ الكَلامَ عَلَيكُم بَعدَ ذٰلك</p>
+<p class="line">لِأَنَّ سَيِّدَ هٰذا العالَمِ آتٍ</p>
+<p class="line">ولَيسَ لَه يَدٌ علَيَّ.</p>
+<p class="line"><span class="vn" id="v14-31" data-v="31">٣١</span>وما ذٰلِكَ إِلَّا لِيَعرِفَ العالَمُ</p>
+<p class="line">أَنِّي أُحِبُّ الآب</p>
+<p class="line">وأَنِّي أَعمَلُ كما أَوصاني الآب.</p>
+<p class="line">قوموا نَذْهَبْ مِن هٰهنا.</p>
+</div>
+</section>
+<section class="chapter" id="ch15" data-ch="15"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٥</span></h2>
+<h3 class="rubric" id="h48">الكرمة الحقّ</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v15-1" data-v="1">١</span>«أَنا الكَرمَةُ الحَقُّ</p>
+<p class="line">وأَبي هُوَ الكَرَّام.</p>
+<p class="line"><span class="vn" id="v15-2" data-v="2">٢</span>كُلُّ غُصنٍ فِيَّ لا يُثمِر يَفصِلُه.</p>
+<p class="line">وكُلُّ غُصنٍ يُثمِر يُقَضِّبُه لِيَكثُرَ ثَمَرُه.</p>
+<p class="line"><span class="vn" id="v15-3" data-v="3">٣</span>أَنتُمُ الآنَ أَطهار</p>
+<p class="line">بِفَضْلِ الكَلامِ الَّذي قُلتُه لَكم.</p>
+<p class="line"><span class="vn" id="v15-4" data-v="4">٤</span>أُثبُتوا فيَّ وأَنا أَثبُتُ فيكم.</p>
+<p class="line">وكما أَنَّ الغُصنَ، إِن لم يَثْبُتْ في الكَرمَة</p>
+<p class="line">لا يَستَطيعُ أَن يُثمِرَ مِن نَفْسِه</p>
+<p class="line">فكذٰلكَ لا تَستَطيعونَ أَنتُم أن تُثمِروا</p>
+<p class="line">إِن لم تَثبُتوا فيَّ.</p>
+<p class="line"><span class="vn" id="v15-5" data-v="5">٥</span>أَنا الكَرْمَةُ وأَنتُمُ الأَغصان.</p>
+<p class="line">فمَن ثَبَتَ فيَّ وثَبَتُّ فيه</p>
+<p class="line">فَذاكَ الَّذي يُثمِرُ ثَمَرًا كثيرًا</p>
+<p class="line">لِأَنَّكُم، بِمَعزِلٍ عَنِّي</p>
+<p class="line">لا تَستَطيعونَ أَن تَعمَلوا شيئًا.</p>
+<p class="line"><span class="vn" id="v15-6" data-v="6">٦</span>مَن لا يَثْبُتْ فيَّ</p>
+<p class="line">يُلْقَ كالغُصنِ إِلى الخارِجِ فَيَيْبَس</p>
+<p class="line">فيَجمَعونَ الأَغْصانَ</p>
+<p class="line">ويُلْقونَها في النَّارِ فَتَشتَعِل.</p>
+<p class="line"><span class="vn" id="v15-7" data-v="7">٧</span>إِذا ثَبَتُّم فيَّ وثَبَتَ كَلامي فيكُم</p>
+<p class="line">فَٱسأَلوا ما شِئتُم يَكُنْ لَكم.</p>
+<p class="line"><span class="vn" id="v15-8" data-v="8">٨</span>أَلَا إِنَّ ما يُمَجَّدُ بِه أَبي</p>
+<p class="line">أَن تُثمِروا ثَمَرًا كثيرًا</p>
+<p class="line">وتَكونوا لي تلاميذ.</p>
+<p class="line"><span class="vn" id="v15-9" data-v="9">٩</span>كما أَحَبَّني الآب</p>
+<p class="line">فكذٰلكَ أَحبَبتُكم أَنا أَيضًا.</p>
+<p class="line">أُثبُتوا في مَحَبَّتي.</p>
+<p class="line"><span class="vn" id="v15-10" data-v="10">١٠</span>إِذا حَفِظتُم وَصايايَ تَثبُتونَ في مَحَبَّتي</p>
+<p class="line">كَما أَنِّي حَفِظتُ وَصايا أَبي</p>
+<p class="line">وأَثبُتُ في مَحَبَّتِه.</p>
+<p class="line"><span class="vn" id="v15-11" data-v="11">١١</span>قُلتُ لَكم هٰذهِ الأَشياءَ</p>
+<p class="line">لِيَكونَ بِكُم فَرَحي</p>
+<p class="line">فيَكونَ فَرحُكم تامًّا.</p>
+<p class="line"><span class="vn" id="v15-12" data-v="12">١٢</span>وصِيَّتي هي:</p>
+<p class="line">أَحِبُّوا بَعْضُكم بَعضًا كما أَحبَبتُكم.</p>
+<p class="line"><span class="vn" id="v15-13" data-v="13">١٣</span>لَيسَ لِأَحَدٍ حُبٌّ أَعظمُ</p>
+<p class="line">مِن أَن يَبذِلَ نَفسَه في سَبيلِ أَحِبَّائِه.</p>
+<p class="line"><span class="vn" id="v15-14" data-v="14">١٤</span>فَإِن عَمِلتُم بِما أُوصيكم بِه</p>
+<p class="line">كُنتُم أَحِبَّائي.</p>
+<p class="line"><span class="vn" id="v15-15" data-v="15">١٥</span>لا أَدعوكم خَدَمًا بعدَ اليَوم</p>
+<p class="line">لِأَنَّ الخادِمَ لا يَعلَمُ ما يَعمَلُ سَيِّدُه.</p>
+<p class="line">فَقَد دَعَوتُكم أَحِبَّائي</p>
+<p class="line">لِأَنِّي أَطلَعتُكم</p>
+<p class="line">على كُلِّ ما سَمِعتُه مِن أَبي.</p>
+<p class="line"><span class="vn" id="v15-16" data-v="16">١٦</span>لم تَخْتاروني أَنتُم، بل أَنا ٱختَرتُكم</p>
+<p class="line">وأَقمتُكُم لِتَذهَبوا فَتُثمِروا</p>
+<p class="line">ويَبْقى ثَمَرُكم</p>
+<p class="line">فيُعطِيَكُمُ الآبُ</p>
+<p class="line">كُلَّ ما تَسأَلونَه بِٱسمي.</p>
+<p class="line"><span class="vn" id="v15-17" data-v="17">١٧</span>ما أُوصيكُم بِه هو:</p>
+<p class="line">أَحِبُّوا بَعضُكم بَعضًا.</p>
+</div>
+<h3 class="rubric" id="h49">بغض العالم ليسوع وتلاميذه</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v15-18" data-v="18">١٨</span>إِذا أَبغَضَكُم العالَم</p>
+<p class="line">فَٱعلَموا أَنَّه أَبغَضَني</p>
+<p class="line">قَبلَ أَن يُبغِضَكم.</p>
+<p class="line"><span class="vn" id="v15-19" data-v="19">١٩</span>لو كُنتُم مِنَ العالَم</p>
+<p class="line">لأَحَبَّ العالَمُ ما كانَ لَه.</p>
+<p class="line">ولٰكِن، لأَنَّكم لَستُم مِنَ العالَم</p>
+<p class="line">إِذ إِنِّي ٱختَرتُكم مِن بَينِ العالَم</p>
+<p class="line">فلِذٰلِكَ يُبغِضُكُمُ العالَم.</p>
+<p class="line"><span class="vn" id="v15-20" data-v="20">٢٠</span>أُذكُروا الكَلامَ الَّذي قُلتُه لَكم:</p>
+<p class="line">ما كانَ الخادِمُ أَعظمَ مِن سَيِّده.</p>
+<p class="line">إِذا ٱضطَهَدوني</p>
+<p class="line">فسَيَضطَهِدونَكم أَيضًا.</p>
+<p class="line">وإِذا حَفِظوا كلامي</p>
+<p class="line">فسيَحفَظونَ كَلامَكم أَيضًا.</p>
+<p class="line"><span class="vn" id="v15-21" data-v="21">٢١</span>لا بَل سيَفعَلونَ ذٰلكَ كُلَّه بِكُم</p>
+<p class="line">مِن أَجْلِ ٱسمي</p>
+<p class="line">لأَنَّهم لا يَعرفونَ الَّذي أَرسَلَني.</p>
+<p class="line"><span class="vn" id="v15-22" data-v="22">٢٢</span>لو لَم آتِ وأُكَلِّمْهُم</p>
+<p class="line">لَما كانَت عَليهِم خَطيئَة.</p>
+<p class="line">ولٰكِن لا عُذْرَ لَهُمُ الآنَ مِن خَطيئَتِهم.</p>
+<p class="line"><span class="vn" id="v15-23" data-v="23">٢٣</span>مَن أَبغَضَني أَبغَضَ أَبي أَيضًا.</p>
+<p class="line"><span class="vn" id="v15-24" data-v="24">٢٤</span>لو لم أَعمَلْ بَينَهم</p>
+<p class="line">تلكَ الأَعمالَ الَّتي لم يَعمَلْها أَحَد</p>
+<p class="line">لَما كانَت علَيهم خَطيئَة.</p>
+<p class="line">أَمَّا الآنَ فقَد رأَوا</p>
+<p class="line">وهُم معَ ذٰلك أَبغَضوني</p>
+<p class="line">وأَبغَضوا أَبي أَيضًا.</p>
+<p class="line"><span class="vn" id="v15-25" data-v="25">٢٥</span>وما كانَ ذٰلك</p>
+<p class="line">إِلَّا لِتَتِمَّ الآيَةُ المَكتوبَةُ في شَريعَتِهم</p>
+<p class="line">وهي: أَبغَضوني بِلا سَبَب.</p>
+<p class="line"><span class="vn" id="v15-26" data-v="26">٢٦</span>ومَتى جاءَ المُؤَيِّدُ</p>
+<p class="line">الَّذي أُرسِلُه إِلَيكُم مِن لَدُنِ الآب</p>
+<p class="line">رُوحُ الحَقِّ المُنبَثِقُ مِنَ الآب</p>
+<p class="line">فهُو يَشهَدُ لي</p>
+<p class="line"><span class="vn" id="v15-27" data-v="27">٢٧</span>وأَنتُم أَيضًا تَشهَدون</p>
+<p class="line">لِأَنَّكُم مَعي مُنذُ البَدْء.</p>
+</div>
+</section>
+<section class="chapter" id="ch16" data-ch="16"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٦</span></h2>
+<div class="poem">
+<p class="line"><span class="vn" id="v16-1" data-v="1">١</span>قُلتُ لَكم هٰذه الأَشياءَ لِئَلَّا تَعثُروا.</p>
+<p class="line"><span class="vn" id="v16-2" data-v="2">٢</span>سيَفصِلونَكم عن المَجامِع</p>
+<p class="line">بل تأتي ساعةٌ يَظُنُّ فيها كُلُّ مَن يَقتُلُكم</p>
+<p class="line">أَنَّهُ يُؤَدِّي للهِ عِبادة.</p>
+<p class="line"><span class="vn" id="v16-3" data-v="3">٣</span>وسَيَفعلونَ ذٰلك</p>
+<p class="line">لِأَنَّهم لم يَعرِفوا أَبي، ولا عَرَفوني.</p>
+<p class="line"><span class="vn" id="v16-4" data-v="4">٤</span>وقد قُلتُ لَكم هٰذهِ الأَشْياءَ لِتَذكُروا</p>
+<p class="line">إِذا أَتَتِ السَّاعَة</p>
+<p class="line">أَنِّي قلتُها لَكم.</p>
+</div>
+<h3 class="rubric" id="h50">مجيء الروح القدس</h3>
+<div class="poem">
+<p class="line">ولم أَقُلْها لَكم مُنذُ البَدْءِ</p>
+<p class="line">لِأَنِّي كُنتُ معَكم.</p>
+<p class="line"><span class="vn" id="v16-5" data-v="5">٥</span>أَمَّا الآنَ، فَإِنِّي ذاهِبٌ إِلى الَّذي أَرسَلَني</p>
+<p class="line">وما مِن أَحَدٍ مِنكُم يسأَلُني:</p>
+<p class="line">إِلى أَينَ تَذهَب؟</p>
+<p class="line"><span class="vn" id="v16-6" data-v="6">٦</span>لا بَل مَلَأَ الحُزنُ قُلوبَكم</p>
+<p class="line">لِأَنِّي قُلتُ لَكم هٰذهِ الأَشياء.</p>
+<p class="line"><span class="vn" id="v16-7" data-v="7">٧</span>غَيرَ أَنِّي أَقولُ لَكُمُ الحَقّ:</p>
+<p class="line">إِنَّه خَيرٌ لَكم أَن أَذهَب.</p>
+<p class="line">فَإِن لَم أَذهَبْ، لا يَأتِكُمُ المُؤيِّد.</p>
+<p class="line">أَمَّا إِذا ذَهَبتُ فأُرِسلُه إِلَيكُم.</p>
+<p class="line"><span class="vn" id="v16-8" data-v="8">٨</span>وهو، مَتى جاءَ</p>
+<p class="line">أَخْزى العالَمَ</p>
+<p class="line">على الخَطيئَةِ والبِرِّ والدَّينونَة:</p>
+<p class="line"><span class="vn" id="v16-9" data-v="9">٩</span>أَمَّا على الخَطيئة</p>
+<p class="line">فَلِأَنَّهم لا يُؤمِنونَ بي.</p>
+<p class="line"><span class="vn" id="v16-10" data-v="10">١٠</span>وأَمَّا على البِرّ</p>
+<p class="line">فلِأَنِّي ذاهِبٌ إِلى الآب فلَن تَرَوني.</p>
+<p class="line"><span class="vn" id="v16-11" data-v="11">١١</span>وأَمَّا على الدَّينونة</p>
+<p class="line">فَلِأَنَّ سَيِّدَ هٰذا العالَمِ قد دِين.</p>
+<p class="line"><span class="vn" id="v16-12" data-v="12">١٢</span>لا يَزالُ عِنْدي أَشْياءُ كثيرةٌ أَقولُها لَكم</p>
+<p class="line">ولٰكِنَّكُم لا تُطيقونَ الآنَ حَملَها.</p>
+<p class="line"><span class="vn" id="v16-13" data-v="13">١٣</span>فمَتى جاءَ هوَ، أَي رُوحُ الحَقّ،</p>
+<p class="line">أَرشَدَكم إِلى الحَقِّ كُلِّه</p>
+<p class="line">لِأَنَّه لن يَتَكَلَّمَ مِن عِندِه</p>
+<p class="line">بل يَتَكَلَّمُ بِما يَسمَع</p>
+<p class="line">ويُخبِرُكم بِما سيَحدُث.</p>
+<p class="line"><span class="vn" id="v16-14" data-v="14">١٤</span>سيُمَجِّدُني لأَنَّه سيَأخُذُ مِمَّا لي</p>
+<p class="line">ويُخبِرُكم بِه.</p>
+<p class="line"><span class="vn" id="v16-15" data-v="15">١٥</span>جَميعُ ما هو لِلآب فهُو لي</p>
+<p class="line">ولِذٰلكَ قُلتُ لَكم</p>
+<p class="line">إِنَّه يأخُذُ مِمَّا لي ويُخبِرُكم بِه.</p>
+</div>
+<h3 class="rubric" id="h51">رجوع يسوع</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v16-16" data-v="16">١٦</span>«بَعدَ قَليلٍ لا تَرَونَني</p>
+<p class="line">ثُمَّ بَعدَ قَليلٍ تُشاهِدونَني».</p>
+</div>
+<p class="prose"><span class="vn" id="v16-17" data-v="17">١٧</span>فقالَ بَعضُ التَّلاميذِ لِبَعض: «ما هٰذا الَّذي يَقولُه لَنا: بَعدَ قَليلٍ لا تَرَونَني، ثُمَّ بَعدَ قَليلٍ تُشاهِدونَني، وأَنا ذاهِبٌ إِلى الآب». <span class="vn" id="v16-18" data-v="18">١٨</span>وقالوا: «ما مَعْنى هٰذا القليل؟ لا نَدري ما يَقول». <span class="vn" id="v16-19" data-v="19">١٩</span>فعَلِمَ يسوعُ أَنَّهم يُريدونَ أَن يَسأَلوه، فقالَ لَهم: «تَتساءَلونَ عن قَولي: بَعدَ قَليلٍ لا تَرونَني، ثُمَّ بَعدَ قَليلٍ تُشاهِدونَني.</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v16-20" data-v="20">٢٠</span>الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">ستَبكون وتَنتَحِبون، وأَمَّا العالَمُ فَيَفرَح.</p>
+<p class="line">ستَحزَنون</p>
+<p class="line">ولٰكِنَّ حُزنَكم سيَنقَلِبُ فَرَحًا.</p>
+<p class="line"><span class="vn" id="v16-21" data-v="21">٢١</span>إِنَّ المَرأَةَ تَحزَنُ عِندما تَلِد</p>
+<p class="line">لِأَنَّ ساعتَها حانَت.</p>
+<p class="line">فإِذا وَضَعَتِ الطِّفْلَ</p>
+<p class="line">لا تَذكُرُ شِدَّتَها بَعدَ ذٰلك</p>
+<p class="line">لِفَرَحِها</p>
+<p class="line">بِأَن قد وُلِدَ إِنسانٌ في العالَم.</p>
+<p class="line"><span class="vn" id="v16-22" data-v="22">٢٢</span>فأَنتُم أَيضًا تَحزَنونَ الآن</p>
+<p class="line">ولٰكِنِّي سأعودُ فأَراكُم فتَفرَحُ قُلوبُكم</p>
+<p class="line">وما مِن أَحَدٍ يسلُبُكم هٰذا الفَرَح.</p>
+<p class="line"><span class="vn" id="v16-23" data-v="23">٢٣</span>وفي ذٰلكَ اليَوم</p>
+<p class="line">لا تسأَلونَني عن شَيء.</p>
+<p class="line">الحَقَّ الحَقَّ أَقولُ لَكم:</p>
+<p class="line">إِن سَأَلتُمُ الآبَ شَيئًا بِٱسمي</p>
+<p class="line">أَعطاكم إِيَّاه:</p>
+<p class="line"><span class="vn" id="v16-24" data-v="24">٢٤</span>حتَّى الآن لم تَسأَلوا شَيئًا بِٱسمي.</p>
+<p class="line">إِسأَلوا تَنالوا فيَكونَ فَرحُكم تامًّا.</p>
+<p class="line"><span class="vn" id="v16-25" data-v="25">٢٥</span>قُلتُ لَكم هٰذِهِ الأَشْياءَ بِالأَمْثال.</p>
+<p class="line">تَأتي ساعَةٌ لا أُكَلِّمُكم فيها بِالأَمثال</p>
+<p class="line">بل أُخبِرُكم عن الآبِ</p>
+<p class="line">بِكَلامٍ صَريح.</p>
+<p class="line"><span class="vn" id="v16-26" data-v="26">٢٦</span>في ذٰلك اليَومِ تَسأَلونَ بِٱسمي</p>
+<p class="line">ولا أَقولُ لَكُم إِنِّي سأَدْعو الآبَ لكُم</p>
+<p class="line"><span class="vn" id="v16-27" data-v="27">٢٧</span>فَإِنَّ الآبَ نَفسَه يُحِبُّكُم</p>
+<p class="line">لِأَنَّكم أَحبَبتُموني</p>
+<p class="line">وآمَنتُم أَنِّي خَرَجتُ مِن لَدُنِ الله.</p>
+<p class="line"><span class="vn" id="v16-28" data-v="28">٢٨</span>خَرَجتُ مِن لَدُنِ الآب</p>
+<p class="line">وأَتَيتُ إِلى العالَم.</p>
+<p class="line">أَمَّا الآن، فَإِنِّي أَترُكُ العالَم</p>
+<p class="line">وأَمضي إِلى الآب».</p>
+</div>
+<p class="prose"><span class="vn" id="v16-29" data-v="29">٢٩</span>فقالَ تَلاميذُه: «ها إِنَّكَ تَتَكَلَّمُ الآنَ كَلامًا صَريحًا ولا تَضرِبُ مَثَلًا. <span class="vn" id="v16-30" data-v="30">٣٠</span>الآنَ عَرَفْنا أَنَّكَ تَعلَمُ كُلَّ شَيء، لا تَحتاجُ إِلى مَن يَسأَلُكَ. فلِذٰلكَ نُؤمِنُ بِأَنَّكَ خَرَجتَ مِنَ الله».</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v16-31" data-v="31">٣١</span>أَجابَهم يسوع:</p>
+<p class="line">«الآنَ تُؤمِنون؟</p>
+<p class="line"><span class="vn" id="v16-32" data-v="32">٣٢</span>ها هي ذي ساعَةٌ آتية، بل قد أَتَت</p>
+<p class="line">فيها تَتفرَّقون فيَذهَبُ كُلُّ واحِدٍ في سَبيلِه</p>
+<p class="line">وتَترُكوني وَحْدي.</p>
+<p class="line">ولَستُ وَحْدي، فإِنَّ الآبَ مَعي.</p>
+<p class="line"><span class="vn" id="v16-33" data-v="33">٣٣</span>قُلتُ لَكم هٰذهِ الأَشياء</p>
+<p class="line">لِيَكونَ لَكُم بِيَ السَّلام.</p>
+<p class="line">تُعانونَ الشِّدَّةَ في العالَم</p>
+<p class="line">ولٰكِن ثِقوا</p>
+<p class="line">إِنِّي قد غَلَبتُ العالَم».</p>
+</div>
+</section>
+<section class="chapter" id="ch17" data-ch="17"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٧</span></h2>
+<h3 class="rubric" id="h52">صلاة يسوع الكهنوتيّة</h3>
+<div class="poem">
+<p class="line"><span class="vn" id="v17-1" data-v="1">١</span>قالَ يسوعُ هٰذهِ الأَشياء، ثُمَّ رَفَعَ عَينَيهِ نَحوَ السَّماءِ وقال:</p>
+<p class="line">«يا أَبَتِ، قد أَتَتِ السَّاعة:</p>
+<p class="line">مَجِّدِ ٱبنَكَ لِيُمَجِّدَكَ ٱبنُكَ</p>
+<p class="line"><span class="vn" id="v17-2" data-v="2">٢</span>بِما أَولَيتَه مِن سُلطانٍ على جَميعِ البَشَر</p>
+<p class="line">لِيَهَبَ الحَياةَ الأَبَدِيَّةَ</p>
+<p class="line">لِجَميعِ الَّذينَ وهبتَهم له.</p>
+<p class="line"><span class="vn" id="v17-3" data-v="3">٣</span>والحَياةُ الأَبدِيَّة هي أَن يَعرِفوكَ</p>
+<p class="line">أَنتَ الإِلٰهَ الحَقَّ وحدَكَ</p>
+<p class="line">ويَعرِفوا الَّذي أَرسَلتَه</p>
+<p class="line">يَسوعَ المَسيح.</p>
+<p class="line"><span class="vn" id="v17-4" data-v="4">٤</span>إِنِّي قد مَجَّدتُكَ في الأَرض</p>
+<p class="line">فأَتمَمتُ العَمَلَ</p>
+<p class="line">الَّذي وَكَلتَ إِلَيَّ أَن أَعمَلَه</p>
+<p class="line"><span class="vn" id="v17-5" data-v="5">٥</span>فمَجِّدْني الآنَ عِندَكَ يا أَبتِ</p>
+<p class="line">بِمَا كانَ لي مِنَ المَجدِ عِندَكَ</p>
+<p class="line">قَبلَ أَن يَكونَ العالَم.</p>
+<p class="line"><span class="vn" id="v17-6" data-v="6">٦</span>أَظهَرتُ ٱسمَكَ لِلنَّاسِ</p>
+<p class="line">الَّذينَ وَهَبتَهُم لي مِن بَينِ العالَم.</p>
+<p class="line">كانوا لَكَ فَوهبتَهُم لي</p>
+<p class="line">وقَد حَفِظوا كَلِمَتَكَ</p>
+<p class="line"><span class="vn" id="v17-7" data-v="7">٧</span>وعرَفوا الآنَ أَنَّ جَميعَ ما وَهَبتَه لي</p>
+<p class="line">هو مِن عِندِكَ</p>
+<p class="line"><span class="vn" id="v17-8" data-v="8">٨</span>وأَنَّ الكلامَ الَّذي بَلَّغتَنيه بَلَّغتُهم إِيَّاه</p>
+<p class="line">فقَبِلوه وعَرَفوا حَقًّا</p>
+<p class="line">أَنِّي مِن لَدُنكَ خَرَجتُ</p>
+<p class="line">وآمنوا بِأَنَّكَ أَنتَ أَرسَلتَني.</p>
+<p class="line"><span class="vn" id="v17-9" data-v="9">٩</span>إِنِّي أَدعو لَهم</p>
+<p class="line">ولا أَدعو لِلعالَم</p>
+<p class="line">بل لِمَن وَهبتَهم لي لِأَنَّهم لَكَ.</p>
+<p class="line"><span class="vn" id="v17-10" data-v="10">١٠</span>وجَميعُ ما هو لي فهو لَكَ</p>
+<p class="line">وما هو لَكَ فهو لي</p>
+<p class="line">وقَد مُجِّدتُ فيهِم.</p>
+<p class="line"><span class="vn" id="v17-11" data-v="11">١١</span>لَستُ بَعدَ اليَومِ في العالَم</p>
+<p class="line">وَأَمَّا هُم فلا يَزالونَ في العالَم</p>
+<p class="line">وأَنا ذاهِبٌ إِليكَ.</p>
+<p class="line">يا أَبَتِ القُدُّوس</p>
+<p class="line">اِحفَظْهم بِٱسمِكَ الَّذي وَهَبتَه لي</p>
+<p class="line">لِيَكونوا واحِدًا كما نَحنُ واحِد.</p>
+<p class="line"><span class="vn" id="v17-12" data-v="12">١٢</span>لَمَّا كُنتُ معَهم</p>
+<p class="line">حَفِظتُهم بِٱسمِكَ الَّذي وَهَبتَه لي</p>
+<p class="line">وسَهِرتُ فلَم يَهلِكْ مِنهُم أَحَدٌ</p>
+<p class="line">إِلَّا ٱبنُ الهَلاك</p>
+<p class="line">فتَمَّ ما كُتِب.</p>
+<p class="line"><span class="vn" id="v17-13" data-v="13">١٣</span>أَمَّا الآنَ فإِنِّي ذاهِبٌ إِلَيكَ.</p>
+<p class="line">ولٰكِنِّي أَقولُ هٰذه الأَشياءَ وأَنا في العالَم</p>
+<p class="line">لِيَكونَ فيهِم فَرَحي التَّامّ.</p>
+<p class="line"><span class="vn" id="v17-14" data-v="14">١٤</span>إِنِّي بَلَّغتُهم كَلِمَتَكَ فأَبغَضَهُمُ العالَم</p>
+<p class="line">لِأَنَّهم لَيسوا مِنَ العالَم</p>
+<p class="line">كما أَنِّي لَستُ مِنَ العالَم.</p>
+<p class="line"><span class="vn" id="v17-15" data-v="15">١٥</span>لا أَسأَلُكَ أَن تُخرِجَهُم مِنَ العالَم</p>
+<p class="line">بل أَن تَحفَظَهم مِنَ الشِّرِّير</p>
+<p class="line"><span class="vn" id="v17-16" data-v="16">١٦</span>لَيسوا مِنَ العالَم</p>
+<p class="line">كَمَا أَنِّي لَستُ مِنَ العالَم.</p>
+<p class="line"><span class="vn" id="v17-17" data-v="17">١٧</span>كَرِّسْهُم بِالحَقّ.</p>
+<p class="line">إِنَّ كَلِمَتَكَ حَقّ.</p>
+<p class="line"><span class="vn" id="v17-18" data-v="18">١٨</span>كَمَا أَرسَلتَني إِلى العالَم</p>
+<p class="line">فكَذٰلِكَ أَنا أَرسَلتُهم إِلى العالَم</p>
+<p class="line"><span class="vn" id="v17-19" data-v="19">١٩</span>وأُكَرِّسُ نَفْسي مِن أَجلِهِم</p>
+<p class="line">لِيَكونوا هم أَيضًا مُكَرَّسينَ بِالحَقّ.</p>
+<p class="line"><span class="vn" id="v17-20" data-v="20">٢٠</span>لا أَدْعو لَهم وَحدَهم</p>
+<p class="line">بل أَدْعو أَيضًا</p>
+<p class="line">لِلَّذينَ يُؤمِنونَ بي عن كلامِهم.</p>
+<p class="line"><span class="vn" id="v17-21" data-v="21">٢١</span>فَلْيكونوا بِأَجمَعِهم واحِدًا:</p>
+<p class="line">كَما أَنَّكَ فِيَّ، يا أَبَتِ، وأَنا فيك</p>
+<p class="line">فَلْيكونوا هُم أَيضًا فينا</p>
+<p class="line">لِيُؤمِنَ العالَمُ بِأَنَّكَ أَنتَ أَرسَلتَني.</p>
+<p class="line"><span class="vn" id="v17-22" data-v="22">٢٢</span>وأَنا وَهَبتُ لَهم ما وَهَبْتَ لي مِنَ المَجْد</p>
+<p class="line">لِيَكونوا واحِدًا كما نَحنُ واحِد:</p>
+<p class="line"><span class="vn" id="v17-23" data-v="23">٢٣</span>أَنا فيهِم وأَنتَ فِيَّ</p>
+<p class="line">لِيَبلُغوا كَمالَ الوَحدَة</p>
+<p class="line">ويَعرِفَ العالَمُ أَنَّكَ أَنتَ أَرسَلتَني</p>
+<p class="line">وأَنَّكَ أَحبَبتَهم كَمَا أَحبَبتَني.</p>
+<p class="line"><span class="vn" id="v17-24" data-v="24">٢٤</span>يا أَبَتِ، إِنَّ الَّذينَ وهَبتَهم لي</p>
+<p class="line">أُريدُ أَن يَكونوا معي حَيثُ أَكون</p>
+<p class="line">فيُعايِنوا ما وَهَبتَ لي مِنَ المَجد</p>
+<p class="line">لِأَنَّكَ أَحبَبتَني قَبلَ إِنشاءِ العالَم.</p>
+<p class="line"><span class="vn" id="v17-25" data-v="25">٢٥</span>يا أَبَتِ البارّ</p>
+<p class="line">إِنَّ العالَمَ لم يَعرِفْكَ</p>
+<p class="line">أَمَّا أَنا فقَد عَرَفتُكَ</p>
+<p class="line">وعَرَفَ هٰؤلاءِ أَنَّكَ أَنتَ أَرسَلتَني.</p>
+<p class="line"><span class="vn" id="v17-26" data-v="26">٢٦</span>عَرَّفتُهم بِاسمِكَ وسأُعَرِّفُهم بِه</p>
+<p class="line">لِتَكونَ فيهمِ المَحبَّةُ الَّتي أَحبَبتَني إِيَّاها</p>
+<p class="line">وأَكونَ أَنا فيهِم».</p>
+</div>
+</section>
+<section class="chapter" id="ch18" data-ch="18"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٨</span></h2>
+<h4 class="subpart" id="h53"><span class="sub-mark">ج</span>آلام يسوع</h4>
+<h3 class="rubric" id="h54">إعتقال يسوع</h3>
+<p class="prose"><span class="vn" id="v18-1" data-v="1">١</span>قالَ يسوعُ هٰذهِ الأَشياء، وخَرَجَ معَ تَلاميذِه، فعَبَرَ واديَ قِدْرون، وكانَ هُناكَ بُستان، فدخَلَه هو وتلاميذُه. <span class="vn" id="v18-2" data-v="2">٢</span>وكانَ يَهوذا الَّذي أَسلَمَه يَعرِفُ ذاكَ المكانَ لِكَثرَةِ ما ٱجتَمَعَ فيه يَسوعُ معَ تَلاميذِه. <span class="vn" id="v18-3" data-v="3">٣</span>فجاءَ يَهوذا بِحَرَسِ الهَيكَلِ والحَرَسِ الَّذينَ أَرسَلَهم عُظَماءُ الكَهَنَةِ والفِرِّيسِيُّونَ حتَّى بَلَغَ ذٰلكَ المَكان، ومعَهُمُ المَصابيحُ والمَشاعِلُ والسِّلاح. <span class="vn" id="v18-4" data-v="4">٤</span>وكانَ يسوعُ يَعلَمُ جَميعَ ما سَيَحدُثُ له، فخَرَجَ وقالَ لَهم: «مَن تَطلُبون؟» <span class="vn" id="v18-5" data-v="5">٥</span>أَجابوه: «يسوعَ النَّاصريّ». قالَ لَهم: «أَنا هو». وكانَ يَهوذا الَّذي أَسلَمَه واقِفًا معَهم. <span class="vn" id="v18-6" data-v="6">٦</span>فلَمَّا قالَ لَهم: أَنا هو، رَجَعوا إِلى الوَراءِ ووَقَعوا إِلى الأَرض. <span class="vn" id="v18-7" data-v="7">٧</span>فسَأَلَهم يسوعُ ثانِيَةً: «مَن تَطلُبون؟» قالوا: «يسوعَ النَّاصِريّ». <span class="vn" id="v18-8" data-v="8">٨</span>أَجابَ يسوع: «قُلتُ لَكُم إِنِّي أَنا هو، فإِذا كُنتُم تَطلُبوني أَنا فدَعُوا هٰؤلاءِ يَذهَبون». <span class="vn" id="v18-9" data-v="9">٩</span>فتَمَّتِ الكَلِمَةُ الَّتي قالَها: «إِنَّ الَّذينَ وَهَبتَهم لي لم أَدَعْ أَحَدًا مِنهُم يَهلِك». <span class="vn" id="v18-10" data-v="10">١٠</span>وكانَ سِمْعانُ بُطرُس يَحمِلُ سَيفًا، فٱستَلَّه وضرَبَ خادِمَ عَظيمِ الكَهَنَة، فقَطَعَ أُذُنَه اليُمْنى، وكانَ ٱسمُ الخادِمِ مَلْخُس. <span class="vn" id="v18-11" data-v="11">١١</span>فقالَ يسوعُ لِبُطرُس: «أَغمِدِ السَّيف. أَفَلا أَشرَبُ الكَأسَ الَّتي ناوَلَني أَبي إِيَّاها».</p>
+<h3 class="rubric" id="h55">يسوع عند حنّان وقيافا. إنكار بطرس</h3>
+<p class="prose"><span class="vn" id="v18-12" data-v="12">١٢</span>فقَبَضَتِ الكَتيبَةُ والقائِدُ وحَرَسُ اليَهودِ على يسوع وأَوثَقوه <span class="vn" id="v18-13" data-v="13">١٣</span>وساقوهُ أَوَّلًا إِلى حَنَّان، وهُو حَمُو قيافا عَظيمِ الكَهَنَةِ في تِلكَ السَّنَة. <span class="vn" id="v18-14" data-v="14">١٤</span>وقَيافا هو الَّذي أَشارَ على اليَهودِ أَنَّه خَيرٌ أَن يَموتَ رَجُلٌ واحِدٌ عَنِ الشَّعب.</p>
+<p class="prose"><span class="vn" id="v18-15" data-v="15">١٥</span>وتَبِعَ يسوعَ سِمعانُ بُطرُس وتِلميذٌ آخَر، وكانَ عَظيمُ الكَهَنَةِ يَعرِفُ ذاكَ التِّلْميذ، فدَخَلَ دارَ عَظيمِ الكَهَنَةِ مع يسوع. <span class="vn" id="v18-16" data-v="16">١٦</span>أَمَّا بُطرُس فوقَفَ على البابِ في خارِجِ الدَّار. وخرَجَ التِّلْميذُ الآخَرُ الَّذي يَعرِفُه عَظيمُ الكَهَنَة، فكَلَّمَ البَوَّابة وأَدخَلَ بُطرُس. <span class="vn" id="v18-17" data-v="17">١٧</span>فقالَتِ الجارِيَةُ الَّتي على البابِ لِبُطرُس: «أَلَستَ أَنتَ أَيضًا مِن تَلاميذِ هٰذا الرَّجُل؟» قال: «لَستُ مِنهُم». <span class="vn" id="v18-18" data-v="18">١٨</span>وأَوقَدَ الخَدَمُ والحَرَسُ نارًا لِشِدَّةِ البَرْد، ووَقَفوا يَستَدفِئون، ووَقَفَ بُطرُسُ يَستدفِئُ معَهم.</p>
+<p class="prose"><span class="vn" id="v18-19" data-v="19">١٩</span>فسأَلَ عَظيمُ الكَهَنَةِ يسوعَ عن تَلاميذِه وتَعليمِه. <span class="vn" id="v18-20" data-v="20">٢٠</span>أَجابَه يسوع: «إِنِّي كَلَّمتُ العالَمَ عَلانِيَةً، وإِنِّي عَلَّمتُ دائمًا في المَجمَعِ والهَيكَلِ حَيثُ يَجتَمِعُ اليَهودُ كُلُّهم، ولَم أَقُلْ شَيْئًا في الخُفْيَة. <span class="vn" id="v18-21" data-v="21">٢١</span>فلِماذا تَسأَلُني أَنا؟ سَلِ الَّذينَ سَمِعوني عَمَّا كَلَّمتُهم بِه، فهُم يَعرِفونَ ما قُلت». <span class="vn" id="v18-22" data-v="22">٢٢</span>فلمَّا قالَ يسوعُ هٰذا الكَلام، لَطَمَه واحِدٌ مِنَ الحَرَسِ كانَ بِجانِبِه وقالَ لَه: «أَهٰكذا تُجيبُ عَظيمَ الكَهَنَة؟» <span class="vn" id="v18-23" data-v="23">٢٣</span>أَجابَه يسوع: «إِن كُنتُ أَسَأْتُ في الكَلام، فبَيِّنِ الإِساءَة. وإِن كُنتُ أَحسَنتُ في الكَلام، فلِماذا تَضرِبُني؟».</p>
+<p class="prose"><span class="vn" id="v18-24" data-v="24">٢٤</span>فأَرسَلَ بِه حَنَّانُ مُوثَقًا إِلى قَيافا عَظيمِ الكَهَنَة. <span class="vn" id="v18-25" data-v="25">٢٥</span>وكانَ سِمعانُ بُطرُس واقِفًا يَستَدفِئ. فقالوا له: «أَلَستَ أَنتَ أَيضًا مِن تَلاميذِه؟» فأَنكَرَ قال: «لَستُ مِنهُم». <span class="vn" id="v18-26" data-v="26">٢٦</span>فقالَ خادِمٌ مِن خَدَمِ عَظيمِ الكَهَنَة، وكانَ مِن أَقارِبِ الرَّجُلِ الَّذي قَطَعَ بُطرُسُ أُذُنَه: «أَما رَأَيتُكَ أَنا بِنَفْسي معَه في البُستان؟» <span class="vn" id="v18-27" data-v="27">٢٧</span>فأَنكَرَ بُطرُسُ مرَّةً أُخرى. وعِندَئِذٍ صاحَ الدِّيك.</p>
+<h3 class="rubric" id="h56">يسوع عند بيلاطس</h3>
+<p class="prose"><span class="vn" id="v18-28" data-v="28">٢٨</span>وساقوا يَسوعَ مِن عِندِ قَيافا إِلى دارِ الحاكِم. وكانَ ذٰلكَ عِندَ الفَجْر، فلَم يَدخُلوا دارَ الحاكِمِ مَخافَةَ أَن يَتَنَجَّسوا فلا يَتَمَكَّنوا مِن أَكْلِ الفِصْح. <span class="vn" id="v18-29" data-v="29">٢٩</span>فخَرَجَ إِلَيهِم بيلاطُس وقال: «بِماذا تَتَّهِمونَ هٰذا الرَّجُل؟» <span class="vn" id="v18-30" data-v="30">٣٠</span>فأَجابوه: «لو لم يَكُنْ فاعِلَ شَرٍّ لَما أَسلَمْناهُ إِلَيكَ». <span class="vn" id="v18-31" data-v="31">٣١</span>فقالَ لَهم بيلاطُس: «خُذوه أَنتُم فحاكِموه بِحَسَبِ شَريعتِكم». قالَ لَه اليَهود: «لا يَجوزُ لَنا أَن نَقتُلَ أَحَدًا». <span class="vn" id="v18-32" data-v="32">٣٢</span>بذٰلك تمَّ الكَلامُ الَّذي قالَه يسوع مُشيرًا إِلى المِيتَةِ الَّتي سيَموتُها.</p>
+<p class="prose"><span class="vn" id="v18-33" data-v="33">٣٣</span>فعادَ بيلاطُس إِلى دارِ الحاكِم، ثُمَّ دَعا يسوعَ وقالَ له: «أَأَنتَ مَلِكُ اليَهود؟» <span class="vn" id="v18-34" data-v="34">٣٤</span>أَجابَ يسوع: «أَمِن عِندِكَ تَقولُ هٰذا أَم قالَه لَكَ فِيَّ آخَرون؟» <span class="vn" id="v18-35" data-v="35">٣٥</span>أَجابَ بيلاطُس: «أَتُراني يَهودِيًّا؟ إِنَّ أُمَّتَكَ وعُظَماءَ الكَهَنَةِ أَسلَموكَ إِلَيَّ. ماذا فَعَلتَ؟»</p>
+<div class="poem">
+<p class="line"><span class="vn" id="v18-36" data-v="36">٣٦</span>أَجابَ يسوع:</p>
+<p class="line">«لَيسَت مَملَكَتي مِن هٰذا العالَم.</p>
+<p class="line">لَو كانَت مَملكَتي مِن هٰذا العالَم</p>
+<p class="line">لَدافَعَ عَنِّي حَرَسي</p>
+<p class="line">لِكي لا أُسلَمَ إِلى اليَهود.</p>
+<p class="line">ولٰكِنَّ مَملَكَتي لَيسَت مِن هٰهُنا».</p>
+<p class="line"><span class="vn" id="v18-37" data-v="37">٣٧</span>فقالَ له بيلاطُس: «فأَنتَ مَلِكٌ إِذَن!» أَجابَ يسوع:</p>
+<p class="line">«هوَ ما تَقول، فإِنِّي مَلِك.</p>
+<p class="line">وأَنا ما وُلِدتُ وأَتَيتُ العالَم</p>
+<p class="line">إِلَّا لِأَشهَدَ لِلحَقّ.</p>
+<p class="line">فكُلُّ مَن كانَ مِنَ الحَقّ</p>
+<p class="line">يُصْغي إِلى صَوتي».</p>
+</div>
+<p class="prose"><span class="vn" id="v18-38" data-v="38">٣٨</span>قالَ له بيلاطُس: «ما هو الحَقّ؟» قالَ ذٰلكَ، ثُمَّ خرَجَ ثانِيَةً إِلى اليَهودِ فقالَ لَهم: «إِنِّي لا أَجِدُ فيه سَبَبًا لِٱتِّهامِه. <span class="vn" id="v18-39" data-v="39">٣٩</span>ولٰكِن جَرَتِ العادَةُ عِندكُم أَن أُطلِقَ لَكم أَحَدًا في الفِصْح. أَفتُريدونَ أَن أُطلِقَ لَكُم مَلِكَ اليَهود؟» <span class="vn" id="v18-40" data-v="40">٤٠</span>فعادوا إِلى الصِّياح: «لا هٰذا، بل بَرْأَبَّا!». وكان بَرْأَبَّا لِصًّا.</p>
+</section>
+<section class="chapter" id="ch19" data-ch="19"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">١٩</span></h2>
+<p class="prose"><span class="vn" id="v19-1" data-v="1">١</span>فأَخَذَ بيلاطُسُ يسوعَ وجَلَدَه. <span class="vn" id="v19-2" data-v="2">٢</span>ثُمَّ ضفَرَ الجُنودُ إِكليلًا مِن شَوكٍ ووضَعوه على رَأسِه، وأَلبَسوه رِداءً أُرجُوانِيًّا، <span class="vn" id="v19-3" data-v="3">٣</span>وأَخَذوا يَدنُونَ مِنهُ فيَقولون: «السَّلامُ علَيكَ يا مَلِكَ اليَهود!» وكانوا يَلطِمونَه.</p>
+<p class="prose"><span class="vn" id="v19-4" data-v="4">٤</span>وخَرَجَ بيلاطُسُ ثانِيًا وقالَ لَهم: «ها إِنِّي أُخرِجُه إِلَيكم لتَعلَموا أَنِّي لا أَجِدُ فيه سَبَبًا لِٱتِّهامِه».</p>
+<p class="prose"><span class="vn" id="v19-5" data-v="5">٥</span>فخَرَجَ يسوعُ وعلَيه إِكْليلُ الشَّوكِ والرِّداءُ الأُرجُوانيّ، فقالَ لَهم بيلاطُس: «ها هُوَذا الرَّجُل!» <span class="vn" id="v19-6" data-v="6">٦</span>فلَمَّا رآه عُظَماءُ الكَهَنَةِ والحَرَس صاحوا: «إِصْلِبْه! إِصْلِبْهُ!» قالَ لَهم بيلاطُس: «خُذوه أَنتُم فٱصلِبوه، فإِنِّي لا أَجِدُ فيه سَبَبًا لِٱتِّهامه». <span class="vn" id="v19-7" data-v="7">٧</span>أَجابَه اليَهود: «لَنا شَريعَة، وبِحَسَبِ هٰذهِ الشَّريعة يَجِبُ علَيه أَن يَموت لِأَنَّه جَعَلَ نَفْسَه ٱبنَ الله».</p>
+<p class="prose"><span class="vn" id="v19-8" data-v="8">٨</span>فلَمَّا سَمِعَ بيلاطُسُ هٰذا الكَلامَ ٱشتَدَّ خَوفُه. <span class="vn" id="v19-9" data-v="9">٩</span>فعادَ إِلى دارِ الحُكومَة وقالَ لِيَسوع: «مِن أَينَ أَنتَ؟» فلَم يُجِبْه يسوعُ بِشَيء. <span class="vn" id="v19-10" data-v="10">١٠</span>فقالَ له بيلاطُس: «أَلا تُكَلِّمُني؟ أَفَلَستَ تَعلَمُ أَنَّ لي سُلْطانًا على أَن أُخلِيَ سبيلَكَ، وسُلطانًا على أَن أَصلِبَكَ؟» <span class="vn" id="v19-11" data-v="11">١١</span>أَجابَهُ يسوع: «لو لم تُعطَ السُّلطانَ مِن عَلُ، لَما كانَ لَكَ علَيَّ مِن سُلْطان، ولِذٰلِكَ فالَّذي أَسلَمَني إِلَيكَ علَيه خَطيئَةٌ كبيرة».</p>
+<h3 class="rubric" id="h57">الحكم على يسوع بالموت</h3>
+<p class="prose"><span class="vn" id="v19-12" data-v="12">١٢</span>فحاوَلَ بيلاطُسُ مِن ذٰلك الحينِ أَن يُخلِيَ سَبيلَه، ولٰكِنَّ اليَهودَ صاحوا: «إِن أَخلَيتَ سَبيلَه، فَلَستَ صَديقًا لِقَيصَر، لِأَنَّ كُلَّ مَن يَجعَلُ نَفْسَه مَلِكًا يَخرُجُ على قَيصَر». <span class="vn" id="v19-13" data-v="13">١٣</span>فلَمَّا سَمِعَ بيلاطُسُ هٰذا الكَلام، أَمَرَ بإِخراجِ يسوع، وأَجلَسَه على كُرسيِّ القَضاءِ في مَكانٍ يُسَمَّى البَلاط ويُقالُ له بِالعِبرِيَّةِ غَبَّاثَة. <span class="vn" id="v19-14" data-v="14">١٤</span>وكانَ ذٰلكَ اليَومُ يَومَ تَهيِئَةِ الفِصْح، والسَّاعَةُ تُقارِبُ الظُّهْر. فقالَ لِليَهود: «ها هُوَذا مَلِكُكم!» <span class="vn" id="v19-15" data-v="15">١٥</span>فصاحوا: «أَعدِمْه! أَعدِمْه! إِصْلِبْهُ!» قالَ لَهم بيلاطس: «أَأَصلِبُ مَلِكَكُم؟» أَجابَ عُظَماءُ الكَهَنَة: «لا مَلِكَ علَينا إِلَّا قَيصَر!» <span class="vn" id="v19-16" data-v="16">١٦</span>فأَسلَمَه إِليهم لِيُصلَب.</p>
+<h3 class="rubric" id="h58">الصلب</h3>
+<p class="prose">فأَمسَكوا يسوع. <span class="vn" id="v19-17" data-v="17">١٧</span>فخَرَجَ حامِلًا صَليبَه إِلى المَكانِ الَّذي يُقالُ لَه مَكانَ الجُمجُمة، ويقالُ لهُ بِالعِبرِيَّةِ جُلْجُثَة. <span class="vn" id="v19-18" data-v="18">١٨</span>فَصَلبوهُ فيه، وصَلَبوا معَه آخَرَين، كُلٌّ مِنهُما في جِهَة، وبَينَهما يسوع. <span class="vn" id="v19-19" data-v="19">١٩</span>وكَتَبَ بيلاطُسُ رُقعَةً وجَعَلَها على الصَّليب، وكانَ مَكتوبًا فيها: «يسوعُ النَّاصِريُّ مَلِكُ اليَهود» <span class="vn" id="v19-20" data-v="20">٢٠</span>وهٰذِه الرُّقعَةُ قَرَأَها كَثيرٌ مِنَ اليَهود، لِأَنَّ المكانَ الَّذي صُلِبَ فيه يسوع كانَ قَريبًا مِنَ المَدينَة. وكانَتِ الكِتابَةُ بِالعِبرِيَّةِ واللَّاتينيَّةِ واليُونانِيَّة. <span class="vn" id="v19-21" data-v="21">٢١</span>فقالَ عُظَماءُ كَهَنَةِ اليَهودِ لِبيلاطُس: «لا تَكتُبْ: مَلِكُ اليَهود، بلِ ٱكتُبْ: قالَ هٰذا الرَّجُل: إِنِّي مَلِكُ اليَهود». <span class="vn" id="v19-22" data-v="22">٢٢</span>أَجابَ بيلاطس: «ما كُتِبَ قد كُتِب!».</p>
+<h3 class="rubric" id="h59">إقتسام ثياب يسوع</h3>
+<p class="prose"><span class="vn" id="v19-23" data-v="23">٢٣</span>وأَمَّا الجُنود فبَعدَما صَلَبوا يسوع أَخذوا ثِيابَه وجَعلوها أَربَعَ حِصَص، لِكُلِّ جُندِيٍّ حِصَّة. وأَخَذوا القَميصَ أَيضًا وكانَ غَيرَ مَخيط، مَنسوجًا كُلُّه مِن أَعلاهُ إِلى أَسفَلِه. <span class="vn" id="v19-24" data-v="24">٢٤</span>فقالَ بَعضُهم لِبَعض: «لا نَشُقَّه، بل نَقتَرِعُ علَيه، فنَرى لِمَن يَكون». فتَمَّتِ الآية:</p>
+<div class="poem">
+<p class="line">«إقتَسَموا ثِيابي</p>
+<p class="line">وعلى لِباسي ٱقتَرعوا».</p>
+<p class="line">فهٰذا ما فَعَلَه الجُنود.</p>
+</div>
+<h3 class="rubric" id="h60">مريم ويوحنّا عند الصليب</h3>
+<p class="prose"><span class="vn" id="v19-25" data-v="25">٢٥</span>هُناكَ عِندَ صَليبِ يسوع، وقَفَت أُمُّه، وأُختُ أُمِّه مَريَمُ ٱمرأَةُ قَلُوبا، ومَريَمُ المِجدَلِيَّة. <span class="vn" id="v19-26" data-v="26">٢٦</span>فرأَى يسوعُ أُمَّه وإِلى جانِبِها التِّلميذُ الحَبيبُ إِلَيه. فقالَ لِأُمِّه: «أَيَّتها المَرأَة، هٰذا ٱبنُكِ». <span class="vn" id="v19-27" data-v="27">٢٧</span>ثُمَّ قالَ لِلتِّلميذ: «هٰذه أُمُّكَ». ومُنذُ تِلكَ السَّاعَةِ ٱستَقبَلَها التِّلميذُ في بَيتِه.</p>
+<h3 class="rubric" id="h61">موت يسوع</h3>
+<p class="prose"><span class="vn" id="v19-28" data-v="28">٢٨</span>وبَعدَ ذٰلك، كانَ يَسوعُ يَعلَمُ أَنَّ كُلَّ شَيءٍ قدِ ٱنتَهى، فلِكَي يَتِمَّ الكِتاب، قالَ: «أَنا عَطْشان». <span class="vn" id="v19-29" data-v="29">٢٩</span>وكانَ هُناكَ إِناءٌ مَمْلوءٌ خَلًّا. فوَضَعوا إِسْفَنْجَةً مُبتَلَّةً بِالخَلِّ على ساقِ زوفى، وأَدنَوها مِن فَمِه. <span class="vn" id="v19-30" data-v="30">٣٠</span>فلَمَّا تَناوَلَ يسوعُ الخَلَّ قال: «تَمَّ كُلُّ شَيء». ثُمَّ حَنى رأسَه وأَسلَمَ الرُّوح.</p>
+<h3 class="rubric" id="h62">طعن جنب يسوع بالحربة</h3>
+<p class="prose"><span class="vn" id="v19-31" data-v="31">٣١</span>وكانَ ذٰلكَ اليَومُ يَومَ التَّهيِئَة، فَسأَلَ اليَهودُ بيلاطُس أَن تُكسَرَ سُوقُ المَصلوبين وتُنزَلَ أَجسادُهُم، لِئَلَّا تَبْقى على الصَّليبِ يَومَ السَّبت، لِأَنَّ ذاكَ السَّبْتَ يَوْمٌ مُكرَّم. <span class="vn" id="v19-32" data-v="32">٣٢</span>فجاءَ الجُنودُ فكَسروا ساقَيِ الأَوَّلِ والآخَرِ اللَّذَينِ صُلِبا معَه. <span class="vn" id="v19-33" data-v="33">٣٣</span>أَمَّا يسوع فلَمَّا وَصَلوا إِليه ورأَوهُ قد مات، لَم يَكسِروا ساقَيْه، <span class="vn" id="v19-34" data-v="34">٣٤</span>لٰكِنَّ واحِدًا مِنَ الجُنودِ طَعَنه بِحَربَةٍ في جَنبِه، فخَرَجَ لِوَقتِه دَمٌ وماء. <span class="vn" id="v19-35" data-v="35">٣٥</span>والَّذي رأَى شَهِد، وشَهادَتُه صَحيحة، وذاك يَعلَمُ أَنَّه يَقولُ الحَقَّ لِتُؤمِنوا أَنتُم أَيضًا. <span class="vn" id="v19-36" data-v="36">٣٦</span>فقد كانَ هٰذا لِيَتِمَّ الكِتاب:</p>
+<div class="poem">
+<p class="line">«لن يُكسَرَ له عَظْم».</p>
+<p class="line"><span class="vn" id="v19-37" data-v="37">٣٧</span>ووَرَدَ أَيضًا في آيةٍ أُخرى مِنَ الكِتاب:</p>
+<p class="line">«سَيَنظُرونَ إِلى مَن طَعَنوا».</p>
+</div>
+<h3 class="rubric" id="h63">دفن يسوع</h3>
+<p class="prose"><span class="vn" id="v19-38" data-v="38">٣٨</span>وبَعدَ ذٰلِك جاءَ يوسُفُ الرَّاميّ، وكانَ تِلميذًا لِيَسوعَ يُخْفي أَمرَهُ خَوفًا مِنَ اليَهود، فسأَلَ بيلاطُسَ أَن يأخُذَ جُثمانَ يَسوع، فأَذِنَ له بيلاطُس. فجاءَ فأَخَذَ جُثْمانَه. <span class="vn" id="v19-39" data-v="39">٣٩</span>وجاءَ نيقوديمُس أَيضًا، وهوَ الَّذي ذهَبَ إِلى يَسوعَ لَيلًا مِن قَبلُ، وكانَ مَعه خَليطٌ مِنَ المُرِّ والعودِ مِقدارُه نَحوُ مائةِ دِرهَم. <span class="vn" id="v19-40" data-v="40">٤٠</span>فحَمَلوا جُثْمانَ يسوع ولَفُّوهُ بِلَفائِفَ مع الطِّيب، كما جَرَت عادةُ اليَهودِ في دَفنِ مَوتاهُم. <span class="vn" id="v19-41" data-v="41">٤١</span>وكانَ في المَوضِعِ الَّذي صُلِبَ فيهِ بُستان، وفي البُستانِ قَبرٌ جَديد لم يَكُنْ قد وُضِعَ فيهِ أَحَد. <span class="vn" id="v19-42" data-v="42">٤٢</span>وكانَ القَبرُ قَريبًا فَوضَعوا فيه يَسوع بِسَبَبِ تَهْيِئَةِ السَّبْتِ عِندَ اليَهود.</p>
+</section>
+<section class="chapter" id="ch20" data-ch="20"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٢٠</span></h2>
+<div class="part" id="h64"><span class="part-num">٨</span><h3 class="part-title">القيامة</h3></div>
+<p class="prose"><span class="vn" id="v20-1" data-v="1">١</span>وفي يَومِ الأَحَد جاءَت مَريمُ المِجدَلِيَّةُ إِلى القَبْرِ عِندَ الفَجْر، والظَّلامُ لَم يَزَلْ مُخَيِّمًا، فرأَتِ الحَجَرَ قد أُزيلَ عنِ القَبْر. <span class="vn" id="v20-2" data-v="2">٢</span>فأَسرَعَت وجاءَت إِلى سِمْعانَ بُطرُس والتِّلميذِ الآخَرِ الَّذي أَحَبَّه يسوع، وقالَت لَهما: «أَخَذوا الرَّبَّ مِنَ القَبْرِ، ولا نَعلَمُ أَينَ وَضَعوه». <span class="vn" id="v20-3" data-v="3">٣</span>فخَرَجَ بُطرُسُ والتِّلْميذُ الآخَرُ وذَهَبا إِلى القَبْرِ <span class="vn" id="v20-4" data-v="4">٤</span>يُسرِعانِ السَّيْرَ مَعًا. ولٰكِنَّ التِّلْميذَ الآخَرَ سَبَق بُطرُس، فوَصَلَ قَبلَه إِلى القَبْرِ <span class="vn" id="v20-5" data-v="5">٥</span>وٱنحَنى فأَبصَرَ اللَّفائِفَ مَمْدودة، ولٰكنَّه لَم يَدخُلْ. <span class="vn" id="v20-6" data-v="6">٦</span>ثُمَّ وَصَلَ سِمْعانُ بُطرُس وكانَ يَتبَعُه، فدَخَلَ القَبْرَ فأَبصَرَ اللَّفائِفَ مَمْدودة، <span class="vn" id="v20-7" data-v="7">٧</span>والمِنديلَ الَّذي كانَ حَولَ رَأسِه غَيرَ مَمْدودٍ معَ اللَّفائِف، بل عَلى شَكْلِ طَوْقٍ خِلافًا لَها، وكان كُلُّ ذٰلك في مَكانِه. <span class="vn" id="v20-8" data-v="8">٨</span>حينَئذٍ دخَلَ أَيضًا التِّلميذُ الآخَرُ وقَد وَصَلَ قَبلَه إِلى القَبْر، فرَأَى وآمَنَ. <span class="vn" id="v20-9" data-v="9">٩</span>ذٰلك بِأَنَّهُما لم يكونا قد فهِما ما وَرَدَ في الكِتاب مِن أَنَّه يَجِبُ أَن يَقومَ مِن بَينِ الأَموات. <span class="vn" id="v20-10" data-v="10">١٠</span>ثُمَّ رَجَعَ التِّلميذانِ إِلى بَيتِهما.</p>
+<h3 class="rubric" id="h65">ترائي يسوع لمريم المجدليّة</h3>
+<p class="prose"><span class="vn" id="v20-11" data-v="11">١١</span>أَمَّا مَريم، فكانَت واقِفَةً عِندَ القَبْرِ في خارِجِه تَبْكي. فَٱنحَنَت نَحوَ القَبرِ وهِي تَبْكي، <span class="vn" id="v20-12" data-v="12">١٢</span>فرَأَت مَلاكَينِ في ثِيابٍ بيضٍ جالِسَينِ حَيثُ وُضِعَ جُثمانُ يسوع، أَحَدُهما عِندَ الرَّأس، والآخَرُ عِندَ القَدَمَين. <span class="vn" id="v20-13" data-v="13">١٣</span>فقالا لَها: «لِماذا تَبْكينَ أَيَّتُها المَرأَة؟» فأَجابَتْهما: «أَخَذوا رَبِّي، ولا أَدْري أَينَ وَضَعوه». <span class="vn" id="v20-14" data-v="14">١٤</span>قالَت هٰذا ثُمَّ ٱلتَفَتَت إِلى الوَراء، فرأَت يسوعَ واقِفًا، ولَم تَعلَمْ أَنَّه يَسوع. <span class="vn" id="v20-15" data-v="15">١٥</span>فقالَ لَها يسوع: «لِماذا تَبْكينَ، أَيَّتُها المَرأَة، وعَمَّن تَبحَثين؟» فظَنَّت أَنَّه البُستانيّ فقالَت له: «سَيِّدي، إِذا كُنتَ أَنتَ قد ذَهَبتَ بِه، فقُلْ لي أَينَ وَضَعتَه، وأَنا آخُذُه». <span class="vn" id="v20-16" data-v="16">١٦</span>فقالَ لَها يسوع: «مَريَم!» فٱلتَفَتَت وقالَت له بِالعِبرِيَّة: «رابُّوني!» أَي: يا مُعلِّم. <span class="vn" id="v20-17" data-v="17">١٧</span>فقالَ لَها يسوع: «لا تُمسِكيني، إِنِّي لم أَصعَدْ بَعدُ إِلى أَبي، بلِ ٱذهَبي إِلى إِخوَتي، فقولي لَهم إِنِّي صاعِدٌ إِلى أَبي وأَبيكُم، وإِلٰهي وإِلٰهِكُم». <span class="vn" id="v20-18" data-v="18">١٨</span>فجاءَت مَريَمُ المِجدَلِيَّة وأَخبَرَتِ التَّلاميذَ بأَن «قد رأيتُ الرَّبّ» وبِأَنَّه قالَ لَها ذٰاكَ الكَلام.</p>
+<h3 class="rubric" id="h66">ترائي يسوع للتلاميذ ولتوما</h3>
+<p class="prose"><span class="vn" id="v20-19" data-v="19">١٩</span>وفي مَساءِ ذٰلك اليَومِ، يومِ الأَحد، كانَ التَّلاميذُ في دارٍ أُغْلِقَتْ أَبوابُها خَوفًا مِنَ اليَهود، فجاءَ يسوعُ ووَقَفَ بَينَهم وقالَ لَهم: «السَّلامُ علَيكم!» <span class="vn" id="v20-20" data-v="20">٢٠</span>قالَ ذٰلك، وأَراهم يَدَيْهِ وجَنبَه ففَرِحَ التَّلاميذُ لِمُشاهَدَتِهمِ الرَّبّ. <span class="vn" id="v20-21" data-v="21">٢١</span>فقالَ لَهم ثانِيَةً: «السَّلامُ علَيكم! كما أَرسَلَني الآب أُرسِلُكم أَنا أَيضًا». <span class="vn" id="v20-22" data-v="22">٢٢</span>قالَ هٰذا ونَفَخَ فيهم وقالَ لَهم: «خُذوا الرُّوحَ القُدُس. <span class="vn" id="v20-23" data-v="23">٢٣</span>مَن غَفَرتُم لَهم خَطاياهم تُغفَرُ لَهم، ومَن أَمسَكتُم عليهمِ الغُفْران يُمسَكُ علَيهم».</p>
+<p class="prose"><span class="vn" id="v20-24" data-v="24">٢٤</span>على أَنَّ توما أَحَدَ الِٱثنَيْ عَشَر، ويُقالُ لَه التَّوأَم، لم يَكُنْ مَعَهم حِينَ جاءَ يسوع. <span class="vn" id="v20-25" data-v="25">٢٥</span>فقالَ لَه سائِرُ التَّلاميذ: «رَأَينا الرَّبّ». فقالَ لَهم: «إِذا لم أُبصِرْ أَثَرَ المِسمارَينِ في يَدَيهِ، وأَضَعْ إِصبَعي في مَكانِ المِسمارَين، ويدي في جَنْبِه، لن أُومِن». <span class="vn" id="v20-26" data-v="26">٢٦</span>وبَعدَ ثَمانِيَةِ أَيَّامٍ كانَ التَّلاميذُ في البَيتِ مَرَّةً أُخْرى، وكانَ توما معَهم. فجاءَ يسوعُ والأَبوابُ مُغلَقَة، فوَقَفَ بَينَهم وقال: «السَّلامُ علَيكم»! <span class="vn" id="v20-27" data-v="27">٢٧</span>ثُمَّ قالَ لِتوما: «هاتِ إِصبَعَكَ إِلى هُنا فَٱنظُرْ يَدَيَّ، وهاتِ يَدَكَ فضَعْها في جَنْبي، ولا تَكُنْ غَيرَ مُؤمِنٍ بل كُنْ مُؤمِنًا». <span class="vn" id="v20-28" data-v="28">٢٨</span>أَجابَه توما: «رَبِّي وإِلٰهي!» <span class="vn" id="v20-29" data-v="29">٢٩</span>فقالَ له يسوع: «أَلِأَنَّكَ رَأَيتَني آمَنتَ؟ طوبى لِلَّذينَ يؤمِنونَ ولَم يَرَوا».</p>
+<p class="prose"><span class="vn" id="v20-30" data-v="30">٣٠</span>وأَتى يسوعُ أَمامَ التَّلاميذ بِآياتٍ أُخرى كثيرة لم تُكتَبْ في هٰذا الكِتاب، <span class="vn" id="v20-31" data-v="31">٣١</span>وإِنَّما كُتِبَت هٰذه لِتُؤمِنوا بِأَنَّ يسوعَ هو المسيحُ ٱبنُ الله، ولِتَكونَ لَكم إِذا آمَنتُمُ الحياةُ بِٱسمِه.</p>
+</section>
+<section class="chapter" id="ch21" data-ch="21"><h2 class="chapter-head"><span class="ch-word">الفصل</span><span class="ch-num">٢١</span></h2>
+<h3 class="rubric" id="h67">ملحق</h3>
+<h3 class="rubric" id="h68">يسوع يتراءى لتلاميذه على شاطئ بحيرة طبريّة</h3>
+<p class="prose"><span class="vn" id="v21-1" data-v="1">١</span>وتَراءَى يسوعُ بَعدَئِذٍ لِلتَّلاميذِ مَرَّةً أُخْرى. وكانَ ذٰلكَ على شاطِئِ بُحَيرَةِ طَبَرِيَّة. وتراءَى لَهم على هٰذا النَّحْو. <span class="vn" id="v21-2" data-v="2">٢</span>كانَ قدِ ٱجتَمَعَ سِمْعانُ بُطرُس وتوما الَّذي يُقالُ له التَّوأَم ونَتَنائيل وهو مِن قانا الجَليل وَٱبنا زَبَدى وآخَرانِ مِن تَلاميذِه. <span class="vn" id="v21-3" data-v="3">٣</span>فقالَ لَهم سِمعانُ بُطرُس: «أَنا ذاهِبٌ لِلصَّيد». فقالوا له: «ونَحنُ نَذهَبُ معَكَ». فخَرَجوا ورَكِبوا السَّفينَة، ولٰكِنَّهم لم يُصيبوا في تِلكَ اللَّيلَةِ شَيئًا.</p>
+<p class="prose"><span class="vn" id="v21-4" data-v="4">٤</span>فلَمَّا كانَ الفَجْر، وقَفَ يسوعُ على الشاطِئِ، لٰكِنَّ التَّلاميذَ لم يَعرِفوا أَنَّه يسوع. <span class="vn" id="v21-5" data-v="5">٥</span>فقالَ لَهم: «أَيُّها الفِتْيان، أَمعَكُم شَيءٌ مِنَ السَّمَك؟» أَجابوه: «لا». <span class="vn" id="v21-6" data-v="6">٦</span>فقالَ لَهم: «أَلقُوا الشَّبَكَةَ إِلى يَمينِ السَّفينَة تَجِدوا». فأَلقَوها، فإِذا هُم لا يَقدِرونَ على جَذبِها، لِما فيها مِن سَمَكٍ كَثير. <span class="vn" id="v21-7" data-v="7">٧</span>فقالَ التِّلميذُ الَّذي أَحبَّه يسوعُ لِبُطرُس: «إِنَّه الرَّبّ». فلَمَّا سَمِعَ سِمْعانُ بُطرُس أَنَّه الرَّبّ، اِئتَزَرَ بِثَوبِه، لِأَنَّه كانَ عُرْيانًا، وأَلْقى بِنَفْسِه في البُحَيرة. <span class="vn" id="v21-8" data-v="8">٨</span>وأَقبَلَ التَّلاميذُ الآخَرونَ بِالسَّفينَة، يجُرُّونَ الشَّبَكَة بِما فيها مِنَ السَّمَك، ولَم يَكونوا إِلَّا على بُعدِ نَحوِ مائَتَيْ ذِراعٍ مِنَ البَرّ.</p>
+<p class="prose"><span class="vn" id="v21-9" data-v="9">٩</span>فلَمَّا نَزَلوا إِلى البَرّ أَبصَروا جَمْرًا مُتَّقِدًا علَيه سَمَكٌ، وخُبزًا. <span class="vn" id="v21-10" data-v="10">١٠</span>فقالَ لَهم يسوع: «هاتوا مِن ذٰلكَ السَّمَكِ الَّذي أَصَبتُموه الآن». <span class="vn" id="v21-11" data-v="11">١١</span>فصَعِدَ سِمْعانُ بُطرُس إِلى السَّفينَة، وجذَبَ الشَّبَكَةَ إِلى البَرّ، وقدِ ٱمتَلأَت بِمائَةٍ وثَلاثٍ وخَمسينَ سَمَكَةً مِنَ السَّمَكِ الكَبير، ولم تَتَمزَّقِ الشَّبَكَةُ معَ هٰذا العَدَدِ الكَثير. <span class="vn" id="v21-12" data-v="12">١٢</span>فقالَ لهم يسوع: «تَعالَوا ٱفْطُروا!» ولَم يَجرُؤْ أَحَدٌ مِنَ التَّلاميذِ أَن يَسأَلَه: مَن أَنتَ؟ لِعِلمِهم أَنَّه الرَّبّ. <span class="vn" id="v21-13" data-v="13">١٣</span>فدَنا يسوع فأَخَذَ الخُبزَ وناوَلَهم، وفعَلَ مِثلَ ذٰلك في السَّمَك. <span class="vn" id="v21-14" data-v="14">١٤</span>تِلكَ المَرَّةُ الثَّالِثَةُ الَّتي تَراءَى فيها يسوعُ لِتَلاميذِه بَعدَ قِيامَتِه مِن بَينِ الأَموات.</p>
+<h3 class="rubric" id="h69">يسوع يجعل بطرس راعي الخراف</h3>
+<p class="prose"><span class="vn" id="v21-15" data-v="15">١٥</span>وبَعدَ أَن فَطَروا قالَ يسوعُ لِسمْعان بُطرُس: «يا سِمْعانُ بنَ يونا، أَتُحِبُّني أَكثَرَ مِمَّا يُحِبُّني هٰؤلاء؟» قالَ لَه: «نَعم يا رَبّ، أَنتَ تَعلَمُ أَنِّي أُحِبُّكَ حُبًّا شَديدًا». قالَ له: «إِرْعَ حُمْلاني». <span class="vn" id="v21-16" data-v="16">١٦</span>قالَ له مَرَّةً ثانِية: «يا سِمْعانُ بنَ يونا، أَتُحِبُّني؟» قالَ له: «نَعم يا ربّ، أَنتَ تَعلَمُ أَنِّي أُحِبُّكَ حُبًّا شَديدًا». قالَ له: «إِسْهَرْ على خِرافي». <span class="vn" id="v21-17" data-v="17">١٧</span>قالَ له في المَرَّةِ الثَّالِثَة: «يا سِمْعانُ بنَ يونا، أَتُحِبُّني حُبًّا شديدًا؟» فحَزِنَ بُطرُس لأَنَّه قالَ له في المرَّةِ الثَّالِثَة: أَتُحِبُّني حُبًّا شَديدًا؟ فقالَ: «يا رَبّ، أَنتَ تَعلَمُ كُلَّ شَيء، أَنتَ تَعلَمُ أَنِّي أُحِبُّكَ حُبًّا شَديدًا». قالَ له: «إِرْعَ خِرافي. <span class="vn" id="v21-18" data-v="18">١٨</span>الحَقَّ الحَقَّ أَقولُ لَكَ: لَمَّا كُنتَ شابًّا، كُنتَ تَتَزَنَّرُ بِيَدَيكَ، وتَسيرُ إِلى حَيثُ تشاء. فإِذا شِخْتَ بَسَطتَ يَدَيكَ، وشَدَّ غَيرُكَ لَكَ الزُّنَّار، ومَضى بِكَ إِلى حَيثُ لا تَشاء». <span class="vn" id="v21-19" data-v="19">١٩</span>قالَ ذٰلك مُشيرًا إِلى المِيتَةِ الَّتي سيُمَجِّدُ بِها الله. ثُمَّ قالَ له: «إِتبَعْني!».</p>
+<h3 class="rubric" id="h70">يسوع والتلميذ الحبيب</h3>
+<p class="prose"><span class="vn" id="v21-20" data-v="20">٢٠</span>فٱلتفَتَ بُطرُس، فرأَى التِّلميذَ الَّذي أَحبَّهُ يسوعُ يَتبعهُما، ذٰاكَ الَّذي مالَ على صَدرِ يسوعَ في أَثناءِ العشاء وقالَ له: «يا ربّ، مَنِ الَّذي يُسلِمُكَ؟» <span class="vn" id="v21-21" data-v="21">٢١</span>فلَمَّا رَآهُ بُطرس قالَ لِيسوع: «يا ربّ، وهٰذا ما شأنُه؟» <span class="vn" id="v21-22" data-v="22">٢٢</span>قالَ لَه يسوع: «لو شِئتُ أَن يَبْقى إِلى أن آتي، فما لَكَ وذٰلك؟ أَمَّا أَنتَ فٱتبَعْني». <span class="vn" id="v21-23" data-v="23">٢٣</span>فشاعَ بَينَ الإخوَةِ هٰذا القَول: «إِنَّ ذٰلِكَ التِّلميذَ لَن يَموت»، مَعَ أَنَّ يسوعَ لَم يَقُلْ له إِنَّه لَن يَموت، بل قالَ له: لو شِئتُ أَن يَبْقى إِلى أَن آتي، فما لكَ وذٰلك؟</p>
+<h3 class="rubric" id="h71">الخاتمة</h3>
+<p class="prose"><span class="vn" id="v21-24" data-v="24">٢٤</span>وهٰذا التِّلميذُ هو الَّذي يَشهَدُ بِهٰذِه الأُمور وهو الَّذي كَتَبَها، ونَحنُ نَعلَمُ أَنَّ شَهادَتَه صادِقَة.</p>
+<p class="prose"><span class="vn" id="v21-25" data-v="25">٢٥</span>وهُناكَ أُمورٌ أُخرى كثيرةٌ أَتى بِها يسوع، لو كُتِبَت واحِدًا واحِدًا، لَحَسِبتُ أَنَّ الدُّنْيا نَفْسَها لا تَسَعُ الأَسفارَ الَّتي تُدَوَّنُ فيها.</p>
+</section>
+</main>
+
+<footer>
+  <p>الترجمة الكاثوليكيّة العربيّة، تُرجمت للمرّة الأولى سنة ١٨٨١.<br>
+  دار المشرق ــ بيروت.</p>
+</footer>
+
+<button class="totop" id="toTop" aria-label="العودة إلى الأعلى">
+  <svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer" id="drawer" aria-label="فهرس الإنجيل">
+  <header>
+    <span>الفهرس</span>
+    <button id="closeDrawer" aria-label="إغلاق">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </header>
+  <div class="search">
+    <input id="q" type="search" placeholder="ابحث في العناوين، أو اكتب ٣:١٦" autocomplete="off">
+  </div>
+  <nav class="toc" id="toc"></nav>
+</aside>
+
+<div class="sheet" id="sheet" aria-label="إعدادات القراءة">
+  <div class="handle"></div>
+  <div class="row">
+    <span class="lab">حجم الخطّ</span>
+    <div class="seg" id="fsSeg">
+      <button data-fs="17">صغير</button>
+      <button data-fs="19" aria-pressed="true">وسط</button>
+      <button data-fs="22">كبير</button>
+      <button data-fs="26">أكبر</button>
+    </div>
+  </div>
+  <div class="row">
+    <span class="lab">لون الصفحة</span>
+    <div class="seg" id="thSeg">
+      <button data-th="light" aria-pressed="true"><span class="sw-dot" style="background:#faf7f1"></span></button>
+      <button data-th="sepia"><span class="sw-dot" style="background:#f2e6d0"></span></button>
+      <button data-th="dark"><span class="sw-dot" style="background:#161513"></span></button>
+    </div>
+  </div>
+  <div class="row">
+    <span class="lab">أرقام الآيات</span>
+    <div class="seg" id="vnSeg">
+      <button data-vn="on" aria-pressed="true">ظاهرة</button>
+      <button data-vn="off">مخفيّة</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var TOC = [{"k": "ch", "n": 1, "id": "ch1", "t": "الفصل ١"}, {"k": "sec", "id": "h1", "t": "المقدِّمة"}, {"k": "part", "id": "h2", "t": "عيد الفصح الأوّل", "n": "١"}, {"k": "sub", "id": "h3", "t": "الأسبوع الأوّل"}, {"k": "sec", "id": "h4", "t": "شهادة يوحنّا ليسوع"}, {"k": "sec", "id": "h5", "t": "التلاميذ الأوّلون"}, {"k": "ch", "n": 2, "id": "ch2", "t": "الفصل ٢"}, {"k": "sec", "id": "h6", "t": "معجزة الخمر في عرس قانا الجليل"}, {"k": "sub", "id": "h7", "t": "عيد الفصح"}, {"k": "sec", "id": "h8", "t": "طرد الباعة من الهيكل"}, {"k": "sec", "id": "h9", "t": "يسوع في أورشليم"}, {"k": "ch", "n": 3, "id": "ch3", "t": "الفصل ٣"}, {"k": "sub", "id": "h10", "t": "يسوع يكشف عن سرّ الروح لنيقوديمس"}, {"k": "sec", "id": "h11", "t": "الإنسان الجديد"}, {"k": "part", "id": "h12", "t": "يسوع في السامرة والجليل", "n": "٢"}, {"k": "sec", "id": "h13", "t": "يوحنّا يشهد شهادته الأخيرة ليسوع"}, {"k": "ch", "n": 4, "id": "ch4", "t": "الفصل ٤"}, {"k": "sec", "id": "h14", "t": "يسوع عند السامريّين"}, {"k": "sec", "id": "h15", "t": "يسوع يشفي طفلًا في كفرناحوم"}, {"k": "ch", "n": 5, "id": "ch5", "t": "الفصل ٥"}, {"k": "part", "id": "h16", "t": "يسوع في أورشليم في العيد مرّة ثانية", "n": "٣"}, {"k": "sec", "id": "h17", "t": "يسوع يشفي مُقعدًا"}, {"k": "sec", "id": "h18", "t": "الآب والابن"}, {"k": "ch", "n": 6, "id": "ch6", "t": "الفصل ٦"}, {"k": "part", "id": "h19", "t": "الفصح وخبز الحياة", "n": "٤"}, {"k": "sec", "id": "h20", "t": "معجزة الخبز والسمكتين"}, {"k": "sec", "id": "h21", "t": "يسوع يمشي على الماء"}, {"k": "sec", "id": "h22", "t": "يسوع خبز الحياة"}, {"k": "sec", "id": "h23", "t": "إيمان بطرس بيسوع"}, {"k": "ch", "n": 7, "id": "ch7", "t": "الفصل ٧"}, {"k": "part", "id": "h24", "t": "عيد الأكواخ", "n": "٥"}, {"k": "sec", "id": "h25", "t": "أقوال الناس في يسوع"}, {"k": "sec", "id": "h26", "t": "يسوع ينبئ بموته"}, {"k": "sec", "id": "h27", "t": "الماء الحيّ"}, {"k": "sec", "id": "h28", "t": "أقوال مختلفة في يسوع"}, {"k": "sec", "id": "h29", "t": "يسوع يعفو عن الزانية"}, {"k": "ch", "n": 8, "id": "ch8", "t": "الفصل ٨"}, {"k": "sec", "id": "h30", "t": "يسوع نور العالم"}, {"k": "sec", "id": "h31", "t": "يسوع ينذر اليهود"}, {"k": "sec", "id": "h32", "t": "يسوع وإبراهيم"}, {"k": "ch", "n": 9, "id": "ch9", "t": "الفصل ٩"}, {"k": "sec", "id": "h33", "t": "شفاء الأعمى"}, {"k": "ch", "n": 10, "id": "ch10", "t": "الفصل ١٠"}, {"k": "sec", "id": "h34", "t": "الراعي الصالح"}, {"k": "part", "id": "h35", "t": "عيد تجديد الهيكل", "n": "٦"}, {"k": "sec", "id": "h36", "t": "يسوع في عبر الأردنّ"}, {"k": "ch", "n": 11, "id": "ch11", "t": "الفصل ١١"}, {"k": "sec", "id": "h37", "t": "إحياء لعازر"}, {"k": "sec", "id": "h38", "t": "عظماء الكهنة يعزمون على قتل يسوع"}, {"k": "part", "id": "h39", "t": "الفصح الأخير", "n": "٧"}, {"k": "sub", "id": "h40", "t": "ما قبل آلام يسوع"}, {"k": "ch", "n": 12, "id": "ch12", "t": "الفصل ١٢"}, {"k": "sec", "id": "h41", "t": "دهن يسوع بالطيب في بيت عنيا"}, {"k": "sec", "id": "h42", "t": "يسوع يدخل أورشليم"}, {"k": "sec", "id": "h43", "t": "يسوع ينبئ بموته وقيامته"}, {"k": "sec", "id": "h44", "t": "عمى اليهود"}, {"k": "ch", "n": 13, "id": "ch13", "t": "الفصل ١٣"}, {"k": "sub", "id": "h45", "t": "العشاء الأخير"}, {"k": "sec", "id": "h46", "t": "يسوع ينبئ بخيانة يهوذا"}, {"k": "sec", "id": "h47", "t": "الوداع"}, {"k": "ch", "n": 14, "id": "ch14", "t": "الفصل ١٤"}, {"k": "ch", "n": 15, "id": "ch15", "t": "الفصل ١٥"}, {"k": "sec", "id": "h48", "t": "الكرمة الحقّ"}, {"k": "sec", "id": "h49", "t": "بغض العالم ليسوع وتلاميذه"}, {"k": "ch", "n": 16, "id": "ch16", "t": "الفصل ١٦"}, {"k": "sec", "id": "h50", "t": "مجيء الروح القدس"}, {"k": "sec", "id": "h51", "t": "رجوع يسوع"}, {"k": "ch", "n": 17, "id": "ch17", "t": "الفصل ١٧"}, {"k": "sec", "id": "h52", "t": "صلاة يسوع الكهنوتيّة"}, {"k": "ch", "n": 18, "id": "ch18", "t": "الفصل ١٨"}, {"k": "sub", "id": "h53", "t": "آلام يسوع"}, {"k": "sec", "id": "h54", "t": "إعتقال يسوع"}, {"k": "sec", "id": "h55", "t": "يسوع عند حنّان وقيافا. إنكار بطرس"}, {"k": "sec", "id": "h56", "t": "يسوع عند بيلاطس"}, {"k": "ch", "n": 19, "id": "ch19", "t": "الفصل ١٩"}, {"k": "sec", "id": "h57", "t": "الحكم على يسوع بالموت"}, {"k": "sec", "id": "h58", "t": "الصلب"}, {"k": "sec", "id": "h59", "t": "إقتسام ثياب يسوع"}, {"k": "sec", "id": "h60", "t": "مريم ويوحنّا عند الصليب"}, {"k": "sec", "id": "h61", "t": "موت يسوع"}, {"k": "sec", "id": "h62", "t": "طعن جنب يسوع بالحربة"}, {"k": "sec", "id": "h63", "t": "دفن يسوع"}, {"k": "ch", "n": 20, "id": "ch20", "t": "الفصل ٢٠"}, {"k": "part", "id": "h64", "t": "القيامة", "n": "٨"}, {"k": "sec", "id": "h65", "t": "ترائي يسوع لمريم المجدليّة"}, {"k": "sec", "id": "h66", "t": "ترائي يسوع للتلاميذ ولتوما"}, {"k": "ch", "n": 21, "id": "ch21", "t": "الفصل ٢١"}, {"k": "sec", "id": "h67", "t": "ملحق"}, {"k": "sec", "id": "h68", "t": "يسوع يتراءى لتلاميذه على شاطئ بحيرة طبريّة"}, {"k": "sec", "id": "h69", "t": "يسوع يجعل بطرس راعي الخراف"}, {"k": "sec", "id": "h70", "t": "يسوع والتلميذ الحبيب"}, {"k": "sec", "id": "h71", "t": "الخاتمة"}];
+  var root = document.documentElement;
+  var drawer = document.getElementById('drawer');
+  var sheet  = document.getElementById('sheet');
+  var scrim  = document.getElementById('scrim');
+  var tocEl  = document.getElementById('toc');
+  var q      = document.getElementById('q');
+
+  /* ---- table of contents ---- */
+  var frag = document.createDocumentFragment();
+  TOC.forEach(function(it){
+    var a = document.createElement('a');
+    a.className = 'toc-item t-' + it.k;
+    a.href = '#' + it.id;
+    a.textContent = it.k === 'part' ? '\u2014 ' + it.t : it.t;
+    a.dataset.txt = it.t;
+    a.addEventListener('click', function(){ close(); });
+    frag.appendChild(a);
+  });
+  tocEl.appendChild(frag);
+  var empty = document.createElement('p');
+  empty.className = 'empty';
+  empty.textContent = 'لا نتيجة مطابقة.';
+  empty.style.display = 'none';
+  tocEl.appendChild(empty);
+
+  /* ---- open / close ---- */
+  function open(el){
+    el.classList.add('on'); scrim.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    drawer.classList.remove('on'); sheet.classList.remove('on');
+    scrim.classList.remove('on'); document.body.style.overflow = '';
+  }
+  document.getElementById('menuBtn').onclick = function(){ open(drawer); setTimeout(function(){q.focus();},280); };
+  document.getElementById('setBtn').onclick  = function(){ open(sheet); };
+  document.getElementById('closeDrawer').onclick = close;
+  scrim.onclick = close;
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+
+  /* ---- settings ---- */
+  function seg(id, fn){
+    var box = document.getElementById(id);
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(box.querySelectorAll('button'), function(x){
+        x.setAttribute('aria-pressed', String(x === b));
+      });
+      fn(b);
+    });
+  }
+  seg('fsSeg', function(b){ root.style.setProperty('--fs', b.dataset.fs + 'px'); });
+  seg('thSeg', function(b){
+    root.setAttribute('data-theme', b.dataset.th);
+    document.querySelector('meta[name=theme-color]')
+      .setAttribute('content', b.dataset.th === 'dark' ? '#0e0d0c' : '#1e1b17');
+  });
+  seg('vnSeg', function(b){ root.setAttribute('data-vn', b.dataset.vn); });
+
+  /* ---- search: titles, or a verse reference like ٣:١٦ / 3:16 ---- */
+  var AR = '٠١٢٣٤٥٦٧٨٩';
+  function west(s){
+    return s.replace(/[٠-٩]/g, function(c){ return String(AR.indexOf(c)); })
+            .replace(/[۰-۹]/g, function(c){ return String('۰۱۲۳۴۵۶۷۸۹'.indexOf(c)); });
+  }
+  function norm(s){
+    return s.replace(/[\u064B-\u0652\u0670\u0640]/g,'')
+            .replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')
+            .replace(/[ؤئ]/g,'ء');
+  }
+  function jump(id){
+    var el = document.getElementById(id);
+    if(!el) return false;
+    close();
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+    return true;
+  }
+  q.addEventListener('input', function(){
+    var raw = q.value.trim();
+    var ref = west(raw).match(/^(\d{1,2})\s*[:.،\s]\s*(\d{1,3})$/);
+    if(ref){
+      var ok = jump('v' + (+ref[1]) + '-' + (+ref[2]));
+      if(ok){ q.value=''; return; }
+    }
+    var n = norm(raw);
+    var any = false;
+    [].forEach.call(tocEl.querySelectorAll('.toc-item'), function(a){
+      var hit = !n || norm(a.dataset.txt).indexOf(n) > -1;
+      a.classList.toggle('hide', !hit);
+      if(hit) any = true;
+    });
+    empty.style.display = any ? 'none' : 'block';
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter') return;
+    var first = tocEl.querySelector('.toc-item:not(.hide)');
+    if(first){ e.preventDefault(); jump(first.getAttribute('href').slice(1)); q.value=''; }
+  });
+
+  /* ---- progress + current chapter ---- */
+  var prog = document.getElementById('prog');
+  var now  = document.getElementById('now');
+  var toTop = document.getElementById('toTop');
+  var chapters = [].slice.call(document.querySelectorAll('.chapter'));
+  var ticking = false;
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var y = h.scrollTop;
+    prog.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    toTop.classList.toggle('on', y > 900);
+    var label = 'إنجيل القدّيس يوحنّا', best = null;
+    for(var i = 0; i < chapters.length; i++){
+      if(chapters[i].getBoundingClientRect().top <= 90) best = chapters[i];
+    }
+    if(best) label = 'الفصل ' + best.querySelector('.ch-num').textContent;
+    if(now.textContent !== label) now.textContent = label;
+    ticking = false;
+  }
+  addEventListener('scroll', function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(onScroll); }
+  }, {passive:true});
+  onScroll();
+
+  toTop.onclick = function(){ scrollTo({top:0, behavior:'smooth'}); };
+
+  /* ---- tap a verse number to copy its reference ---- */
+  document.getElementById('text').addEventListener('click', function(e){
+    var vn = e.target.closest('.vn'); if(!vn) return;
+    var ch = vn.closest('.chapter').dataset.ch;
+    var ref = 'يوحنّا ' + ch + ':' + vn.dataset.v;
+    if(navigator.clipboard) navigator.clipboard.writeText(ref).catch(function(){});
+    vn.classList.remove('flash'); void vn.offsetWidth; vn.classList.add('flash');
+  });
+})();
+</script>
+</body>
+</html>
